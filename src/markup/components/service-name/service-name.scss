@@ -1,0 +1,72 @@
+.service-name {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: rem(25);
+
+    .stars {
+        margin-right: rem(15);
+
+        &__input {
+            &::before {
+                top: rem(2);
+            }
+        }
+    }
+
+    &__name {
+        margin: 0;
+
+        font-family: $open_sans;
+        font-size: rem(30);
+        font-weight: 300;
+        color: $dim-grey;
+        text-align: left;
+    }
+
+    &__icon {
+        margin-right: rem(20);
+
+        fill: $dim-grey;
+    }
+
+    &__info {
+        display: flex;
+        margin-left: rem(70);
+    }
+
+    &__service-name {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: rem(25);
+
+        .stars {
+            margin-right: rem(15);
+            &__input {
+                &::before {
+                    top: rem(2);
+                }
+            }
+        }
+    }
+
+    &__service-name-name {
+        margin: 0;
+
+        font-family: $open_sans;
+        font-size: rem(30);
+        font-weight: 300;
+        color: $dim-grey;
+        text-align: left;
+    }
+
+    &__service-name-icon {
+        margin-right: rem(20);
+
+        fill: $dim-grey;
+    }
+
+    &__service-name-info {
+        display: flex;
+        margin-left: rem(70);
+    }
+}

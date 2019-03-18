@@ -1,0 +1,592 @@
+// GUI stylies of the project
+// For example, styles of the links, buttons and so on.
+
+.title {
+    font-family: $open_sans;
+    font-weight: 300;
+
+    &_size {
+        &_big {
+            font-size: rem(30);
+
+            @include below($tablet) {
+                font-size: rem(24);
+            }
+        }
+
+        &_medium{
+            font-size: rem(24);
+        }
+
+        &_small{
+            font-size: rem(18);
+        }
+    }
+
+    &_color {
+        &_white {
+            color: $white;
+        }
+
+        &_grey {
+            color: $dim-grey;
+        }
+
+        &_black{
+            color: $black;
+        }
+
+        &_ash-grey{
+            color: $ash-grey;
+        }
+        &_dim-grey{
+            color: $dim-grey;
+        }
+    }
+
+    &_underline {
+        position: relative;
+        margin: 0;
+
+        &::after{
+            position: absolute;
+            content: '';
+            bottom: - rem(15);
+            left: 0;
+
+            width: 100%;
+            height: rem(1);
+            background-color: $platinum-grey;
+        }
+    }
+}
+
+.text {
+    font-family: $open_sans;
+    font-size: rem(14);
+    font-weight: 300;
+    color: $dim-grey;
+
+    &_color {
+        &_grey-light {
+            color: $platinum-grey;
+        }
+
+        &_blue {
+            color: $yale-blue;
+        }
+
+        &_blue-rackley {
+            color: $rackley-blue;
+        }
+
+        &_yellow {
+            color: $gold-yellow;
+        }
+
+        &_white {
+            color: $white;
+        }
+
+        &_blue-sky {
+            color: $sky-blue;
+        }
+
+        &_black {
+            color: $black;
+        }
+
+        &_ash-grey {
+            color: $ash-grey;
+        }
+
+        &_dim-grey {
+            color: $dim-grey;
+        }
+
+        &_forest-green {
+            color: $forest-green;
+        }
+
+        &_rich-blue {
+            color: $rich-blue;
+        }
+
+        &_dark-golden {
+            color: $dark-golden;
+        }
+    }
+
+    &_size {
+        &_biggest {
+            font-size: rem(24);
+        }
+
+        &_big {
+            font-size: rem(18);
+        }
+
+        &_small {
+            font-size: rem(12);
+        }
+        &_mini {
+            font-size: rem(10);
+        }
+    }
+
+    &_weight {
+
+        &_medium {
+            font-weight: 500;
+        }
+
+        &_Bold {
+            font-weight: 700;
+        }
+    }
+}
+
+.link {
+    padding: 0;
+
+    font-size: rem(14);
+    text-decoration: none;
+
+    background: none;
+    border: none;
+    outline: none;
+
+    transition: color .25s;
+
+    &_color {
+        &_yellow {
+            color: $gold-yellow;
+
+            &::after {
+                border-bottom-width: 1px;
+                border-bottom-color: $gold-yellow;
+            }
+        }
+
+        &_deep-sky-blue {
+            color: $deep-sky-blue;
+
+            &::after {
+                border-bottom-width: 1px;
+                border-bottom-color: $deep-sky-blue;
+            }
+        }
+
+        &_rich-blue {
+            color: $rich-blue;
+
+            &::after {
+                border-bottom-width: 1px;
+                border-bottom-color: $rich-blue;
+            }
+        }
+
+        &_yale-blue {
+            color: $yale-blue;
+
+            &::after {
+                border-bottom-width: 1px;
+                border-bottom-color: $yale-blue;
+            }
+        }
+    }
+
+    &_hover {
+        &_yale-blue {
+            &:hover {
+                color: $yale-blue;
+
+                svg {
+                    fill: $yale-blue;
+                }
+
+                &::after {
+                    border-bottom-color: $yale-blue;
+                }
+            }
+        }
+
+        &_yellow {
+            &:hover {
+                color: $gold-yellow;
+
+                &::after {
+                    border-bottom-color: $gold-yellow;
+                }
+            }
+        }
+
+        &_deep-sky-blue {
+            &:hover {
+                color: $deep-sky-blue;
+
+                &::after {
+                    border-bottom-color: $deep-sky-blue;
+                }
+            }
+        }
+
+        &_mikado-yellow {
+            &:hover {
+                color: $mikado-yellow;
+
+                &::after {
+                    border-bottom-color: $mikado-yellow;
+                }
+            }
+        }
+    }
+
+    &_border {
+        position: relative;
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 1px;
+
+            transition: border .25s;
+        }
+
+        &_solid {
+            &::after {
+                border-bottom-style: solid;
+            }
+        }
+
+        &_dashed {
+            &::after {
+                border-bottom-style: dashed;
+            }
+        }
+    }
+
+}
+
+.name {
+    font-family: $open_sans;
+    font-size: rem(18);
+
+    &_size {
+        &_small {
+            padding: rem(8) rem(20);
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.03em;
+
+            border-top-left-radius: rem(5);
+            border-top-right-radius: rem(5);
+
+            background-color: $sky-blue;
+
+            @include below($tablet) {
+                font-size: rem(12);
+            }
+        }
+    }
+
+    &_color {
+        &_white {
+            color: $white;
+        }
+    }
+
+    &_weight {
+        &_light {
+            font-weight: 300;
+        }
+    }
+
+    &_after {
+        &_send {
+            display: none;
+
+            text-align: center;
+        }
+    }
+}
+
+.input-wrap {
+    position: relative;
+
+    &::after {
+        content: '';
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        width: 100%;
+        height: rem(4);
+
+        border-right: 1px solid $rackley-blue;
+        border-bottom: 1px solid $rackley-blue;
+        border-left: 1px solid $rackley-blue;
+    }
+}
+
+.input,
+.textarea {
+    padding: rem(5) rem(10);
+
+    font-family: $open_sans;
+    font-size: rem(14);
+    color: $platinum-grey;
+
+    background: none;
+    border: 0 none;
+
+    &:focus {
+        color: $platinum-grey;
+    }
+
+    &::-webkit-input-placeholder {
+        font-family: $open_sans;
+        font-size: rem(14);
+        font-weight: 300;
+
+        color: $platinum-grey;
+
+        @include below($mobile) {
+            font-size: rem(16);
+        }
+    }
+
+    &::-moz-placeholder {
+        font-family: $open_sans;
+        font-size: rem(14);
+        font-weight: 300;
+
+        color: $platinum-grey;
+
+        opacity: 1;
+
+        @include below($mobile) {
+            font-size: rem(16);
+        }
+    }
+
+    &:-ms-input-placeholder {
+        font-family: $open_sans;
+        font-size: rem(14);
+        font-weight: 300;
+
+        color: $platinum-grey;
+
+        @include below($mobile) {
+            font-size: rem(16);
+        }
+    }
+
+    &:-moz-placeholder {
+        font-family: $open_sans;
+        font-size: rem(14);
+        font-weight: 300;
+
+        color: $platinum-grey;
+
+        opacity: 1;
+
+        @include below($mobile) {
+            font-size: rem(16);
+        }
+    }
+
+    &::placeholder {
+        font-family: $open_sans;
+        font-size: rem(14);
+        font-weight: 300;
+
+        color: $platinum-grey;
+
+        @include below($mobile) {
+            font-size: rem(16);
+        }
+    }
+
+    @include below($mobile) {
+        font-size: rem(16);
+    }
+
+    &_date {
+        position: relative;
+        z-index: 1;
+
+        padding-right: rem(35);
+
+        color: $sky-blue;
+        transition: color .25s;
+
+        &:focus {
+            color: $sky-blue;
+        }
+
+        &:hover {
+            color: $gold-yellow;
+        }
+
+        &:hover {
+            .booking__icon_date {
+                fill: $gold-yellow;
+            }
+        }
+
+        @include below($mobile) {
+            padding-right: 0;
+        }
+    }
+
+    &_color {
+        &_grey {
+            color: $dim-grey;
+
+            &::-webkit-input-placeholder {
+                font-weight: 500;
+
+                color: $dim-grey;
+            }
+
+            &::-moz-placeholder {
+                font-weight: 500;
+
+                color: $dim-grey;
+            }
+
+            &:-ms-input-placeholder {
+                font-weight: 500;
+
+                color: $dim-grey;
+            }
+
+            &:-moz-placeholder {
+                font-weight: 500;
+
+                color: $dim-grey;
+            }
+
+            &:focus {
+                color: $dim-grey;
+
+                font-weight: 500;
+            }
+
+        }
+    }
+}
+
+.button {
+    padding: rem(10) 0;
+
+    font-family: $open_sans;
+    font-size: rem(18);
+    font-weight: 300;
+    text-align: center;
+
+    border: 0 none;
+    border-radius: 0;
+
+    outline: none;
+    cursor: pointer;
+
+    transition: background-color .25s, color .25s;
+
+    &_color {
+        &_yellow {
+            color: $prussian-blue;
+
+            background-color: $gold-yellow;
+
+            &:hover {
+                background-color: $white;
+            }
+        }
+
+        &_blue-dark {
+            color: $white;
+
+            background-color: $prussian-blue;
+        }
+
+        &_deep-blue-sky {
+            color: $white;
+
+            background-color: $deep-sky-blue;
+        }
+
+        &_white {
+            color: $dim-grey;
+
+            background-color: $white;
+        }
+
+        &_grey {
+            color: $dim-grey;
+
+            background-color: #E7E7E7;
+
+            &:hover {
+                color: $prussian-blue;
+
+                background-color: $gold-yellow;
+            }
+        }
+    }
+
+    &_size {
+        &_big {
+            width: 100%;
+            padding-top: rem(18);
+            padding-bottom: rem(17);
+            font-weight: 600;
+        }
+    }
+
+    &_rounded {
+        border-radius: rem(5);
+    }
+
+    &_link {
+        padding: 0;
+
+        font-size: rem(14);
+
+        background: none;
+        border: none;
+        outline: none;
+    }
+}
+
+.rouble-light {
+    display: inline-flex;
+    align-self: center;
+    margin-left: rem(5);
+
+    &_color {
+        &_grey {
+            fill: $dim-grey;
+        }
+    }
+}
+
+.message-dir-button {
+    position: fixed;
+    z-index: 9999;
+    top: calc(75% - 75px);
+    left: rem(-85);
+
+    padding-top: rem(12);
+    padding-right: rem(15);
+    padding-bottom: rem(12);
+    padding-left: rem(15);
+}

@@ -1,0 +1,169 @@
+.entertainment {
+    padding-top: rem(15);
+
+    @include above($desktop) {
+        background: linear-gradient(0deg, white 45%, rgba(34, 60, 92, .5) 75%);
+    }
+    @include below($tablet) {
+        padding-top: rem(40);
+    }
+
+    .mCustomScrollBox {
+        @include below($tablet) {
+            margin: 0 rem(20);
+        }
+    }
+
+    .mCSB_scrollTools .mCSB_draggerContainer {
+        @include above($desktop) {
+            width: em(1220) !important;
+            margin: 0 auto;
+        }
+    }
+
+    .mCSB_horizontal.mCSB_inside > .mCSB_container {
+        margin-bottom: 0;
+
+        @include below($tablet) {
+            padding-top: rem(35);
+        }
+    }
+
+    .mCSB_scrollTools_horizontal {
+        @include below($tablet) {
+            top: 0;
+        }
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: rem(15);
+
+        color: $white;
+
+        @include below($tablet) {
+            color: $dim-grey;
+        }
+        @include below($mobile) {
+            text-align: center;
+        }
+    }
+
+    &__slider {
+        width: 100%;
+    }
+
+    &__list {
+        display: flex;
+        margin-right: rem(10);
+        margin-bottom: rem(35);
+
+        @include below($tablet) {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        flex-basis: rem(290);
+        padding: 0 rem(10);
+
+        text-decoration: none;
+
+        outline: none;
+
+        @include below($tablet) {
+            flex-basis: rem(230);
+            padding: 0;
+
+            &:not(:last-child) {
+                margin-right: rem(20);
+            }
+        }
+
+        &:hover {
+            .entertainment__name {
+                color: $rich-blue;
+            }
+        }
+    }
+
+    &__wrap {
+        position: relative;
+
+        width: rem(290);
+        margin-bottom: rem(15);
+        overflow: hidden;
+
+        border-radius: rem(5);
+
+        @include below($tablet) {
+            width: rem(230);
+            height: rem(150);
+        }
+
+        .grayscale-replaced {
+            //хак для ишака
+            transform: scale(1.1) !important;
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            background-color: rgba(2, 183, 255, .3);
+
+            transition: background-color .5s;
+
+            @include below($mobile) {
+                background: none;
+            }
+        }
+
+        &:hover {
+            .entertainment__image {
+                filter: none;
+            }
+
+            .grayscale {
+                svg {
+                    opacity: 0;
+                }
+            }
+
+            &::after {
+                content: '';
+
+                background-color: rgba(2, 183, 255, 0);
+            }
+        }
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+
+        @include below($mobile) {
+            filter: none;
+        }
+    }
+
+    &__name {
+        margin: 0;
+
+        font-family: $open_sans;
+        font-size: 18px;
+        font-weight: 300;
+        color: $dim-grey;
+
+        transition: color .25s;
+    }
+}

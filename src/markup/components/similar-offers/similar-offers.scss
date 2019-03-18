@@ -1,0 +1,51 @@
+.similar-offers {
+    &__title {
+        margin-bottom: rem(35);
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &_yacht-detailed {
+        position: relative;
+        z-index: 2;
+
+        margin-bottom: - rem(44);
+
+        @include below($tablet) {
+            margin-bottom: rem(105);
+
+            .similar-offers__title {
+                &::after {
+                    display: none;
+                }
+            }
+
+            .boat:nth-of-type(3) {
+                display: none;
+            }
+        }
+        @include below($mobile) {
+            .boat {
+                margin: 0 rem(5);
+
+                border-bottom: none;
+            }
+        }
+
+        .boat {
+            .boat__button:nth-child(1) {
+                color: $dim-grey;
+
+                background-color: $white;
+            }
+            .boat__button:nth-child(2) {
+                color: $white;
+
+                background-color: $prussian-blue;
+            }
+        }
+    }
+}

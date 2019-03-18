@@ -1,0 +1,353 @@
+.boat {
+    width: rem(290);
+    overflow: hidden;
+
+    border-radius: rem(5);
+
+    @include below($tablet) {
+        width: rem(230);
+    }
+    @include below($mobile) {
+        width: auto;
+        padding-bottom: rem(25);
+
+        border-bottom: rem(1) solid $platinum-grey;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .tmb-wrap {
+        opacity: 0;
+
+        transition: opacity .2s;
+    }
+
+    .brazzers-daddy {
+        img {
+            width: auto !important;
+            max-width: 120%;
+        }
+    }
+
+    .image-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tmb-wrap-table {
+        border-spacing: rem(1);
+
+        transform: translateY(1px);
+
+        div {
+            border-color: #00b5ff;
+
+            &.active {
+                border-color: #ffdf00;
+            }
+        }
+    }
+
+    &__images-wrap {
+        height: rem(220);
+        overflow: hidden;
+
+        @include below($tablet) {
+            display: none;
+        }
+
+        &:hover {
+            .tmb-wrap {
+                opacity: 1;
+            }
+        }
+
+        &_adaptive {
+            display: none;
+
+            @include below($tablet) {
+                position: relative;
+
+                display: block;
+                width: rem(230);
+                height: rem(180);
+                overflow: hidden;
+
+                border-radius: rem(5);
+
+                .boat__image {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+
+                    width: auto;
+                    max-width: 150%;
+                    height: auto;
+
+                    transform: translate(-50%,-50%);
+                }
+            }
+            @include below($mobile) {
+                width: auto;
+                height: rem(230);
+            }
+        }
+    }
+
+    &__image {
+        @include below($tablet) {
+            height: 100%;
+        }
+        @include below($mobile) {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content {
+        padding: rem(15);
+
+        border-right: rem(1) solid $platinum-grey;
+        border-left: rem(1) solid $platinum-grey;
+
+        @include below($tablet) {
+            padding: 0;
+            padding-top: rem(20);
+
+            border: 0 none;
+        }
+        @include below($mobile) {
+            padding-top: rem(15);
+        }
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: rem(15);
+        margin-bottom: rem(15);
+
+        border-bottom: rem(1) solid $platinum-grey;
+
+        @include below($tablet) {
+            padding-bottom: 0;
+            margin-bottom: rem(10);
+
+            border: 0 none;
+        }
+        @include below($mobile) {
+            justify-content: flex-start;
+        }
+    }
+
+    &__caption {
+        max-width: rem(170);
+
+        @include below($tablet) {
+            max-width: rem(150);
+            overflow: hidden;
+
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        @include below($mobile) {
+            margin-right: rem(15);
+        }
+    }
+
+    &__review {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .boat__text {
+            padding-right: rem(5);
+        }
+    }
+
+    &__name {
+        margin-top: 0;
+        margin-bottom: rem(5);
+        overflow: hidden;
+
+        font-family: $open_sans;
+        font-size: rem(18);
+        color: $dim-grey;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        @include below($tablet) {
+            margin-bottom: 0;
+
+            color: $rich-blue;
+        }
+    }
+
+    &__place {
+        display: flex;
+        align-items: flex-end;
+
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__place-icon {
+        margin-right: rem(5);
+
+        fill: $ash-grey;
+    }
+
+    &__place-text {
+        margin-left: auto;
+    }
+
+    &__text {
+        margin: 0;
+        overflow: hidden;
+
+        font-family: $open_sans;
+        font-size: rem(12);
+        color: $ash-grey;
+        white-space: nowrap;
+        text-decoration: none;
+        text-overflow: ellipsis;
+
+        @include below($tablet) {
+            font-size: rem(14);
+        }
+    }
+
+    &__rating {
+        padding: 0;
+        margin-bottom: rem(10);
+
+        @include below($tablet) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__rating-text {
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-wrap: nowrap;
+
+        @include below($tablet) {
+            flex-direction: column;
+        }
+    }
+
+    &__price-item {
+        width: 50%;
+
+        @include below($tablet) {
+            display: flex;
+            align-items: flex-end;
+            width: auto;
+        }
+    }
+
+    &__price {
+        font-family: $open_sans;
+        font-size: rem(18);
+        color: $dim-grey;
+        text-transform: uppercase;
+
+        @include below($tablet) {
+            position: relative;
+
+            padding-right: rem(10);
+            margin-right: rem(5);
+
+            &::after {
+                content: '-';
+
+                position: absolute;
+                top: 50%;
+                right: 0;
+
+                color: $ash-grey;
+
+                transform: translateY(-50%);
+
+                will-change: transform;
+            }
+        }
+    }
+
+    &__price-light {
+        font-weight: 300;
+        color: $ash-grey;
+        text-transform: lowercase;
+
+        @include below($tablet) {
+            font-size: rem(14);
+            font-weight: normal;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__button {
+        display: inline-flex;
+        justify-content: center;
+        flex-basis: 50%;
+
+        text-decoration: none;
+    }
+
+    &__sticker {
+        position: absolute;
+        z-index: 2;
+        top: rem(5);
+        right: rem(3);
+
+        display: none;
+        padding: rem(8) rem(13);
+        margin: 0;
+
+        border-radius: rem(5);
+        background-color: $yellow;
+    }
+
+    .port {
+        display: none;
+    }
+
+    &_service-detailed {
+        margin: 0 auto;
+
+        @include below($mobile) {
+            .boat__sticker {
+                display: block;
+            }
+
+            .port {
+                display: none;
+            }
+        }
+
+        .port {
+            display: flex;
+        }
+        .boat__price-item:last-of-type {
+            margin-bottom: rem(10);
+        }
+    }
+}

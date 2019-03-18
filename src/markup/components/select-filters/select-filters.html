@@ -1,0 +1,51 @@
+<div class="select-filters {{className}}">
+    <div class="select-filters__item">
+        <div class="select select-filters__filter">
+            <select name="type-of-rest" id="" class="">
+                <option value="0">Все виды яхт и катеров</option>
+                <option value="">Катания на вейкборде</option>
+                <option value="">Камера GoPro для купания</option>
+                <option value="">Дельфины</option>
+                <option value="">Уроки черчения на борту</option>
+                <option value="">Дайвинг</option>
+                <option value="">Парковка на диком пляже</option>
+            </select>
+        </div>
+    </div>
+    <div class="select-filters__item">
+        <div class="select select-filters__filter">
+            <select name="organize" id="" class="">
+                <option value="0">По популярности</option>
+                <option value="">Цена по возрастанию</option>
+                <option value="">Цена по убыванию</option>
+            </select>
+        </div>
+        <div class="select-filters__order js-order">
+            <div class="select-filters__order-line"></div>
+            <div class="select-filters__order-line"></div>
+            <div class="select-filters__order-line"></div>
+        </div>
+    </div>
+    <div class="select-filters__item">
+        <div class="select select-filters__filter">
+            <select name="location" id="" class="">
+                <option value="0">Во всех портах г. Сочи</option>
+                <option value="">Порт Адлерский</option>
+                <option value="">Порт Хостинский</option>
+                <option value="">Яхтклуб Имеретинский другой</option>
+                <option value="">Порт г. Сочи</option>
+                <option value="">Порт Лазаревский</option>
+                <option value="">Гавань Сталина</option>
+                <option value="">Порт Дагомыса</option>
+                <option value="">Яхтклуб Секретный</option>
+                <option value="">Порт Новый Сочи</option>
+            </select>
+        </div>
+    </div>
+    <div class="select-filters__view">
+        {{> button-view/button-view}}
+    </div>
+    <div class="select-filters__pagination">
+        {{> pagination-filters/pagination-filters}}
+    </div>
+</div>

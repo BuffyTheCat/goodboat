@@ -1,0 +1,127 @@
+.booking {
+    .item {
+        padding: rem(3) 0;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__image-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__form {
+        padding: rem(15);
+
+        border-bottom-right-radius: rem(5);
+        border-bottom-left-radius: rem(5);
+        background-color: rgba(0, 23, 51, .8);
+
+        @include below($tablet) {
+            padding-top: rem(10);
+        }
+
+        &_after {
+            &_send {
+                display: flex;
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: rem(15);
+                padding-bottom: rem(35);
+
+                border-bottom-right-radius: rem(5);
+                border-bottom-left-radius: rem(5);
+                background-color: rgba(0, 23, 51, .8);
+            }
+        }
+    }
+
+    &__thumbsup {
+        fill: $white;
+    }
+
+    &__form-text {
+        margin-top: 0;
+        margin-bottom: rem(24);
+
+        font-size: rem(14);
+        font-weight: 300;
+        color: $white;
+        text-align: center;
+    }
+
+    &__item {
+        position: relative;
+
+        margin-bottom: rem(15);
+
+        @include below($tablet) {
+            margin-bottom: rem(10);
+        }
+
+        &_date {
+            @include below($mobile) {
+                &.js-placeholder {
+                    &::before {
+                        content: 'Дата отдыха';
+
+                        position: absolute;
+                        top: rem(5);
+                        left: rem(10);
+
+                        font-family: $open_sans;
+                        font-size: rem(16);
+                        font-weight: 300;
+                        color: $platinum-grey;
+                    }
+                }
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+
+        outline: none;
+
+        &_date {
+            @include below($mobile) {
+                display: none;
+            }
+
+            &_mobile {
+                display: none;
+
+                @include below($mobile) {
+                    display: block;
+                    height: rem(34);
+                }
+            }
+        }
+    }
+
+    &__icon {
+        &_date {
+            position: absolute;
+            top: 50%;
+            right: rem(6);
+            bottom: rem(6);
+
+            transform: translateY(-50%);
+        }
+    }
+
+    &__text {
+        padding-left: rem(10);
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &__button {
+        width: 100%;
+    }
+}

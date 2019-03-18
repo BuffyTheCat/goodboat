@@ -1,0 +1,164 @@
+.button-view {
+    display: flex;
+    height: rem(41);
+
+    border: rem(1) solid $ash-grey;
+    cursor: pointer;
+    background: $white;
+
+    @include below($tablet) {
+        height: rem(23);
+
+        border: 0 none;
+        background: none;
+    }
+
+    &__row {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: rem(38);
+        padding: rem(6);
+
+        @include below($tablet) {
+            width: rem(23);
+            padding: 0;
+        }
+
+        &.active {
+            .button-view__line {
+                background-color: $ash-grey;
+
+                @include below($tablet) {
+                    background-color: $white;
+                }
+            }
+        }
+
+        &:hover {
+            .button-view__line {
+                background-color: $ash-grey;
+
+                @include below($tablet) {
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        width: rem(38);
+        padding: rem(6);
+
+        @include below($tablet) {
+            align-items: flex-start;
+            width: rem(23);
+            height: rem(27);
+            padding: 0;
+            margin-left: rem(15);
+        }
+
+        &.active {
+            .button-view__column-subitem {
+                border: rem(1) solid $ash-grey;
+
+                @include below($tablet) {
+                    border: rem(1) solid $white;
+                    background-color: $white;
+                }
+            }
+
+            .button-view__column-subitem-bg {
+                background: $ash-grey;
+
+                @include below($tablet) {
+                    border: rem(1) solid $white;
+                    background-color: $white;
+                }
+            }
+        }
+
+        &:hover {
+            .button-view__column-subitem {
+                border: rem(1) solid $ash-grey;
+
+                @include below($tablet) {
+                    border: rem(1) solid $white;
+                    background-color: $white;
+                }
+            }
+
+            .button-view__column-subitem-bg {
+                background: $ash-grey;
+
+                @include below($tablet) {
+                    border: rem(1) solid $white;
+                    background-color: $white;
+                }
+            }
+        }
+    }
+
+    &__line {
+        width: 100%;
+        height: rem(5);
+
+        background-color: $platinum-grey;
+
+        transition: background-color .25s;
+
+        @include below($tablet) {
+            background-color: $sky-blue;
+        }
+    }
+
+    &__column-subitem {
+        display: flex;
+        width: rem(5);
+        height: rem(5);
+        margin-bottom: rem(6);
+        margin-left: rem(1);
+
+        border: rem(1) solid $platinum-grey;
+        background: $white;
+
+        transition: border .25s;
+
+        @include below($tablet) {
+            width: rem(5);
+            height: rem(5);
+            margin-bottom: 0;
+
+            border: rem(1) solid $sky-blue;
+            background-color: $sky-blue;
+        }
+
+        &:nth-of-type(10),
+        &:nth-of-type(11),
+        &:nth-of-type(12) {
+            @include below($tablet) {
+                display: none;
+            }
+        }
+    }
+
+    &__column-subitem-bg {
+        width: 100%;
+        height: 100%;
+
+        border: rem(1) solid white;
+        background-color: $platinum-grey;
+
+        transition: background-color .25s;
+
+        @include below($tablet) {
+            border: rem(1) solid $sky-blue;
+            background-color: $sky-blue;
+        }
+    }
+}

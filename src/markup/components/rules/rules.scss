@@ -1,0 +1,38 @@
+.rules {
+    padding-top: rem(90);
+    padding-bottom: rem(170);
+
+    @include below($phablet) {
+        padding-top: rem(50);
+        padding-right: rem(35);
+        padding-bottom: rem(60);
+    }
+    @include below($mobile) {
+        padding-top: rem(30);
+        margin-bottom: rem(70);
+    }
+
+    p {
+        margin-top: 0;
+
+        @extend .text;
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(40);
+
+            @include below($mobile) {
+                margin-bottom: rem(25);
+            }
+        }
+    }
+
+    ul {
+        margin-bottom: rem(40) !important;
+
+        @extend .text;
+        @include nl;
+        @include below($mobile) {
+            margin-bottom: rem(25) !important;
+        }
+    }
+}

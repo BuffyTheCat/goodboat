@@ -1,0 +1,31 @@
+.more-button {
+    position: relative;
+
+    padding: 0;
+
+    font-family: $open_sans;
+    font-size: rem(24);
+    font-weight: 300;
+    color: $rich-blue;
+    text-decoration: none;
+
+    border: 0 none;
+    outline: none;
+    background: none;
+
+    @include below($mobile) {
+        font-size: rem(18);
+    }
+
+    &::after {
+        content: '';
+
+        position: absolute;
+        bottom: rem(-25);
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        @include bg($more-button-arrow);
+    }
+}

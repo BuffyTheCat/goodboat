@@ -1,0 +1,43 @@
+.pagination-filters {
+    &__filter {
+        margin: 0;
+
+        @include below($phablet) {
+            color: $white;
+        }
+    }
+
+    &__list {
+        margin-left: rem(10);
+    }
+
+    &__item {
+        padding: 0;
+
+        color: $rich-blue;
+        text-decoration: underline;
+
+        border: 0 none;
+        outline: none;
+        background: none;
+
+        &.js-active {
+            color: $dim-grey;
+            text-decoration: none;
+
+            @include below($phablet) {
+                color: $white;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: rem(5);
+        }
+    }
+
+    &__text {
+        @include below($mobile) {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.catalog {
+    display: flex;
+    justify-content: space-between;
+
+    @include below($mobile) {
+        flex-direction: column;
+    }
+
+    .boat {
+        @include between($mobile, $phablet) {
+            &:last-child {
+                display: none;
+            }
+        }
+        @include below($mobile) {
+            &:not(:last-child) {
+                margin-bottom: rem(15);
+            }
+        }
+    }
+}

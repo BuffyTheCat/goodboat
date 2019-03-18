@@ -1,0 +1,114 @@
+.reviews-other {
+    padding-bottom: rem(165);
+
+    @include below($mobile) {
+        padding-bottom: rem(100);
+    }
+
+    &__caption {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: rem(15);
+        margin-bottom: rem(30);
+
+        border-bottom: rem(1) solid $platinum-grey;
+
+        @include below($mobile) {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: rem(15) rem(10);
+            margin: 0 rem(-10);
+
+            border-top: rem(1) solid $ash-grey;
+            background-color: $light-grey;
+        }
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    &__button {
+        font-size: rem(24);
+        font-weight: 300;
+
+        &:not(:last-child) {
+            margin-right: rem(100);
+
+            @include below($tablet) {
+                margin-right: 0;
+            }
+        }
+
+        &_top {
+            @include below($mobile) {
+                font-size: rem(18);
+                text-transform: lowercase;
+            }
+        }
+
+        &_arrow {
+            position: relative;
+
+            @include below($mobile) {
+                display: none;
+            }
+
+            &::before {
+                content: '';
+
+                position: absolute;
+                top: 50%;
+                left: rem(-30);
+
+                transform: translateY(-50%);
+
+                will-change: transform;
+
+                @include bg($arrow-up);
+            }
+        }
+    }
+
+    &__content {
+        margin-bottom: rem(35);
+
+        @include below($mobile) {
+            padding-top: rem(20);
+        }
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .reviews-other__button {
+            font-size: rem(18);
+        }
+    }
+
+    &__footer-item {
+        @include below($mobile) {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: auto;
+
+            .reviews-other__button {
+                &:not(:last-child) {
+                    margin-bottom: rem(20);
+                }
+            }
+        }
+        &:first-child {
+            @include above($mobile) {
+                display: flex;
+                justify-content: space-between;
+                width: 55%;
+            }
+        }
+    }
+}

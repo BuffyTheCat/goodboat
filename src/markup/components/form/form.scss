@@ -1,0 +1,168 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+        @include below($mobile) {
+            width: 100%;
+        }
+        &:not(:last-of-type) {
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__item-wrap {
+        position: relative;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: rem(580);
+
+        @include below($mobile) {
+            flex-direction: column;
+            width: auto;
+        }
+
+        &_hiden {
+            display: none;
+        }
+    }
+
+    &__input-wrap {
+        width: rem(262);
+
+        @include below($mobile) {
+            width: auto;
+
+            &:not(:last-child) {
+                margin-bottom: rem(25);
+            }
+
+            &:last-child {
+                margin-bottom: rem(20);
+            }
+        }
+
+        &::after {
+            content: '';
+
+            border-color: $white;
+        }
+    }
+
+    &__input {
+        width: 100%;
+
+        outline: none;
+    }
+
+    &__textarea {
+        width: 100%;
+        min-height: rem(116);
+        padding: rem(12) rem(10);
+        resize: none;
+
+        font-family: $open_sans;
+        font-weight: 300;
+        color: $white;
+
+        border: rem(1) solid $white;
+        outline: none;
+        background-color: $dark-blue;
+
+        &::-webkit-input-placeholder {
+            font-family: $open_sans;
+            font-size: rem(14);
+            font-weight: 300;
+            color: $white;
+
+            @include below($mobile) {
+                font-size: rem(16);
+            }
+        }
+    }
+
+    &__text {
+        width: rem(362);
+        margin: 0;
+
+        font-size: rem(14);
+        font-weight: 300;
+        color: $rackley-blue;
+    }
+
+    &__button {
+        position: relative;
+
+        padding: rem(10) rem(40);
+
+        font-size: rem(18);
+        font-weight: 300;
+        color: $msu-green;
+
+        outline: none;
+        background-color: $gold-yellow;
+
+        transition: background-color .3s;
+
+        &:hover {
+            background-color: $white;
+        }
+
+        &:active {
+            top: rem(1);
+        }
+
+        &_big {
+            width: 100%;
+
+            font-size: rem(18);
+            font-weight: 500;
+            color: $black;
+
+            border-radius: rem(3);
+
+            &:hover {
+                border: rem(1) solid $gold-yellow;
+                background-color: $white;
+            }
+        }
+    }
+
+    &__item-button {
+        p {
+            width: rem(362);
+            margin: 0;
+
+            font-family: $open_sans;
+            font-size: rem(14);
+            font-weight: 300;
+            color: $rackley-blue;
+        }
+    }
+
+    &__status-send {
+        display: none;
+
+        font-size: rem(18);
+        font-weight: 300;
+        color: $gold-yellow;
+        text-align: center;
+    }
+
+    &__footer {
+        .form__item-wrap {
+            @include below($mobile) {
+                flex-direction: column-reverse;
+
+                p {
+                    width: auto;
+                    padding-top: rem(20);
+                }
+            }
+        }
+    }
+}

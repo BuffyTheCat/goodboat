@@ -1,0 +1,49 @@
+<div class="booking">
+    <p class="name name_color_white name_weight_light name_size_small booking__title">Бронирование</p>
+    <p class="name  name_color_white name_weight_light name_size_small booking__title name_after_send">Готово!</p>
+    <form class="booking__form" action="https://jsonplaceholder.typicode.com/posts">
+        <fieldset class="input-wrap booking__item">
+            <input type="text" name="name" placeholder="Представьтесь" class="input booking__input">
+        </fieldset>
+        <fieldset class="input-wrap booking__item">
+            <input type="tel" name="phone" placeholder="Контактный телефон" class="input booking__input booking__input_number">
+        </fieldset>
+        <fieldset class="input-wrap booking__item">
+            <div class="select select_form">
+                <select name="board" id="board" class="">
+                    <option value="0">Желаемый борт</option>
+                    <option value="">Катер Красотка</option>
+                    <option value="">Крейсер Аврора</option>
+                    <option value="">Яхта Спанчбоба</option>
+                    <option value="">Катер Старкрафт</option>
+                    <option value="">Яхта Шампту</option>
+                    <option value="">Гидроцикл Honda</option>
+                    <option value="">Катамаран Ураган</option>
+                    <option value="">Яхта Лучик</option>
+                    <option value="">Катер 007</option>
+                    <option value="">Катер Красотка</option>
+                    <option value="">Крейсер Аврора</option>
+                    <option value="">Яхта Спанчбоба</option>
+                    <option value="">Катер Старкрафт</option>
+                    <option value="">Яхта Шампту</option>
+                    <option value="">Гидроцикл Honda</option>
+                    <option value="">Катамаран Ураган</option>
+                    <option value="">Яхта Лучик</option>
+                    <option value="">Катер 007</option>
+                </select>
+            </div>
+        </fieldset>
+        <fieldset class="input-wrap booking__item booking__item_date js-placeholder">
+            <input type="text" name="date" placeholder="Дата отдыха" class="input input_date booking__input booking__input_date js-input-date">
+            <input type="datetime-local" name="date-mobile" placeholder="Дата отдыха" class="input input_date booking__input booking__input_date_mobile js-input-date_mobile">
+            {{Icon iconName='datepicker' className='booking__icon booking__icon_date'  iconWidth='15' iconHeight='16'}}
+        </fieldset>
+        <input type="submit" value="Забронировать" class="button button_color_yellow booking__button">
+    </form>
+    <div class="booking__form_after_send">
+        <p class="booking__form-text">Ваша бронь отправлена.Мы свяжемся с вами в ближайшее время по указанному телефону для уточнения подробностей отдыха.</p>
+        <div class="booking__image-wrapper">
+            {{Icon iconName='thumbsup' className='booking__thumbsup' iconWidth='76' iconHeight='73'}}
+        </div>
+    </div>
+</div>

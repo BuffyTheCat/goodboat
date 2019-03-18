@@ -1,0 +1,133 @@
+.not-found {
+    padding-top: rem(55);
+    margin-bottom: rem(-10);
+
+    .gohome__icon,
+    .comeback__icon {
+        fill: $sky-blue;
+    }
+
+    &__content {
+        position: relative;
+
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+
+        @include below($mobile) {
+            flex-direction: column;
+            padding-bottom: rem(250);
+            margin-bottom: rem(-20);
+            overflow: hidden;
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            bottom: 0;
+            left: rem(-60);
+
+            width: rem(490);
+            height: rem(375);
+
+            background: url('%=static=%assets/not-found/not-found.png') 50% 50% no-repeat;
+
+            @include below($phablet) {
+                bottom: rem(-40px);
+
+                background-size: 80%;
+            }
+            @include below($mobile) {
+                bottom: rem(-150);
+                left: 0;
+
+                background: url('%=static=%assets/not-found/not-found-bkg.png') no-repeat;
+            }
+        }
+    }
+
+    &__content-left {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__content-right {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-basis: 42%;
+        margin-right: rem(177);
+        margin-bottom: rem(55);
+
+        @include below($phablet) {
+            margin-right: 0;
+        }
+        @include below($mobile) {
+            flex-basis: auto;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    h2 {
+        height: rem(455);
+        margin: 0;
+
+        font-family: $open_sans;
+        font-size: rem(30);
+        font-weight: 400;
+        color: $maroon;
+        text-align: left;
+
+        @include below($mobile) {
+            height: auto;
+            margin-bottom: rem(20);
+
+            font-size: rem(24);
+        }
+    }
+
+    &__subtitle {
+        p {
+            margin: 0;
+            margin-bottom: rem(30);
+
+            font-family: $open_sans;
+            font-size: rem(18);
+            font-weight: 300;
+            color: $dim-grey;
+            text-align: left;
+
+            &:first-of-type {
+                margin: 0;
+                margin-bottom: rem(16);
+
+                font-family: $open_sans;
+                font-size: rem(18);
+                font-weight: 300;
+                color: $dim-grey;
+                text-align: left;
+            }
+        }
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+
+        font-family: $open_sans;
+        font-size: rem(14);
+        text-align: left;
+        text-decoration: none;
+
+        &:first-of-type {
+            margin-bottom: rem(25);
+        }
+    }
+
+    &__link-text {
+        margin: 0;
+        margin-left: rem(15);
+    }
+}

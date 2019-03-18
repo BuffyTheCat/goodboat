@@ -1,0 +1,36 @@
+<header id="header" class="header {{headerModifier}} {{className}}">
+    <div class="header__top {{headerTopModifier}}">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    {{> logo/logo}}
+                </div>
+                {{> socials/socials socials.main}}
+                {{> navigation/navigation}}
+                {{> phone/phone}}
+                <button type="button" class="header__menu js-open-menu">
+                    {{Icon iconName='menu-mobile' className='header__menu-icon'  iconWidth='40' iconHeight='30'}}
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="header__bottom {{headerBottomModifier}}">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__breadcrumbs">
+                    {{> breadcrumbs/breadcrumbs}}
+                </div>
+
+                <div class="header__socials">
+                    {{> socials/socials socials.main}}
+                </div>
+                {{> navigation/navigation}}
+            </div>
+        </div>
+        <div class="header__breadcrumbs header__breadcrumbs_mobile">
+            {{> breadcrumbs/breadcrumbs}}
+        </div>
+    </div>
+    {{> menu-mobile/menu-mobile}}
+    {{> message-dir-button/message-dir-button}}
+</header>

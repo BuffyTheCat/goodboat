@@ -1,0 +1,48 @@
+.socials {
+    display: inline-flex;
+    align-items: center;
+
+    &__text {
+        margin-right: rem(10);
+
+        font-family: $open_sans;
+        font-size: rem(12);
+
+        @include below($mobile) {
+            display: none;
+        }
+
+        &_main {
+            color: $black;
+        }
+
+        &_mobile {
+            display: none;
+
+            @include below($mobile) {
+                display: block;
+                margin-left: rem(10);
+
+                font-size: rem(18);
+                font-weight: 300;
+                color: $ash-grey;
+            }
+        }
+    }
+
+    &__link {
+        display: inline-flex;
+
+        &:not(:last-of-type) {
+            margin-right: rem(5);
+        }
+    }
+
+    &__icon {
+        fill: $sky-blue;
+
+        &_mobile {
+            display: none;
+        }
+    }
+}

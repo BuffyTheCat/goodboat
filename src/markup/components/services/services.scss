@@ -1,0 +1,187 @@
+.services {
+    position: relative;
+
+    padding-top: rem(150);
+    padding-bottom: rem(338);
+    margin-top: rem(-25);
+
+    background-image: url('%=static=%assets/services/services-bkg.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    @include between($mobile, $tablet) {
+        overflow: hidden;
+
+        background-color: rgb(12, 145, 214);
+        background-image: url('%=static=%assets/services/services-bkg_tablet.jpg');
+        background-size: 100%;
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+            margin: auto;
+
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgb(12, 145, 214) 30%);
+        }
+    }
+    @include below($mobile) {
+        padding-top: rem(100);
+        padding-bottom: rem(250);
+
+        background-color: #0c91d6;
+        background-image: url('%=static=%assets/services/services-bkg_mobile.jpg');
+        background-size: 100%;
+    }
+
+    &__content {
+        @include below($tablet) {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    &__caption {
+        h2 {
+            position: relative;
+
+            padding-bottom: rem(15);
+            margin-top: 0;
+            margin-bottom: rem(35);
+
+            font-family: $open_sans;
+            font-size: rem(30);
+            font-weight: 300;
+            color: $white;
+            text-align: right;
+
+            @include below($mobile) {
+                margin-bottom: rem(20);
+            }
+
+            &::after {
+                content: '';
+
+                position: absolute;
+                right: 0;
+                bottom: 0;
+
+                width: rem(400);
+                height: rem(1);
+
+                background-color: rgba($white, .5);
+
+                @include below($mobile) {
+                    left: 0;
+
+                    width: auto;
+                }
+            }
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: rem(50);
+
+            font-family: $open_sans;
+            font-size: rem(14);
+            font-weight: 300;
+            color: $yale-blue;
+            text-align: right;
+
+            @include below($mobile) {
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__icon {
+        fill: #ffffff;
+
+        &_color {
+            &_blue {
+                fill: $rich-blue;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        width: 100%;
+
+        @include below($tablet) {
+            position: relative;
+
+            &::before {
+                content: '';
+
+                position: absolute;
+            }
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: rem(296);
+        height: auto;
+        padding-top: rem(30);
+        padding-right: rem(30);
+        padding-left: rem(30);
+
+        @include below($tablet) {
+            flex-basis: 33%;
+            width: auto;
+            padding-top: rem(25);
+            padding-right: rem(20);
+            padding-left: rem(20);
+        }
+        @include below($mobile) {
+            flex-basis: 50%;
+            padding-top: 0;
+            padding-right: 0;
+            padding-left: 0;
+            margin-bottom: rem(50);
+        }
+    }
+
+    &__name {
+        margin: 0;
+        margin-bottom: rem(10);
+
+        font-family: $open_sans;
+        font-size: rem(18);
+        color: $white;
+        text-align: center;
+    }
+
+    &__description {
+        width: 100%;
+        margin-top: 0;
+
+        font-family: $open_sans;
+        font-size: rem(14);
+        font-weight: 300;
+        text-align: center;
+        text-align: center;
+
+        @include below($mobile) {
+            display: none;
+        }
+    }
+
+    &__icon-wrap {
+        margin-bottom: rem(18);
+    }
+}

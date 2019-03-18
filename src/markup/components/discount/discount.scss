@@ -1,0 +1,43 @@
+.discount {
+    position: absolute;
+    z-index: 99;
+    top: rem(100);
+    right: 0;
+    left: rem(80);
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: rem(30);
+        padding-top: rem(25);
+    }
+
+    &__item {
+        display: flex;
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__text {
+        margin: 0;
+
+        line-height: rem(20);
+
+        &:first-child {
+            margin-right: rem(5);
+        }
+    }
+
+    &_yacht-fishing {
+        top: rem(230);
+        left: 0;
+    }
+
+    &__link {
+        font-size: rem(14);
+    }
+}

@@ -1,0 +1,87 @@
+.seo {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: rem(135);
+    padding-bottom: rem(265);
+
+    background: $dark-blue url('%=static=%assets/seo/ships.png') bottom no-repeat;
+    background-color: $dark-blue;
+
+    @include below($tablet) {
+        padding-top: rem(85);
+
+        background-position: 70% bottom;
+    }
+    @include below($mobile) {
+        background-position: 60% bottom;
+    }
+
+    &::before {
+        content: '';
+
+        position: absolute;
+        top: rem(102);
+
+        width: 100%;
+        height: rem(116);
+
+        background: url('%=static=%assets/seo/ellips.png') 50% 50% no-repeat;
+
+        @include below($tablet) {
+            top: rem(50);
+        }
+    }
+
+    p,
+    li {
+        margin: 0;
+
+        font-family: $open_sans;
+        font-size: rem(14);
+        font-weight: 300;
+        line-height: rem(20);
+        color: $white;
+    }
+    span {
+        margin: 0;
+
+        font-family: $open_sans;
+        font-size: rem(14);
+        font-weight: 300;
+        color: $sky-blue;
+    }
+
+    &__logo {
+        position: relative;
+
+        margin: 0 auto;
+        margin-bottom: rem(60);
+    }
+
+    &__list {
+        padding-left: 0;
+        margin-bottom: rem(30);
+
+        list-style-type: none;
+    }
+
+    &__content {
+        &_height {
+            &_small {
+                height: rem(61);
+                overflow: hidden;
+
+                p {
+                    margin: 0;
+
+                    font-family: $open_sans;
+                    font-size: rem(14);
+                    font-weight: 300;
+                    color: $rackley-blue;
+                }
+            }
+        }
+    }
+}

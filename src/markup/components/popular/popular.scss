@@ -1,0 +1,119 @@
+.popular {
+    &__content {
+        width: 100%;
+    }
+
+    &__caption {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: rem(30);
+
+        @include below($mobile) {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__filter {
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-right: rem(50);
+        margin-bottom: 0;
+
+        @include below($mobile) {
+            margin-right: 0;
+            margin-bottom: rem(15);
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        font-family: $open_sans;
+        font-size: rem(14);
+        font-weight: 300;
+        color: $ash-grey;
+        text-decoration: none;
+
+        transition: color .25s;
+
+        &:not(:last-of-type) {
+            margin-right: rem(45);
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            margin: auto;
+
+            border-bottom: rem(1) dashed $ash-grey;
+
+            transition: border .25s;
+        }
+
+        &_active {
+            color: $rich-blue;
+
+            &::after {
+                border-bottom: rem(1) dashed $rich-blue;
+            }
+        }
+    }
+
+    &__location {
+        width: rem(210);
+        margin-left: auto;
+
+        @include below($tablet) {
+            width: rem(230);
+        }
+        @include below($mobile) {
+            width: auto;
+            margin: auto;
+        }
+    }
+
+    &__catalog {
+        margin-bottom: rem(60);
+
+        @include below($desktop) {
+            margin-right: rem(-10);
+            margin-left: rem(-10);
+        }
+        @include below($mobile) {
+            margin-bottom: rem(35);
+        }
+
+        .boat {
+            @include below($desktop) {
+                margin: 0 rem(10);
+            }
+            @include below($phablet) {
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &__more {
+        text-align: center;
+
+        @include below($tablet) {
+            position: relative;
+            z-index: 2;
+        }
+    }
+}

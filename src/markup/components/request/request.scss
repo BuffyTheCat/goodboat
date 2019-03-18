@@ -1,0 +1,64 @@
+.request {
+    position: relative;
+
+    padding-top: rem(100);
+
+    background-color: $dark-blue;
+
+    &__title {
+        h2 {
+            position: relative;
+
+            margin-top: 0;
+            margin-bottom: rem(50);
+
+            font-family: $open_sans;
+            font-size: rem(30);
+            font-weight: 300;
+            color: $white;
+            text-align: center;
+
+            @include below($mobile) {
+                margin-bottom: rem(33);
+
+                font-size: rem(24);
+            }
+
+            &::after {
+                content: '';
+
+                position: absolute;
+                bottom: rem(-12);
+                left: 50%;
+
+                width: rem(580);
+                height: rem(1);
+                margin-left: - rem(290);
+
+                background: $white;
+
+                @include below($mobile) {
+                    background: none;
+                }
+            }
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: rem(30);
+
+            font-family: $open_sans;
+            font-size: rem(14);
+            font-weight: 300;
+            color: $rackley-blue;
+            text-align: center;
+
+            span {
+                font-family: $open_sans;
+                font-size: rem(14);
+                font-weight: 300;
+                color: $gold-yellow;
+            }
+        }
+    }
+}

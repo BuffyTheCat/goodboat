@@ -1,0 +1,133 @@
+.yacht-card {
+    display: flex;
+    padding: rem(5) rem(10);
+
+    transition: background-color .3s;
+
+    .stars__wrap {
+        justify-content: flex-end;
+        margin-right: rem(10);
+    }
+
+    .jq-ry-rated-group,
+    .jq-ry-normal-group {
+        svg {
+            transition: fill .5s;
+        }
+    }
+
+    &:hover {
+        background-color: $gold-yellow;
+
+        .jq-ry-rated-group {
+            svg {
+                fill: $white;
+            }
+        }
+
+        .jq-ry-normal-group {
+            svg {
+                fill: $mikado-yellow;
+            }
+        }
+
+        .yacht-card__info-name,
+        .port__name,
+        .yacht-card__price-name,
+        .yacht-card__price-value {
+            color: $black;
+        }
+        .yacht-card__text {
+            color: $black;
+
+            opacity: .6;
+        }
+
+
+        .port__icon {
+            fill: $black;
+        }
+
+        .rouble_mini {
+            @include bg($rouble_mini_black);
+        }
+    }
+
+    &__image-wrap {
+        width: rem(150);
+        height: rem(100);
+        margin-right: rem(10);
+        overflow: hidden;
+
+        border-radius: rem(6);
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        width: calc(100% - 150px);
+    }
+
+    &__name {
+        display: flex;
+        width: 100%;
+        margin: 0;
+
+        font-family: $open-sans;
+        font-size: rem(18);
+        color: $dim-grey;
+        text-align: left;
+
+        transition: color .3s;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(15);
+
+        .stars {
+            margin-right: rem(10);
+        }
+    }
+
+    &__price {
+        display: flex;
+        width: 100%;
+    }
+
+    &__price-name,
+    &__price-value {
+        width: 50%;
+        margin: 0;
+
+        text-align: left;
+
+        transition: color .3s;
+    }
+
+    &__price-value {
+        display: flex;
+
+        .rouble_mini {
+            align-self: center;
+        }
+    }
+
+    &__price-rent {
+        margin-right: rem(5);
+    }
+
+    &__text {
+        margin: 0;
+
+        &:first-of-type {
+            margin-right: rem(5);
+        }
+    }
+}

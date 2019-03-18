@@ -1,0 +1,52 @@
+<div class="boat {{boatModifier}}">
+    <div class="boat__images-wrap js-boat-gallery">
+        <img src="%=static=%img/assets/boat/boat-1.jpg" alt="" class="boat__image">
+        <img src="%=static=%img/assets/boat/boat-2.jpg" alt="" class="boat__image">
+        <img src="%=static=%img/assets/boat/boat-3.jpg" alt="" class="boat__image">
+        <img src="%=static=%img/assets/boat/boat-4.jpg" alt="" class="boat__image">
+    </div>
+    <div class="boat__images-wrap boat__images-wrap_adaptive">
+        <p class="text text_color_black text_size_big boat__sticker">Выбрать</p>
+        <img src="%=static=%img/assets/boat/yacht-adaptive.jpg" alt="" class="boat__image">
+    </div>
+    <div class="boat__content">
+        <div class="boat__header">
+            <div class="boat__caption">
+                <h3 class="boat__name">Красотка</h3>
+                <div class="boat__place">
+                    {{Icon iconName='anchor' className='boat__place-icon'  iconWidth='11' iconHeight='12'}}
+                    <p class="boat__text boat__place-text">Порт «Адлерский»</p>
+                </div>
+            </div>
+            <div class="boat__review">
+                <div class="rating boat__rating js-rate_boat"></div>
+                <a href="javascript:void(0);" class="boat__rating-text boat__text">51 отзыв</a>
+            </div>
+        </div>
+        <div class="boat__body">
+            <div class="boat__price-item">
+                <div class="boat__price">
+                    800
+                    <span class="boat__price-light">
+                        <span class="rouble rouble_grey">руб.</span>/час
+                    </span>
+                </div>
+                <p class="boat__text">Аренда судна</p>
+            </div>
+            <div class="boat__price-item">
+                <div class="boat__price">
+                    800
+                    <span class="boat__price-light">
+                        <span class="rouble rouble_grey">руб.</span>/чел
+                    </span>
+                </div>
+                <p class="boat__text">Групповая прогулка</p>
+            </div>
+        </div>
+        {{>port/port}}
+    </div>
+    <div class="boat__footer">
+        <a href="javascript:;" class="button button_color_blue-dark boat__button">Подробнее</a>
+        <button class="button button_color_grey boat__button">Бронировать</button>
+    </div>
+</div>

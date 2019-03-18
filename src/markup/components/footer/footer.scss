@@ -1,0 +1,106 @@
+.footer {
+    position: relative;
+    z-index: 1;
+
+    padding-top: 0;
+    overflow: hidden;
+
+    background-color: transparent;
+
+    &__wave {
+        position: relative;
+
+        display: none;
+        width: 100%;
+        height: rem(81);
+
+        background-color: $dark-blue;
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            z-index: 2;
+            top: rem(-20);
+            right: 0;
+            left: 0;
+
+            height: rem(81);
+
+            background-image: url('%=static=%/assets/footer/wave.png');
+            background-position: center;
+        }
+    }
+
+    &_with-wave {
+        padding-top: rem(21);
+
+        .footer__wave {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    &_main {
+        .footer__wave {
+            display: none;
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .request {
+            padding-top: rem(745);
+
+            background: $dark-blue url('%=static=%assets/request/yaht.jpg') top no-repeat;
+
+            @include below($tablet) {
+                padding-top: rem(400);
+
+                background-size: 100%;
+            }
+            @include below($mobile) {
+                padding-top: rem(250);
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .form {
+            &__item {
+                @include below($mobile) {
+                    width: 100%;
+                }
+            }
+
+            &__item-wrap {
+                @include below($mobile) {
+                    width: auto;
+                }
+            }
+
+            &__input-wrap {
+                @include below($mobile) {
+                    width: auto;
+
+                    &:not(:last-child) {
+                        margin-bottom: rem(25);
+                    }
+
+                    &:last-child {
+                        margin-bottom: rem(20);
+                    }
+                }
+            }
+
+            &::before {
+                content: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,427 @@
+.review-all {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: rem(20);
+
+    border-bottom: rem(1) solid $platinum-grey;
+
+    &__photos {
+        display: flex;
+        align-items: flex-start;
+        flex-shrink: 0;
+        flex-basis: rem(270);
+        margin-right: rem(20);
+
+        @include below($tablet) {
+            flex-basis: rem(100);
+        }
+        @include below($mobile) {
+            display: none;
+        }
+    }
+
+    &__photos-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include below($tablet) {
+            &:first-child {
+                display: none;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-right: rem(20);
+        }
+    }
+
+    &__photos-item-wrap {
+        margin-bottom: rem(10);
+        overflow: hidden;
+
+        border-radius: rem(5);
+
+        &_item {
+            width: rem(150);
+            height: rem(100);
+        }
+
+        &_person {
+            width: rem(100);
+            height: rem(100);
+        }
+    }
+
+    &__photos-image {
+        display: block;
+        width: 100%;
+    }
+
+    &__photos-description {
+        margin: 0;
+
+        font-weight: normal;
+        color: $ash-grey;
+
+        @extend .text;
+    }
+
+    &__content {
+        flex-grow: 1;
+        width: 45%;
+        margin-right: rem(25);
+
+        @include below($phablet) {
+            width: auto;
+            margin-right: 0;
+        }
+    }
+
+    &__person {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__person-wrap {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(15);
+
+        @include below($phablet) {
+            margin-bottom: rem(10);
+        }
+    }
+
+    &__person-info {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+
+        .stars {
+            @include below($mobile) {
+                display: none;
+            }
+        }
+    }
+
+    &__person-name {
+        margin-top: 0;
+        margin-right: rem(15);
+        margin-bottom: 0;
+
+        font-weight: normal;
+    }
+
+    &__social-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: rem(15);
+    }
+
+    &__social-icon {
+        fill: $sky-blue;
+    }
+
+    &__text {
+        height: rem(55);
+        margin-top: 0;
+        margin-bottom: rem(15);
+        overflow: hidden;
+
+        font-weight: normal;
+        text-overflow: ellipsis;
+
+        @extend .text;
+        @include below($mobile) {
+            margin-bottom: 0;
+        }
+
+        &.js-open {
+            height: auto;
+        }
+    }
+
+    &__button-more {
+        position: relative;
+
+        padding-right: rem(17);
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            right: 0;
+            left: unset;
+
+            display: block;
+            width: 0;
+            height: 0;
+
+            border-width: rem(4) rem(3.5) 0 rem(3.5);
+            border-style: solid;
+            border-color: $rich-blue transparent transparent transparent;
+            transform: translateY(-50%);
+
+            will-change: transform;
+        }
+
+        &.js-active {
+            &::after {
+                transform: translateY(-50%) rotate(180deg);
+            }
+        }
+    }
+
+    &__review {
+        display: flex;
+        align-items: center;
+
+        @include below($mobile) {
+            display: none;
+        }
+    }
+
+    &__review-text {
+        margin-right: rem(10);
+
+        font-weight: normal;
+
+        @extend .text;
+    }
+
+    &__review-button {
+        position: relative;
+
+        padding-left: rem(15);
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            display: block;
+            width: 0;
+            height: 0;
+
+            border-width: 5px 0 5px 9px;
+            border-style: solid;
+            border-color: transparent transparent transparent $rich-blue;
+            transform: translateY(-45%);
+
+            will-change: transform;
+        }
+    }
+
+    &__gallery {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+
+        @include below($phablet) {
+            display: none;
+        }
+    }
+
+    &__gallery-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-right: rem(20);
+
+            @include below($phablet) {
+                margin-right: rem(10);
+            }
+        }
+    }
+
+    &__gallery-link {
+        display: block;
+        width: rem(150);
+        height: rem(100);
+        margin-bottom: rem(10);
+        overflow: hidden;
+
+        border-radius: rem(5);
+        outline: none;
+    }
+
+    &__gallery-image {
+        display: block;
+        width: 100%;
+    }
+
+    &__gallery-description {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        color: $ash-grey;
+
+        @extend .text;
+    }
+
+    &__gallery-video,
+    &__gallery-photos {
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            display: block;
+
+            transform: translate(-50%,-50%);
+
+            will-change: transform;
+        }
+    }
+
+    &__gallery-video {
+        @include above($tablet) {
+            &::before {
+                width: rem(35);
+                height: rem(35);
+
+                border-radius: 50%;
+                background-color: rgba($black, .5);
+            }
+
+            &::after {
+                width: 0;
+                height: 0;
+
+                border-width: rem(7) 0 rem(7) rem(12);
+                border-style: solid;
+                border-color: transparent transparent transparent $white;
+            }
+        }
+        @include below($phablet) {
+            &::after {
+                @include bg($gallery-adaptive-video);
+            }
+        }
+    }
+
+    &__gallery-photos {
+        @include below($phablet) {
+            &::after {
+                @include bg($gallery-adaptive-photo);
+            }
+        }
+    }
+
+    &__person-gallery {
+        display: none;
+
+        @include below($phablet) {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: rem(10);
+
+            .review-all__gallery-description {
+                margin-right: rem(10);
+
+                font-family: $open_sans;
+                font-size: rem(14);
+                font-weight: 400;
+                color: $black;
+            }
+
+            .review-all__gallery-item {
+                justify-content: center;
+            }
+
+            .review-all__gallery-link {
+                width: rem(32);
+                height: rem(22);
+                margin-bottom: 0;
+
+                background-color: $sky-blue;
+            }
+        }
+        @include below($mobile) {
+            display: none;
+        }
+
+        &_mobile {
+            display: none;
+
+            @include below($mobile) {
+                display: flex;
+                align-items: center;
+                margin-left: rem(60);
+
+                .stars {
+                    margin-right: rem(10);
+                }
+            }
+        }
+    }
+
+    &__person-photo {
+        display: none;
+
+        @include below($mobile) {
+            position: relative;
+
+            display: inline-flex;
+            flex-shrink: 0;
+            width: rem(47);
+            height: rem(47);
+            margin-right: rem(10);
+            overflow: hidden;
+
+            border-radius: rem(5);
+        }
+    }
+
+    &__person-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        display: block;
+        width: 150%;
+
+        transform: translate(-50%,-50%);
+    }
+
+    &__person-rating {
+        display: none;
+
+        @include below($mobile) {
+            display: flex;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: center;
+    }
+
+    &__date {
+        display: none;
+
+        &_mobile {
+            @include below($mobile) {
+                display: inline-flex;
+                margin-right: rem(10);
+
+                font-family: $open_sans;
+                font-size: rem(12);
+                color: $ash-grey;
+            }
+        }
+    }
+}

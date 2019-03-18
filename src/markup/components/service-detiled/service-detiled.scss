@@ -1,0 +1,412 @@
+.service-detiled {
+    padding-top: rem(50);
+    padding-bottom: rem(120);
+
+    @include below($mobile) {
+        padding-top: rem(15);
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: rem(112);
+
+        @include below($tablet) {
+            margin-bottom: rem(100);
+        }
+        @include below($mobile) {
+            margin-bottom: rem(85);
+        }
+    }
+
+    &__left-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 62%;
+        margin-right: 2%;
+        overflow: hidden;
+
+        @include below($tablet) {
+            margin-bottom: rem(45);
+            overflow: hidden;
+
+            border-radius: rem(6);
+
+            .service-detiled__button {
+                display: none;
+            }
+        }
+        @include below($mobile) {
+            order: 2;
+            width: 100%;
+            margin: 0;
+            margin-bottom: rem(25);
+
+            .gallery-with-slider__list {
+                height: rem(210);
+            }
+        }
+
+        p {
+            font-family: $open_sans;
+            font-size: rem(14);
+            font-weight: 300;
+            line-height: rem(20);
+            color: $dim-grey;
+        }
+        .text-hide {
+            margin: 0;
+            margin-bottom: rem(15);
+        }
+    }
+
+    &__left-subtitle-button {
+        width: auto;
+
+        text-align: left;
+
+        &_active {
+            transform: rotate(180deg);
+        }
+    }
+
+
+
+    &__right-side {
+        display: flex;
+        flex-direction: column;
+        width: 36%;
+
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__right-side-tablet {
+        display: none;
+
+        @include below($tablet) {
+            display: flex;
+            flex-direction: column;
+            width: 36%;
+
+            .service-detiled__service-name {
+                flex-wrap: nowrap;
+            }
+            .service-detiled__service-name-icon {
+                margin-right: rem(15);
+            }
+            .service-detiled__service-name-info {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                margin-left: 0;
+            }
+        }
+        @include below($mobile) {
+            display: flex;
+            order: 1;
+            width: 100%;
+
+            .stars {
+                display: none;
+
+                &_big {
+                    display: block;
+                    padding: 0;
+                }
+            }
+
+            .number-of-reviews {
+                margin-left: rem(5);
+
+                color: $rich-blue;
+            }
+
+            .service-detiled__service-name-info {
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &__tab-tablet {
+        width: 100%;
+        height: rem(225);
+        padding-top: 10%;
+        padding-right: 15%;
+        padding-bottom: 27%;
+        padding-left: 12%;
+
+        background-image: url('%=static=%assets/service-detiled/buble2.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        @include below($mobile) {
+            display: none;
+        }
+
+        .service-detiled__tab-text:nth-of-type(1) {
+            padding-left: rem(25);
+        }
+        .service-detiled__tab-text:nth-of-type(2) {
+            padding-left: rem(15);
+        }
+        .service-detiled__tab-text:nth-of-type(3) {
+            padding-left: rem(5);
+        }
+    }
+
+    &__tab {
+        width: 90%;
+        height: rem(185);
+        padding-top: rem(75);
+        padding-right: rem(50);
+        padding-bottom: rem(35);
+        padding-left: rem(50);
+        margin: 0 auto;
+
+        background-image: url('%=static=%assets/service-detiled/buble_1x.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        @media (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
+            background-image: url('%=static=%assets/service-detiled/buble_2x.png');
+        }
+    }
+
+    &__tab-text {
+        margin: 0;
+
+        font-family: $open-sans;
+        font-size: rem(16);
+        font-weight: 300;
+        color: $white;
+        text-align: left;
+
+        &_padding-left {
+            padding-left: rem(10);
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+
+        @include below($mobile) {
+            order: 2;
+        }
+
+
+
+        &:hover {
+            .mini-arrow_deep-sky-blue {
+                fill: $yale-blue;
+            }
+        }
+    }
+    &__service-name {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: rem(17);
+
+        .stars {
+            padding: 0;
+            margin-right: rem(15);
+            &__input {
+                &::before {
+                    top: rem(2);
+                }
+            }
+            &_big {
+                display: none;
+
+                @include below($mobile) {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__service-name-name {
+        margin: 0;
+
+        font-family: $open_sans;
+        font-size: rem(30);
+        font-weight: 300;
+        line-height: 1;
+        color: $dim-grey;
+        text-align: left;
+
+        @include below($tablet) {
+            flex-basis: 100%;
+
+            font-size: rem(18);
+        }
+        @include below($mobile) {
+            display: none;
+        }
+    }
+
+    &__service-name-icon {
+        margin-right: rem(20);
+
+        fill: $dim-grey;
+    }
+
+    &__service-name-info {
+        display: flex;
+        margin-left: rem(70);
+
+        @include below($tablet) {
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    }
+
+    &__text-hide {
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__yacht-title {
+        display: none;
+
+        @include below($mobile) {
+            display: flex;
+            order: 4;
+            width: calc(100% + 20px);
+            padding: rem(20);
+            padding-right: 0;
+            padding-left: rem(10);
+            margin-right: rem(-10);
+            margin-left: rem(-10);
+
+            border-top: rem(1) solid $ash-grey;
+        }
+    }
+
+    &__yacht-tablet {
+        display: none;
+
+        @include below($tablet) {
+            display: flex;
+            width: 100%;
+            margin-bottom: rem(30);
+
+            .slick-track {
+                margin-left: -15%;
+            }
+        }
+        @include below($mobile) {
+            order: 5;
+            width: calc(100% + 20px);
+            margin-right: rem(-10);
+            margin-bottom: 0;
+            margin-left: rem(-10);
+
+            .slick-track {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__info-text {
+        display: none;
+
+        @include below($tablet) {
+            display: flex;
+            width: 100%;
+            padding-bottom: rem(20);
+            margin: 0;
+            margin-bottom: rem(35);
+
+            text-align: center;
+
+            border-bottom: rem(1) solid $platinum-grey;
+        }
+        @include below($mobile) {
+            display: none;
+        }
+    }
+
+    &__tablet-text {
+        display: none;
+
+        @include below($tablet) {
+            display: flex;
+            flex-wrap: wrap;
+
+            .service-detiled__text-hide {
+                display: flex;
+                height: rem(124);
+                margin-bottom: rem(20);
+
+                p {
+                    margin: 0;
+                }
+            }
+            .service-detiled__button {
+                display: flex;
+            }
+        }
+        @include below($mobile) {
+            order: 3;
+            margin-bottom: rem(40);
+
+            .service-detiled__text-hide {
+                height: rem(58);
+
+                p {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    &__boat {
+        @include below($tablet) {
+            .boat {
+                margin: 0 rem(10);
+            }
+        }
+        @include below($mobile) {
+            .boat {
+                width: rem(230);
+                margin: 0 rem(5);
+
+                border-bottom: none;
+            }
+
+            .boat__images-wrap_adaptive {
+                height: rem(175);
+            }
+        }
+    }
+
+    &__link-popup {
+        text-decoration: none;
+    }
+
+    &__icon-wrap {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: rem(33);
+        height: rem(38);
+
+        @include below($mobile) {
+            display: flex;
+            margin-right: rem(10);
+        }
+    }
+
+    &__entertiment-icon {
+        fill: $dim-grey;
+    }
+}

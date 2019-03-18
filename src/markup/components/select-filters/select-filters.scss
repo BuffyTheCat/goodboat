@@ -1,0 +1,150 @@
+.select-filters {
+    display: flex;
+    padding: rem(30) 0;
+
+    border-bottom: rem(1) solid $platinum-grey;
+
+    @include below($tablet) {
+        position: relative;
+
+        justify-content: space-between;
+    }
+    @include below($mobile) {
+        display: block;
+        padding: rem(10);
+        margin: 0 rem(-10);
+
+        border-bottom: 0 none;
+        background-color: $light-grey;
+    }
+
+    &__item {
+        display: flex;
+        flex-basis: rem(290);
+
+        @include below($phablet) {
+            flex-basis: rem(230);
+            width: auto;
+        }
+        @include below($mobile) {
+            order: 0;
+            flex-basis: auto;
+
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+
+            &:nth-of-type(2) {
+                order: 1;
+            }
+        }
+
+        .select {
+            select {
+                height: rem(41);
+            }
+        }
+
+        &:not(:first-child) {
+            margin-left: rem(20);
+
+            @include below($tablet) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__filter {
+        flex-shrink: 1;
+        flex-basis: 100%;
+
+        @include below($mobile) {
+            background-color: $white;
+        }
+    }
+
+    &__order {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-shrink: 0;
+        width: rem(38);
+        height: rem(41);
+        padding: rem(6);
+        margin-left: rem(5);
+
+        border: rem(1) solid $ash-grey;
+        cursor: pointer;
+        background-color: $white;
+
+        &.filtered {
+            transform: scale(1,-1);
+        }
+    }
+
+    &__order-line {
+        width: 100%;
+        height: rem(5);
+
+        background: $ash-grey;
+
+        &:nth-of-type(2) {
+            width: 60%;
+        }
+
+        &:nth-of-type(3) {
+            width: 20%;
+        }
+    }
+
+    &__view,
+    &__pagination {
+        margin-left: auto;
+    }
+
+    &__view {
+        @include below($tablet) {
+            position: absolute;
+            top: rem(-32);
+            right: 0;
+        }
+        @include below($mobile) {
+            display: none;
+        }
+    }
+
+    &__pagination {
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        flex-basis: rem(260);
+
+        @include below($phablet) {
+            position: absolute;
+            top: rem(-35);
+            right: 0;
+        }
+        @include below($mobile) {
+            right: rem(10);
+        }
+    }
+
+    &_service {
+        .select-filters__pagination {
+            display: none;
+        }
+
+        .select-filters__item {
+            @include below($tablet) {
+                flex-basis: 32%;
+            }
+        }
+    }
+
+    &_transport {
+        .select-filters__view {
+            display: none;
+        }
+    }
+}

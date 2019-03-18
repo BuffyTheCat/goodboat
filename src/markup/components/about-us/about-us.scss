@@ -1,0 +1,418 @@
+.about-us {
+    padding-top: rem(35);
+    padding-bottom: rem(170);
+
+    @include below($tablet) {
+        padding-bottom: rem(105);
+    }
+
+    h2 {
+        position: relative;
+
+        width: 100%;
+        margin-bottom: rem(35);
+
+        font-family: $open_sans;
+        font-size: rem(24);
+        font-weight: 300;
+        color: $dim-grey;
+
+        @include below($mobile) {
+            &::after {
+                display: none;
+            }
+        }
+        @include below($mobile) {
+            margin-top: rem(20);
+            margin-bottom: rem(20);
+        }
+        &::after {
+            content: '';
+
+            position: absolute;
+            bottom: - rem(15);
+            left: 0;
+
+            width: 100%;
+            height: rem(1);
+
+            background-color: $platinum-grey;
+        }
+    }
+
+    h3 {
+        margin: 0;
+        margin-bottom: rem(5);
+
+        font-family: $open_sans;
+        font-size: rem(18);
+        font-weight: 300;
+        color: $black;
+    }
+
+
+    ul {
+        max-width: 100%;
+        padding-left: rem(20);
+        margin: 0;
+        margin-bottom: rem(24);
+
+        list-style-type: none;
+    }
+
+    li {
+        position: relative;
+
+        max-width: 100%;
+        margin: 0;
+
+        font-family: $open_sans;
+        font-size: rem(14);
+        color: $dim-grey;
+        text-align: left;
+
+        &::before {
+            content: '—';
+
+            position: absolute;
+            left: - rem(20);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__our-team {
+        width: rem(250);
+
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__goodboat-info {
+        width: rem(928);
+
+        @include below($tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 62%;
+        }
+        @include below($mobile) {
+            width: 100%;
+        }
+        p {
+            max-width: 100%;
+            margin-top: 0;
+            margin-bottom: rem(20);
+
+            font-family: $open_sans;
+            font-size: rem(14);
+            color: $dim-grey;
+        }
+    }
+
+    &__list-deep-sky-blue {
+        width: 100%;
+
+        ul {
+            margin: 0;
+
+
+            a {
+                text-decoration: none;
+
+
+                li {
+                    color: $rich-blue;
+
+                    transition: color .3s;
+
+                    &:hover {
+                        color: $yale-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    &__staff {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include below($mobile) {
+            margin-bottom: rem(65);
+        }
+
+        .stuff-member {
+            &:last-child {
+                margin-left: auto;
+            }
+        }
+    }
+
+
+
+    &__goodboat-info-text {
+        width: rem(570);
+    }
+
+    &__preview-wrapper {
+        @include below($tablet) {
+            display: none;
+        }
+        @include below($mobile) {
+            display: block;
+            order: -1;
+            width: 100%;
+            margin: 0 auto;
+
+            & button.slick-arrow {
+                position: absolute;
+                z-index: 9;
+                top: 40%;
+
+                width: rem(15);
+                height: rem(30);
+                padding: 0;
+
+                text-indent: rem(-99999);
+
+                border: none;
+                outline: none;
+                background-color: $white;
+                transform: translateY(-50%);
+
+                will-change: transform;
+            }
+
+            & button.slick-next.slick-arrow {
+                right: 0;
+
+                border-radius: rem(15) 0 0 rem(15) ;
+
+                &::after {
+                    content: '';
+
+                    position: absolute;
+                    top: 50%;
+                    right: rem(1);
+
+                    display: block;
+
+                    transform: translateY(-50%);
+
+                    will-change: transform;
+
+                    @include bg($arrow-right);
+                }
+            }
+
+            & button.slick-prev.slick-arrow {
+                left: 0;
+
+                border-radius: 0 rem(15) rem(15) 0;
+
+                &::after {
+                    content: '';
+
+                    position: absolute;
+                    top: 50%;
+                    left: rem(1);
+
+                    display: block;
+
+                    transform: translateY(-50%);
+
+                    will-change: transform;
+
+                    @include bg($arrow-left);
+                }
+            }
+        }
+    }
+
+    &__goodboat-info-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__image {
+        width: rem(337);
+        height: rem(220);
+        margin-bottom: rem(7);
+        overflow: hidden;
+
+        border-radius: rem(5);
+
+        @include below($tablet) {
+            width: 100%;
+            height: auto;
+        }
+        @include below($mobile) {
+            width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    &__image-content {
+        width: 100%;
+        height: auto;
+    }
+
+    &__subtitle {
+        margin: 0;
+
+        font-family: $open_sans;
+        font-size: rem(12);
+        color: $ash-grey;
+        text-align: right;
+
+        @include below($tablet) {
+            text-align: right;
+        }
+        @include below($mobile) {
+            width: 100%;
+            padding-bottom: rem(10)!important;
+            margin-top: rem(10)!important;
+            margin-bottom: 0!important;
+
+            font-size: rem(19)!important;
+            color: $ash-grey!important;
+
+            border-bottom: rem(1) solid $ash-grey !important;
+        }
+    }
+
+    &__preview {
+        min-height: rem(240);
+        margin-bottom: rem(20);
+
+        @include below($tablet) {
+            min-height: auto;
+        }
+        @include below($mobile) {
+            min-height: rem(195);
+        }
+    }
+
+    &__tablet-right {
+        display: none;
+
+        @include below($tablet) {
+            display: block;
+            width: 35%;
+
+            .about-us__preview-wrapper {
+                display: block;
+            }
+
+            .about-us__our-team {
+                display: block;
+                width: auto;
+            }
+
+            .stuff-member {
+                width: 48%;
+            }
+        }
+        @include below($mobile) {
+            display: none;
+        }
+    }
+
+    &__goodboat-is {
+        width: 100%;
+
+        @include below($mobile) {
+            height: rem(466);
+            margin-bottom: rem(13);
+            overflow: hidden;
+        }
+    }
+
+    &__booking-order {
+        @include below($mobile) {
+            width: calc(100% + 20px);
+            height: rem(298);
+            margin-right: -10px;
+            margin-bottom: rem(13);
+            margin-left: -10px;
+            overflow: hidden;
+
+            h2 {
+                padding: rem(10);
+                margin-top: 0;
+                margin-bottom: rem(20);
+
+                color: black;
+
+                border-top: rem(1) solid $ash-grey;
+                background-color: $light-grey;
+            }
+            p,
+            h3 {
+                padding: 0 rem(20);
+            }
+        }
+    }
+
+    &__title-tablet {
+        display: none;
+
+        @include below($tablet) {
+            display: block;
+        }
+    }
+
+    &__title-desctop {
+        display: block;
+
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__button {
+        display: none;
+
+        @include below($mobile) {
+            display: block;
+            margin-bottom: rem(70);
+        }
+    }
+
+    &__staff-mobile {
+        display: none;
+
+        @include below($mobile) {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+
+            .about-us__our-team {
+                display: block;
+                width: calc(100% + 20px);
+                margin-right: -10px;
+                margin-left: -10px;
+
+                h2 {
+                    padding: rem(10);
+                    margin-top: 0;
+                    margin-bottom: rem(10);
+
+                    color: black;
+
+                    border-top: rem(1) solid $ash-grey;
+                    background-color: $light-grey;
+                }
+            }
+        }
+    }
+}

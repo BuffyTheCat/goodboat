@@ -1,0 +1,144 @@
+.header {
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        @include below($tablet) {
+            height: rem(62);
+        }
+        @include below($mobile) {
+            height: rem(50);
+        }
+    }
+
+    &__top {
+        background-color: #ffffff;
+
+        @include below($tablet) {
+            border-bottom: rem(1) solid #dae1dd;
+        }
+
+        .socials {
+            display: none;
+
+            @include below($tablet) {
+                display: inline-flex;
+            }
+            @include below($mobile) {
+                display: none;
+            }
+        }
+
+        .navigation {
+            @include below($tablet) {
+                display: none;
+            }
+        }
+
+        &_main {
+            border-bottom: rem(1) solid #dae1dd;
+
+            @include below($mobile) {
+                .phone {
+                    order: 0;
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        padding: rem(15) 0;
+
+        color: $white;
+
+        background-color: $dark-blue;
+
+        @include below($tablet) {
+            padding: 0;
+
+            border-bottom: rem(1) solid #dae1dd;
+            background-color: $white;
+        }
+        @include below($mobile) {
+            .header__content {
+                display: none;
+            }
+        }
+
+        .socials {
+            @include below($tablet) {
+                display: none;
+            }
+        }
+
+        .navigation {
+            display: none;
+
+            @include below($tablet) {
+                display: flex;
+            }
+        }
+
+        &_transparent {
+            background-color: transparent;
+
+
+
+            .header__breadcrumbs {
+                display: none;
+            }
+
+            .socials__text {
+                color: $black;
+            }
+        }
+    }
+
+    &__logo {
+        display: inline-flex;
+    }
+
+    &__socials {
+        margin-left: auto;
+    }
+
+    &__menu {
+        display: none;
+
+        @include below($mobile) {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+
+            border: 0 none;
+            outline: none;
+            background: none;
+        }
+    }
+
+    &__breadcrumbs {
+        display: flex;
+
+        @include below($tablet) {
+            display: none;
+        }
+
+        &_mobile {
+            display: none;
+            align-items: center;
+            width: 100%;
+            height: rem(40);
+            padding: 0 rem(10);
+
+            background-color: $dark-blue;
+
+            @include below($tablet) {
+                display: flex;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.choice-yacht {
+    &__content {
+        height: rem(660);
+        margin-bottom: rem(10);
+        overflow: hidden;
+
+        border: rem(1) solid $platinum-grey;
+        border-radius: rem(6);
+    }
+
+    &__link {
+        text-decoration: none;
+
+        outline: none;
+    }
+
+    &__title {
+        padding: rem(10) rem(15);
+        padding-top: rem(7);
+        padding-bottom: rem(15);
+        margin: 0;
+
+        font-family: $open_sans;
+        font-size: rem(12);
+        color: $dim-grey;
+        text-align: left;
+
+        background-color: $platinum-grey;
+    }
+
+    &__yachts {
+        height: rem(615);
+        padding: rem(5) 0;
+        margin-top: rem(-10);
+
+        border-radius: rem(6);
+        background-color: $white;
+    }
+}

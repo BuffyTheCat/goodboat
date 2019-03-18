@@ -1,0 +1,15 @@
+.logo {
+    &__icon {
+        @include below($mobile) {
+            display: none;
+        }
+
+        &_mobile {
+            display: none;
+
+            @include below($mobile) {
+                display: inline-flex;
+            }
+        }
+    }
+}

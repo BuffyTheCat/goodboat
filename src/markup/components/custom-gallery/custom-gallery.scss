@@ -1,0 +1,206 @@
+.custom-gallery {
+    .fancybox-inner {
+        right: 0!important;
+
+        border-top: 20vh solid transparent;
+        border-right: 35vw solid transparent;
+        border-bottom: 20vh solid transparent;
+        border-left: 15vw solid transparent;
+    }
+
+    .fancybox-arrow {
+        width: rem(40);
+        height: rem(80);
+
+        &::after {
+            top: 0;
+
+            width: 100%;
+            height: 100%;
+
+            border-radius: 0 rem(50) rem(50) 0;
+        }
+    }
+
+    .fancybox-arrow--left {
+        left: - rem(40);
+    }
+
+    .fancybox-arrow--right {
+        right: - rem(40);
+    }
+
+    .fancybox-button {
+        margin-right: rem(2);
+    }
+
+    .fancybox-image-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%!important;
+        height: 100%!important;
+
+        transform: translate(0)!important;
+    }
+
+    .fancybox-toolbar {
+        top: rem(-60);
+        right: rem(-368);
+
+        @include below($tablet) {
+            right: rem(-345);
+        }
+    }
+
+    .fancybox-caption {
+        position: absolute;
+
+        padding: rem(25) 0;
+
+        font-family: $open_sans;
+        font-size: rem(14);
+        font-weight: 300;
+        color: $white;
+        text-align: left;
+
+        border-top: none;
+    }
+
+    .fancybox-caption-wrap {
+        padding: 0;
+    }
+
+    .fancybox-thumbs {
+        right: calc(35vw - 398px);
+
+        width: rem(318);
+        padding: 0;
+
+        border-top: 20vh solid transparent;
+        border-bottom: 20vh solid transparent;
+        background: transparent;
+
+        @include below($tablet) {
+            right: calc(35vw - 375px);
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 0;
+            margin: 0;
+
+            list-style-type: none;
+
+            li {
+                width: 50%;
+                height: rem(114);
+
+                border: rem(1) solid transparent;
+                outline: none;
+
+                img {
+                    width: 100%!important;
+                    height: 100%!important;
+                    margin-left: 0!important;
+                }
+            }
+
+            .fancybox-thumbs-active {
+                border: rem(1) solid #ffffff;
+                outline: none;
+            }
+        }
+    }
+
+    .fancybox-button {
+        width: rem(70);
+        height: rem(45);
+    }
+
+    .fancybox-thumbs-active {
+        &::before {
+            border: rem(2) solid $white;
+        }
+    }
+
+    .fancybox-title {
+        position: absolute;
+        z-index: 99999;
+        top: rem(-80);
+
+        height: rem(31);
+
+        font-family: $open_sans;
+        font-size: rem(30);
+        font-weight: 300;
+        color: $white;
+        text-align: left;
+    }
+
+    .fancybox-image {
+        position: relative;
+        top: auto;
+        left: 0;
+
+        display: flex;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        max-height: none;
+        padding: 0;
+
+        border: 0;
+    }
+
+    .fancybox-button--play,
+    .fancybox-button--fullscreen,
+    .fancybox-button--thumbs,
+    .fancybox-button--close {
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+
+        &:hover {
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+    }
+
+    .fancybox-button--play {
+        background-image: url('%=static=%assets/custom-gallery/play_1x.png') ;
+
+        &:hover {
+            background-image: url('%=static=%assets/custom-gallery/play_1x.png') ;
+        }
+    }
+
+    .fancybox-button--fullscreen {
+        background-image: url('%=static=%assets/custom-gallery/full_1x.png') ;
+
+        &:hover {
+            background-image: url('%=static=%assets/custom-gallery/full_1x.png') ;
+        }
+    }
+
+    .fancybox-button--thumbs {
+        background-image: url('%=static=%assets/custom-gallery/gallary_1x.png') ;
+
+        &:hover {
+            background-image: url('%=static=%assets/custom-gallery/gallary_1x.png') ;
+        }
+    }
+
+    .fancybox-button--close {
+        background-image: url('%=static=%assets/custom-gallery/close_1x.png') ;
+
+        &:hover {
+            background-image: url('%=static=%assets/custom-gallery/close_1x.png') ;
+        }
+    }
+}

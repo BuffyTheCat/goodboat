@@ -1,0 +1,196 @@
+.slider {
+    &__wrap {
+        position: relative;
+
+        width: 100%;
+    }
+
+    &__item {
+        outline: none;
+
+        @include below($tablet) {
+            height: rem(500);
+        }
+        @include below($phablet) {
+            height: rem(295);
+        }
+        @include below($mobile) {
+            height: rem(370);
+        }
+    }
+
+    &__image {
+        @include below($phablet) {
+            width: 100%;
+        }
+        @include below($mobile) {
+            width: auto;
+            height: 100%;
+        }
+    }
+
+    &__booking {
+        position: absolute;
+        z-index: 2;
+        top: rem(100);
+        right: 0;
+
+        width: rem(200);
+
+        @include below($phablet) {
+            top: rem(20);
+        }
+        @include below($mobile) {
+            top: rem(355);
+            left: 0;
+
+            width: auto;
+        }
+    }
+
+    &__caption {
+        position: absolute;
+        z-index: 2;
+        top: rem(100);
+
+        width: rem(380);
+        overflow: hidden;
+
+        @include below($phablet) {
+            top: rem(20);
+
+            width: rem(270);
+        }
+        @include below($mobile) {
+            top: 0;
+
+            width: 100vw;
+            margin: 0 rem(-10);
+        }
+    }
+
+    &__title {
+        margin: 0;
+
+        @include below($mobile) {
+            text-align: center;
+
+            border-radius: 0;
+        }
+    }
+
+    &__action-wrap {
+        margin: 0;
+
+        @include below($mobile) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: rem(20) 0;
+
+            background-color: rgba(0, 23, 51, .8);
+        }
+    }
+
+    &__action {
+        display: inline-flex;
+        padding: 0 rem(20);
+
+        font-family: $roboto;
+        font-size: rem(45);
+        font-weight: 100;
+        line-height: rem(45);
+        letter-spacing: .03em;
+        text-transform: uppercase;
+
+        background-color: rgba(0, 23, 51, .8);
+
+        @include below($phablet) {
+            font-size: rem(31);
+        }
+        @include below($mobile) {
+            padding: 0;
+            margin-bottom: rem(5);
+
+            font-size: rem(20);
+            line-height: normal;
+
+            background: none;
+        }
+
+        &:first-of-type {
+            padding-top: rem(20);
+            padding-bottom: rem(20);
+
+            @include below($phablet) {
+                padding-top: rem(10);
+                padding-bottom: rem(10);
+            }
+            @include below($mobile) {
+                padding-top: 0;
+                padding-bottom: 0;
+                margin-right: rem(5);
+            }
+        }
+
+        &:last-of-type {
+            padding-top: rem(10);
+            padding-bottom: rem(20);
+
+            @include below($phablet) {
+                padding-top: 0;
+                padding-bottom: rem(10);
+            }
+            @include below($mobile) {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+
+        &_color {
+            &_blue {
+                color: $sky-blue;
+            }
+
+            &_yellow {
+                color: $gold-yellow;
+            }
+        }
+    }
+
+    &__button {
+        padding: rem(15) rem(20);
+        margin: 0;
+
+        font-family: $roboto;
+        font-size: rem(18);
+        color: $white;
+
+        border: 0 none;
+        border-bottom-right-radius: rem(5);
+        border-bottom-left-radius: rem(5);
+        outline: none;
+        background-color: $sky-blue;
+
+        @include below($phablet) {
+            padding-top: rem(10);
+            padding-bottom: rem(10);
+        }
+        @include below($mobile) {
+            display: none;
+        }
+    }
+
+    &__descripion {
+        display: none;
+        margin: 0;
+
+        font-family: $open_sans;
+        font-size: rem(14);
+        color: #ffffff;
+
+        @include below($mobile) {
+            display: block;
+        }
+    }
+}

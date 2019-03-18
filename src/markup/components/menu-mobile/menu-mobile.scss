@@ -1,0 +1,113 @@
+.menu-mobile {
+    position: fixed;
+    z-index: 20;
+
+    display: none;
+    width: 100vw;
+    padding-bottom: rem(20);
+    overflow-y: scroll;
+
+    background-color: $white;
+
+    @include stretch;
+
+    .socials {
+        margin: 0 rem(10);
+
+        &__icon {
+            display: none;
+
+            &_mobile {
+                display: inline-block;
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__title {
+        padding: rem(15) rem(50) rem(15) rem(10);
+        margin: 0;
+        overflow: hidden;
+
+        font-family: $open_sans;
+        font-size: rem(24);
+        font-weight: 300;
+        color: #ffffff;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        background-color: $light-blue;
+
+        &_arrow {
+            position: relative;
+
+            display: block;
+            padding-left: rem(35);
+
+            text-decoration: none;
+
+            &::before {
+                content: '';
+
+                position: absolute;
+                top: 50%;
+                left: rem(10);
+
+                transform: translateY(-50%);
+
+                will-change: transform;
+
+                @include bg($arrow-menu-left);
+            }
+        }
+    }
+
+    &__close {
+        position: absolute;
+        z-index: 90;
+        top: rem(12);
+        right: rem(10);
+
+        display: block;
+        width: rem(40);
+        height: rem(40);
+        padding: 0;
+
+        border: 0 none;
+        outline: none;
+        background: none;
+
+        @include text-hide;
+        &::before,
+        &::after {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            display: block;
+            width: 50%;
+            height: rem(2);
+
+            background-color: $white;
+
+            will-change: transform;
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+
+    &__navigation {
+        margin-bottom: rem(20);
+    }
+}

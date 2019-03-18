@@ -1,0 +1,147 @@
+.reviews {
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        padding: rem(15) 0;
+
+        border-bottom: rem(1) solid $platinum-grey;
+
+        @include below($mobile) {
+            display: none;
+        }
+
+        &_mobile {
+            display: none;
+
+            @include below($mobile) {
+                display: flex;
+                flex-direction: column;
+                width: calc(100% + 20px);
+                padding: rem(17) rem(10);
+                margin-right: rem(-10);
+                margin-left: rem(-10);
+
+                border-top: 1px solid $ash-grey;
+                border-bottom: none;
+                background-color: $light-grey;
+
+                .reviews__make-review {
+                    width: rem(135);
+
+                    font-size: rem(18);
+                    text-transform: lowercase;
+                }
+
+                .reviews__title-text {
+                    color: $black;
+                }
+            }
+        }
+    }
+
+    &__title-text {
+        margin: 0;
+        margin-right: rem(130);
+
+        font-family: $open_sans;
+        font-size: rem(24);
+        font-weight: 300;
+        color: $dim-grey;
+        text-align: left;
+
+        @include below($tablet) {
+            margin-right: 0;
+        }
+    }
+
+    &__make-review {
+        font-family: $open_sans;
+        font-size: rem(24);
+        font-weight: 300;
+    }
+
+    &__content {
+        margin-bottom: rem(35);
+    }
+
+    &__links {
+        display: flex;
+        width: 100%;
+
+        @include below($tablet) {
+            justify-content: space-between;
+        }
+        @include below($mobile) {
+            flex-direction: column;
+        }
+    }
+
+
+    &__button {
+        display: flex;
+        align-items: center;
+
+        &:not(:first-of-type) {
+            margin-left: rem(80);
+
+            @include below($tablet) {
+                margin: 0;
+            }
+        }
+
+        &:first-of-type {
+            @include below($mobile) {
+                margin-bottom: rem(20);
+            }
+        }
+
+        &:last-of-type {
+            margin-left: auto;
+
+            @include below($tablet) {
+                margin: 0;
+            }
+            @include below($mobile) {
+                display: none;
+            }
+        }
+
+        &:hover {
+            .mini-arrow_deep-sky-blue {
+                fill: $yale-blue;
+            }
+        }
+    }
+
+    &__left-side-button,
+    &__right-side-button {
+        font-size: rem(18);
+    }
+
+    &__right-side-button {
+        position: relative;
+
+        padding-left: rem(30);
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+
+            transform: translateY(-50%);
+
+            will-change: transform;
+
+            @include bg($arrow-up);
+        }
+    }
+
+    &__right-side {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 50%;
+    }
+}

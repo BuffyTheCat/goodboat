@@ -1,0 +1,399 @@
+.yacht-detiled {
+    padding-top: rem(50);
+
+    @include below($tablet) {
+        .reviews {
+            margin-bottom: rem(100);
+        }
+    }
+    @include below($mobile) {
+        padding-top: rem(20);
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: rem(112);
+
+        @include below($tablet) {
+            margin-bottom: rem(95);
+        }
+        @include below($mobile) {
+            flex-direction: column;
+            margin-bottom: rem(50);
+        }
+    }
+
+    &__left-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 62%;
+        margin-right: 2%;
+        overflow: hidden;
+
+        @include below($tablet) {
+            margin-bottom: rem(30);
+
+            .text-hide {
+                display: none;
+            }
+            .yacht-detiled__button {
+                display: none;
+            }
+        }
+        @include below($mobile) {
+            width: 100%;
+            margin-right: 0;
+
+
+            .gallery-with-slider__list {
+                width: 100%;
+            }
+        }
+
+        p {
+            margin: 0;
+
+            font-family: $open_sans;
+            font-size: rem(14);
+            font-weight: 300;
+            line-height: rem(19);
+            color: $dim-grey;
+        }
+        .text-hide {
+            margin: 0;
+            margin-bottom: rem(15);
+        }
+
+        .discount {
+            z-index: 3;
+        }
+    }
+
+    &__right-side {
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        width: 36%;
+
+        @include below($mobile) {
+            order: -1;
+            width: 100%;
+        }
+
+        .discount {
+            display: none;
+
+            @include below($tablet) {
+                top: rem(25);
+                left: 40%;
+
+                display: flex;
+
+                .discount__link {
+                    font-size: rem(14);
+                }
+            }
+            @include below($mobile) {
+                z-index: 2;
+                top: rem(185);
+                right: 0;
+                left: auto;
+
+                width: rem(110);
+
+                text-align: right;
+            }
+        }
+    }
+
+
+    &__button {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            .mini-arrow_deep-sky-blue {
+                fill: $yale-blue;
+            }
+        }
+    }
+
+    &__entertiment-name {
+        margin: 0;
+    }
+
+    &__service-name {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: rem(25);
+
+        border-bottom: rem(1) solid $platinum-grey;
+
+        @include below($mobile) {
+            display: none;
+        }
+
+        .stars {
+            padding: 0;
+            margin-right: rem(15);
+            &__input {
+                &::before {
+                    top: rem(2);
+                }
+            }
+        }
+        .port {
+            margin-left: rem(30);
+        }
+    }
+
+    &__service-title {
+        width: 100%;
+        margin: 0;
+        margin-bottom: rem(9);
+
+        font-family: $open_sans;
+        font-size: rem(30);
+        font-weight: 300;
+        line-height: 1;
+        color: $dim-grey;
+        text-align: left;
+
+        @include below($tablet) {
+            font-size: rem(18);
+            font-weight: 400;
+        }
+    }
+
+    &__service-info {
+        display: flex;
+        align-items: center;
+
+        @include below($tablet) {
+            flex-direction: column;
+
+            .number-of-reviews {
+                display: none;
+            }
+            .stars {
+                margin-bottom: rem(10);
+            }
+            .port {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__info-yacht-wrap {
+        padding-top: rem(8);
+        padding-bottom: rem(30);
+
+        border-bottom: rem(1) solid $platinum-grey;
+
+        @include below($tablet) {
+            border-bottom: none;
+        }
+    }
+
+    &__info-yacht {
+        height: rem(168);
+        margin-bottom: rem(10);
+        overflow: hidden;
+    }
+
+    &__yacht-spec {
+        display: flex;
+        align-items: baseline;
+        justify-content: flex-start;
+        width: 100%;
+        margin: 0;
+        margin-bottom: rem(3);
+    }
+
+    &__yacht-spec-name {
+        width: 34%;
+
+        font-weight: 400;
+
+        @include below($mobile) {
+            width: 50%;
+        }
+    }
+
+    &__yacht-spec-value {
+        width: 66%;
+        margin: 0;
+
+        font-weight: 400;
+
+        @include below($mobile) {
+            width: 50%;
+        }
+    }
+
+    &__yacht-spec-price {
+        &_big {
+            font-size: rem(24);
+        }
+    }
+
+    &__wrap-button:hover .mini-arrow_deep-sky-blue {
+        fill: $yale-blue;
+    }
+
+    &__entertiment {
+        padding-top: rem(15);
+
+        @include below($tablet) {
+            display: none;
+        }
+    }
+
+    &__entertiment-included {
+        padding-bottom: rem(38);
+
+        border-bottom: rem(1) solid $platinum-grey;
+    }
+
+    &__entertiment-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: rem(7);
+
+        @include below($tablet) {
+            width: 50%;
+
+            .yacht-detiled__entertiment-price {
+                width: auto;
+            }
+        }
+        @include below($mobile) {
+            width: 100%;
+
+            &:last-of-type {
+                margin-bottom: rem(0);
+            }
+        }
+
+        &:last-of-type {
+            margin-bottom: rem(25);
+        }
+    }
+
+    &__entertiment-icon {
+        fill: $dim-grey;
+    }
+
+    &__entertiment-price {
+        width: 26%;
+        margin: 0;
+        margin-left: auto;
+    }
+
+    &__entertiment-icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(42);
+        height: rem(35);
+        margin-right: rem(20);
+    }
+
+    &__booking {
+        position: relative;
+
+        color: $white;
+
+        &:active {
+            top: rem(1);
+        }
+    }
+
+    &__add-entertiment {
+        position: relative;
+
+        padding-top: rem(22);
+    }
+
+    &__add-entertiment-title {
+        position: absolute;
+        top: rem(-10);
+        left: rem(52);
+
+        padding: 0 rem(10);
+        margin: 0;
+
+        background-color: $white;
+    }
+
+    .reviews {
+        margin-bottom: rem(150);
+    }
+
+    &__tablet-content {
+        display: none;
+
+        @include below($tablet) {
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: rem(20);
+
+            border-top: rem(1) solid $platinum-grey;
+
+            .text-hide {
+                height: rem(128);
+
+                font-size: rem(14);
+                line-height: rem(14);
+            }
+        }
+        @include below($mobile) {
+            .yacht-detiled__booking {
+                order: 1;
+            }
+            .yacht-detiled__entertiment-tablet {
+                order: 2;
+            }
+
+            .text-hide {
+                height: rem(56);
+                margin-bottom: rem(20);
+            }
+            .yacht-detiled__button {
+                margin-bottom: rem(25);
+            }
+            .yacht-detiled__booking {
+                margin-bottom: rem(20);
+            }
+        }
+    }
+
+    &__entertiment-tablet {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: rem(30);
+    }
+
+    &__yacht-price {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+
+        .discount {
+            position: relative;
+            top: 0;
+            left: auto;
+
+            display: inline-flex;
+            padding-left: rem(5);
+            margin-left: auto;
+
+            @include below($tablet) {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.message-dir-button {
+    color: $white;
+
+    border: none;
+    border-radius: 0 0 rem(5) rem(5);
+    outline: none;
+    background-color: $prussian-blue;
+    transform: rotate(-90deg);
+
+    @include below($tablet) {
+        display: none;
+    }
+
+    &__image {
+        transform: rotate(90deg);
+
+        fill: $gold-yellow;
+    }
+}

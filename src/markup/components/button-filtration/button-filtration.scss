@@ -1,0 +1,38 @@
+.button-filtration {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: rem(38);
+    height: rem(41);
+    padding: rem(6);
+    margin-left: rem(5);
+
+    border: rem(1) solid $ash-grey;
+    cursor: pointer;
+    background-color: $white;
+
+    &.filtered {
+        transform: scale(1,-1);
+    }
+
+    &__line,
+    &__line-two,
+    &__line-three {
+        width: 100%;
+        height: rem(5);
+
+        background: $ash-grey;
+    }
+
+    &__line-two {
+        width: 60%;
+    }
+
+    &__line-three {
+        width: 20%;
+    }
+
+    &_filtered-ascending {
+        transform: scale(1,-1);
+    }
+}

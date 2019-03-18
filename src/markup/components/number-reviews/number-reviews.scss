@@ -1,0 +1,11 @@
+.number-reviews {
+    margin: 0;
+
+    font-family: $open_sans;
+    font-size: rem(12);
+    color: $ash-grey;
+    text-align: left;
+    text-decoration: underline;
+
+    transition: color .5s;
+}
