@@ -1,119 +1,190 @@
 .popular {
+    position: relative;
+    z-index: 2;
+
+    @extend .container;
+
     &__content {
+        display: flex;
+        flex-direction: column;
         width: 100%;
     }
 
     &__caption {
         display: flex;
         align-items: baseline;
-        margin-bottom: rem(30);
+        margin-bottom: rem(28);
+
+        @include below($tablet-small) {
+            flex-direction: column;
+            margin-bottom: rem(46);
+        }
 
         @include below($mobile) {
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: rem(10);
+            margin-bottom: rem(25);
         }
     }
 
     &__filter {
-        @include below($tablet) {
-            display: none;
+        display: flex;
+
+        @include below($mobile) {
+            flex-wrap: wrap;
+        }
+
+        &-item {
+            cursor: pointer;
+
+            @include below($mobile) {
+                margin-bottom: rem(21);
+            }
+
+            span {
+                position: relative;
+
+                font-family: $lato;
+                font-size: rem(16);
+                font-weight: 400;
+                line-height: rem(24);
+                color: #93a2a7;
+                letter-spacing: rem(-.2);
+
+                transition: color .25s;
+
+                &::after {
+                    content: '';
+
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+
+                    width: 100%;
+                    margin: auto;
+
+                    border-bottom: rem(1) dashed $ash-grey;
+
+                    transition: border .25s;
+                }
+            }
+
+            input {
+                display: none;
+
+                &:checked + span {
+                    color: #069edb;
+
+                    &::after {
+                        border-bottom: rem(1) dashed #069edb;
+                    }
+                }
+            }
+
+            &:not(:last-of-type) {
+                margin-right: rem(32);
+
+                @include below($mobile) {
+                    margin-right: rem(25);
+                }
+            }
+
+
+
+            &:hover {
+                span {
+                    color: #069edb;
+
+                    &::after {
+                        border-bottom: rem(1) dashed #069edb;
+                    }
+                }
+            }
         }
     }
 
     &__title {
-        margin-top: 0;
-        margin-right: rem(50);
-        margin-bottom: 0;
+        margin: 0;
+        margin-right: auto;
 
-        @include below($mobile) {
-            margin-right: 0;
-            margin-bottom: rem(15);
-        }
-    }
+        font-family: $avenir;
+        font-size: rem(48);
+        font-weight: 600;
+        line-height: rem(54);
+        color: #5b6f76;
+        letter-spacing: rem(-1.8);
 
-    &__item {
-        position: relative;
-
-        font-family: $open_sans;
-        font-size: rem(14);
-        font-weight: 300;
-        color: $ash-grey;
-        text-decoration: none;
-
-        transition: color .25s;
-
-        &:not(:last-of-type) {
-            margin-right: rem(45);
-        }
-
-        &::after {
-            content: '';
-
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            left: 0;
-
+        @include below($tablet-small) {
             width: 100%;
-            margin: auto;
-
-            border-bottom: rem(1) dashed $ash-grey;
-
-            transition: border .25s;
+            margin-bottom: rem(19);
         }
 
-        &_active {
-            color: $rich-blue;
-
-            &::after {
-                border-bottom: rem(1) dashed $rich-blue;
-            }
-        }
-    }
-
-    &__location {
-        width: rem(210);
-        margin-left: auto;
-
-        @include below($tablet) {
-            width: rem(230);
-        }
         @include below($mobile) {
-            width: auto;
-            margin: auto;
+            font-size: rem(36);
+            line-height: rem(44);
+            letter-spacing: rem(-1.2);
+            margin-bottom: rem(22);
         }
     }
 
     &__catalog {
-        margin-bottom: rem(60);
+        display: flex;
+        flex-wrap: wrap;
+        width: calc(100% + 20px);
+        margin-right: rem(-10);
+        margin-bottom: rem(16);
+        margin-left: rem(-10);
 
-        @include below($desktop) {
-            margin-right: rem(-10);
-            margin-left: rem(-10);
+        @include below($tablet-small) {
+            width: calc(100% + 16px);
+            margin-right: rem(-8);
+            margin-bottom: rem(48);
+            margin-left: rem(-8);
         }
+
         @include below($mobile) {
-            margin-bottom: rem(35);
+            flex-direction: column;
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: rem(16);
+            margin-left: 0;
         }
 
         .boat {
-            @include below($desktop) {
-                margin: 0 rem(10);
-            }
-            @include below($phablet) {
-                &:last-child {
+            width: calc(25% - 20px);
+            margin: 0 rem(10);
+            margin-bottom: rem(32);
+
+            @include below($tablet-small) {
+                width: calc(33.333% - 16px);
+                margin: 0 rem(8);
+                margin-bottom: 0;
+
+                &:nth-of-type(n + 4) {
                     display: none;
+                }
+            }
+
+            @include below($mobile) {
+                width: 100%;
+                margin: 0;
+                margin-bottom: rem(32);
+
+                &:nth-of-type(n + 4) {
+                    display: block;
                 }
             }
         }
     }
 
     &__more {
-        text-align: center;
+        width: rem(380);
+        margin: 0 auto;
 
-        @include below($tablet) {
-            position: relative;
-            z-index: 2;
+        @extend .button;
+        @extend .button_color_yellow;
+
+        @include below($mobile) {
+            width: 100%;
         }
     }
 }

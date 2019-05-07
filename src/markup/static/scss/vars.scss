@@ -3,10 +3,11 @@
 
 //breakpoints
 $desktop: rem(1280);
-$tablet: rem(1024);
-$phablet: rem(768);
+$tablet: rem(1279);
+$tablet-small: rem(960);
+$phablet: rem(720);
 $mobile: rem(719);
-
+$mobile-small: rem(322);
 //colors
 $black: #000000;
 $white: #ffffff;

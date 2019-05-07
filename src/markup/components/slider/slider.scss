@@ -1,196 +1,176 @@
 .slider {
-    &__wrap {
-        position: relative;
+    width: 100%;
+    height: rem(724);
 
+    &__list {
         width: 100%;
+        height: 100%;
     }
 
     &__item {
-        outline: none;
+        position: relative;
 
-        @include below($tablet) {
-            height: rem(500);
-        }
-        @include below($phablet) {
-            height: rem(295);
-        }
-        @include below($mobile) {
-            height: rem(370);
-        }
-    }
+        width: 100%;
+        height: rem(724);
 
-    &__image {
-        @include below($phablet) {
-            width: 100%;
-        }
-        @include below($mobile) {
-            width: auto;
-            height: 100%;
-        }
-    }
+        background-image: url('%=static=%assets/slider/slider_image.jpg');
+        background-size: cover;
+        background-position: center bottom;
 
-    &__booking {
-        position: absolute;
-        z-index: 2;
-        top: rem(100);
-        right: 0;
+        &::before {
+            content: '';
 
-        width: rem(200);
-
-        @include below($phablet) {
-            top: rem(20);
-        }
-        @include below($mobile) {
-            top: rem(355);
+            position: absolute;
+            top: 0;
             left: 0;
 
-            width: auto;
+            width: 100%;
+            height: 100%;
+
+            opacity: .65;
+            background-color: #042450;
         }
-    }
 
-    &__caption {
-        position: absolute;
-        z-index: 2;
-        top: rem(100);
+        &::after {
+            content: '';
 
-        width: rem(380);
-        overflow: hidden;
+            position: absolute;
+            bottom: 0;
+            left: 0;
 
-        @include below($phablet) {
-            top: rem(20);
+            width: 100%;
+            height: rem(320);
 
-            width: rem(270);
+            background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
         }
-        @include below($mobile) {
-            top: 0;
 
-            width: 100vw;
-            margin: 0 rem(-10);
-        }
-    }
+        &-content {
+            position: relative;
+            z-index: 2;
 
-    &__title {
-        margin: 0;
-
-        @include below($mobile) {
-            text-align: center;
-
-            border-radius: 0;
-        }
-    }
-
-    &__action-wrap {
-        margin: 0;
-
-        @include below($mobile) {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: rem(20) 0;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-top: rem(108);
+            padding-bottom: rem(164);
 
-            background-color: rgba(0, 23, 51, .8);
-        }
-    }
-
-    &__action {
-        display: inline-flex;
-        padding: 0 rem(20);
-
-        font-family: $roboto;
-        font-size: rem(45);
-        font-weight: 100;
-        line-height: rem(45);
-        letter-spacing: .03em;
-        text-transform: uppercase;
-
-        background-color: rgba(0, 23, 51, .8);
-
-        @include below($phablet) {
-            font-size: rem(31);
-        }
-        @include below($mobile) {
-            padding: 0;
-            margin-bottom: rem(5);
-
-            font-size: rem(20);
-            line-height: normal;
-
-            background: none;
-        }
-
-        &:first-of-type {
-            padding-top: rem(20);
-            padding-bottom: rem(20);
-
-            @include below($phablet) {
-                padding-top: rem(10);
-                padding-bottom: rem(10);
+            @extend .container;
+            @include below($tablet-small) {
+                padding-top: rem(76);
+                padding-bottom: rem(196);
             }
+
             @include below($mobile) {
-                padding-top: 0;
-                padding-bottom: 0;
-                margin-right: rem(5);
+                padding-top: rem(48);
+                padding-bottom: rem(265);
             }
         }
 
-        &:last-of-type {
-            padding-top: rem(10);
-            padding-bottom: rem(20);
+        &-overtitle {
+            margin: 0;
+            margin-bottom: rem(14);
 
-            @include below($phablet) {
-                padding-top: 0;
-                padding-bottom: rem(10);
-            }
+            font-family: $avenir;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(20);
+            color: #ffffff;
+            letter-spacing: rem(6);
+            text-transform: uppercase;
+
             @include below($mobile) {
-                padding-top: 0;
-                padding-bottom: 0;
+                font-size: rem(12);
+                letter-spacing: rem(4);
+                line-height: rem(19);
             }
         }
 
-        &_color {
-            &_blue {
-                color: $sky-blue;
+        &-title {
+            display: inline-flex;
+            flex-direction: column;
+            margin: 0;
+            margin-bottom: rem(26);
+
+            font-family: $avenir;
+            font-size: rem(72);
+            font-weight: 600;
+            line-height: rem(80);
+            color: #ffffff;
+            letter-spacing: rem(-3);
+
+            @include below($mobile) {
+                font-size: rem(48);
+                letter-spacing: rem(-1.8);
+                line-height: rem(54);
+                margin-bottom: rem(31);
             }
 
-            &_yellow {
-                color: $gold-yellow;
+            span {
+                font-size: rem(48);
+                line-height: rem(54);
+                letter-spacing: rem(-1.8);
+
+                @include below($mobile) {
+                    font-size: rem(24);
+                    letter-spacing: rem(-0.8);
+                    line-height: rem(30);
+                    color: #f0c010;
+                }
+            }
+        }
+
+        &-desc {
+            margin: 0;
+
+            font-family: $lato;
+            font-size: rem(24);
+            font-weight: 400;
+            line-height: rem(34);
+            color: #ffffff;
+            letter-spacing: rem(-.4);
+
+            @include below($mobile) {
+                font-size: rem(18);
+                letter-spacing: rem(-0.3);
+                line-height: rem(24);
+            }
+
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(12);
+
+                @include below($mobile) {
+                    margin-bottom: rem(8);
+                }
+            }
+            &:last-of-type {
+                margin-bottom: rem(42);
+
+                @include below($mobile) {
+                    margin-bottom: rem(31);
+                }
+            }
+
+            &-small {
+                font-size: rem(20);
+                letter-spacing: rem(-.33);
+
+                @include below($mobile) {
+                    font-size: rem(16);
+                    line-height: rem(20);
+                }
             }
         }
     }
 
-    &__button {
-        padding: rem(15) rem(20);
-        margin: 0;
+    &__item-button {
+        width: rem(300);
 
-        font-family: $roboto;
-        font-size: rem(18);
-        color: $white;
-
-        border: 0 none;
-        border-bottom-right-radius: rem(5);
-        border-bottom-left-radius: rem(5);
-        outline: none;
-        background-color: $sky-blue;
-
-        @include below($phablet) {
-            padding-top: rem(10);
-            padding-bottom: rem(10);
-        }
-        @include below($mobile) {
-            display: none;
-        }
-    }
-
-    &__descripion {
-        display: none;
-        margin: 0;
-
-        font-family: $open_sans;
-        font-size: rem(14);
-        color: #ffffff;
+        @extend .button;
+        @extend .button_color_yellow;
 
         @include below($mobile) {
-            display: block;
+            width: 100%;
         }
     }
 }

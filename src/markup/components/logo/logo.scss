@@ -1,15 +1,18 @@
 .logo {
+    display: flex;
+    align-items: center;
+
     &__icon {
+        margin-right: rem(12);
+
+        @include below($mobile) {
+            margin: 0;
+        }
+    }
+
+    &__text {
         @include below($mobile) {
             display: none;
-        }
-
-        &_mobile {
-            display: none;
-
-            @include below($mobile) {
-                display: inline-flex;
-            }
         }
     }
 }

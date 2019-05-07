@@ -52,22 +52,27 @@
             }
         }
 
-        .request {
-            padding-top: rem(745);
+        .seo {
+            padding-top: rem(795);
 
             background: $dark-blue url('%=static=%assets/request/yaht.jpg') top no-repeat;
 
-            @include below($tablet) {
-                padding-top: rem(400);
+            @include below($tablet-small) {
+                padding-top: rem(355);
 
-                background-size: 100%;
+                background-size: 100% auto;
+
+                &::after {
+                    top: rem(306);
+                }
             }
             @include below($mobile) {
-                padding-top: rem(250);
-            }
+                padding-top: rem(302);
+                background-size: 200%;
 
-            &::before {
-                display: none;
+                &::after {
+                    top: rem(254);
+                }
             }
         }
 

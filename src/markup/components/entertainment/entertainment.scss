@@ -1,169 +1,101 @@
 .entertainment {
-    padding-top: rem(15);
+    @extend .container;
 
-    @include above($desktop) {
-        background: linear-gradient(0deg, white 45%, rgba(34, 60, 92, .5) 75%);
-    }
-    @include below($tablet) {
-        padding-top: rem(40);
-    }
-
-    .mCustomScrollBox {
-        @include below($tablet) {
-            margin: 0 rem(20);
-        }
-    }
-
-    .mCSB_scrollTools .mCSB_draggerContainer {
-        @include above($desktop) {
-            width: em(1220) !important;
-            margin: 0 auto;
-        }
-    }
-
-    .mCSB_horizontal.mCSB_inside > .mCSB_container {
-        margin-bottom: 0;
-
-        @include below($tablet) {
-            padding-top: rem(35);
-        }
-    }
-
-    .mCSB_scrollTools_horizontal {
-        @include below($tablet) {
-            top: 0;
-        }
-    }
-
-    &__title {
-        margin-top: 0;
-        margin-bottom: rem(15);
-
-        color: $white;
-
-        @include below($tablet) {
-            color: $dim-grey;
-        }
-        @include below($mobile) {
-            text-align: center;
-        }
-    }
-
-    &__slider {
-        width: 100%;
-    }
-
-    &__list {
+    &__content {
         display: flex;
-        margin-right: rem(10);
-        margin-bottom: rem(35);
+        width: calc(100% + 20px);
+        margin-right: rem(-10);
+        margin-left: rem(-10);
 
-        @include below($tablet) {
-            padding: 0;
-            margin: 0;
+        @include below($tablet-small) {
+            width: calc(100% + 16px);
+            margin-right: rem(-8);
+            margin-left: rem(-8);
+        }
+
+        @include below($mobile) {
+            flex-direction: column;
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
         }
     }
 
     &__item {
         display: flex;
         flex-direction: column;
-        flex-shrink: 0;
-        flex-basis: rem(290);
-        padding: 0 rem(10);
+        align-items: center;
+        justify-content: flex-start;
+        width: calc(33.3% - 20px);
+        margin: 0 rem(10);
+        overflow: hidden;
 
         text-decoration: none;
 
-        outline: none;
+        border-radius: rem(12);
+        background-color: #ffffff;
+        box-shadow: 0 0 rem(2) rgba(0, 0, 0, .16), inset 0 rem(-1) 0 rgba(0, 0, 0, .12), 0 0 8px rgba(0, 140, 210, 0);
 
-        @include below($tablet) {
-            flex-basis: rem(230);
-            padding: 0;
+        transition: box-shadow .3s;
 
-            &:not(:last-child) {
-                margin-right: rem(20);
+        @include below($tablet-small) {
+            width: calc(33.3% - 16px);
+            margin: 0 rem(8);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+            margin: 0;
+
+            &:not(:last-of-type) {
+                margin-bottom: rem(32);
             }
         }
 
+
         &:hover {
+            box-shadow: 0 rem(16) rem(16) rgba(0, 140, 210, .16), inset 0 rem(-1) 0 rgba(0, 0, 0, 0), 0 0 8px rgba(0, 140, 210, .08);
+
             .entertainment__name {
-                color: $rich-blue;
-            }
-        }
-    }
-
-    &__wrap {
-        position: relative;
-
-        width: rem(290);
-        margin-bottom: rem(15);
-        overflow: hidden;
-
-        border-radius: rem(5);
-
-        @include below($tablet) {
-            width: rem(230);
-            height: rem(150);
-        }
-
-        .grayscale-replaced {
-            //хак для ишака
-            transform: scale(1.1) !important;
-        }
-
-        &::after {
-            content: '';
-
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-
-            background-color: rgba(2, 183, 255, .3);
-
-            transition: background-color .5s;
-
-            @include below($mobile) {
-                background: none;
-            }
-        }
-
-        &:hover {
-            .entertainment__image {
-                filter: none;
-            }
-
-            .grayscale {
-                svg {
-                    opacity: 0;
-                }
-            }
-
-            &::after {
-                content: '';
-
-                background-color: rgba(2, 183, 255, 0);
+                color: #069edb;
             }
         }
     }
 
     &__image {
-        display: block;
         width: 100%;
+        height: rem(256);
 
-        @include below($mobile) {
-            filter: none;
+        @include below($tablet-small) {
+            height: rem(176);
         }
+
+        object-fit: cover;
     }
 
     &__name {
+        width: 100%;
+        padding-top: rem(24);
+        padding-bottom: rem(31);
         margin: 0;
 
-        font-family: $open_sans;
-        font-size: 18px;
-        font-weight: 300;
-        color: $dim-grey;
+        font-family: $avenir;
+        font-size: rem(32);
+        font-weight: 600;
+        line-height: rem(40);
+        color: #5b6f76;
+        text-align: center;
+        letter-spacing: rem(-.5);
 
-        transition: color .25s;
+        transition: color .3s;
+
+        @include below($tablet-small) {
+            padding-top: rem(16);
+            padding-bottom: rem(23);
+
+            font-size: rem(20);
+            line-height: rem(24);
+            letter-spacing: rem(-.3);
+        }
     }
 }

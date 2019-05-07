@@ -1,0 +1,74 @@
+.whatsapp {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    font-family: $avenir;
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: rem(18);
+    color: #5b6f76;
+    text-decoration: none;
+    letter-spacing: -.5px;
+
+    @include below($tablet-small) {
+        flex-direction: column;
+        padding-left: rem(28);
+        margin-right: rem(32);
+
+        &:hover {
+            .whatsapp__text-mobile {
+                &::after {
+                    bottom: rem(-4);
+                }
+            }
+        }
+    }
+
+    &__icon {
+        margin-right: rem(8);
+
+        @include below($tablet-small) {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__text-desctop {
+        @include below($tablet-small) {
+            display: none;
+        }
+    }
+
+    &__text-mobile {
+        position: relative;
+
+        font-family: $avenir;
+        font-size: rem914;
+        font-weight: 400;
+        line-height: rem(18);
+        color: #93a2a7;
+        letter-spacing: rem(-.5);
+
+        @include above($tablet-small) {
+            display: none;
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            bottom: rem(-2);
+            left: 0;
+
+            width: 100%;
+            height: rem(1);
+
+            border-bottom: rem(1) dashed #93a2a7;
+
+            transition: bottom .3s;
+        }
+    }
+}

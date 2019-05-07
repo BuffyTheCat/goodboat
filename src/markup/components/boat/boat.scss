@@ -1,353 +1,324 @@
 .boat {
-    width: rem(290);
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    height: rem(352);
     overflow: hidden;
 
-    border-radius: rem(5);
+    border-radius: rem(8);
+    background-color: #ffffff;
+    box-shadow: 0 0 rem(4) rgba(54, 64, 70, .16), 0 0 rem(8) rgba(255, 221, 0, 0);
 
-    @include below($tablet) {
-        width: rem(230);
-    }
-    @include below($mobile) {
-        width: auto;
-        padding-bottom: rem(25);
+    transition: box-shadow .3s;
 
-        border-bottom: rem(1) solid $platinum-grey;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 0;
-    }
+    &:hover {
+        box-shadow: 0 rem(16) rem(16) rgba(6, 158, 219, .16), 0 0 rem(8) rgba(6, 158, 219, .08);
 
-    .tmb-wrap {
-        opacity: 0;
-
-        transition: opacity .2s;
-    }
-
-    .brazzers-daddy {
-        img {
-            width: auto !important;
-            max-width: 120%;
-        }
-    }
-
-    .image-wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .tmb-wrap-table {
-        border-spacing: rem(1);
-
-        transform: translateY(1px);
-
-        div {
-            border-color: #00b5ff;
-
-            &.active {
-                border-color: #ffdf00;
-            }
-        }
-    }
-
-    &__images-wrap {
-        height: rem(220);
-        overflow: hidden;
-
-        @include below($tablet) {
-            display: none;
-        }
-
-        &:hover {
-            .tmb-wrap {
-                opacity: 1;
-            }
-        }
-
-        &_adaptive {
-            display: none;
-
-            @include below($tablet) {
-                position: relative;
-
-                display: block;
-                width: rem(230);
-                height: rem(180);
-                overflow: hidden;
-
-                border-radius: rem(5);
-
-                .boat__image {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-
-                    width: auto;
-                    max-width: 150%;
-                    height: auto;
-
-                    transform: translate(-50%,-50%);
-                }
-            }
-            @include below($mobile) {
-                width: auto;
-                height: rem(230);
-            }
-        }
-    }
-
-    &__image {
-        @include below($tablet) {
-            height: 100%;
-        }
-        @include below($mobile) {
+        .boat__book {
             width: 100%;
+            height: rem(56);
+            padding-top: rem(5);
+            text-indent: 0;
+        }
+
+        .boat__features {
+            margin-top: rem(7);
+        }
+
+        .boat__name {
+            color: #069edb;
+        }
+
+        .boat__thumbs {
             height: auto;
+        }
+
+        .boat__prices {
+            margin-top: rem(16);
+        }
+
+        .boat__feature {
+            display: flex;
         }
     }
 
     &__content {
-        padding: rem(15);
-
-        border-right: rem(1) solid $platinum-grey;
-        border-left: rem(1) solid $platinum-grey;
-
-        @include below($tablet) {
-            padding: 0;
-            padding-top: rem(20);
-
-            border: 0 none;
-        }
-        @include below($mobile) {
-            padding-top: rem(15);
-        }
-    }
-
-    &__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-bottom: rem(15);
-        margin-bottom: rem(15);
-
-        border-bottom: rem(1) solid $platinum-grey;
-
-        @include below($tablet) {
-            padding-bottom: 0;
-            margin-bottom: rem(10);
-
-            border: 0 none;
-        }
-        @include below($mobile) {
-            justify-content: flex-start;
-        }
-    }
-
-    &__caption {
-        max-width: rem(170);
-
-        @include below($tablet) {
-            max-width: rem(150);
-            overflow: hidden;
-
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-        @include below($mobile) {
-            margin-right: rem(15);
-        }
-    }
-
-    &__review {
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
+        height: 100%;
+    }
 
-        .boat__text {
-            padding-right: rem(5);
+    &__features {
+        display: flex;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    &__feature {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 4;
+        height: rem(24);
+        padding: rem(7) rem(10);
+        margin: 0;
+
+        font-size: rem(10);
+        line-height: normal;
+        color: #5b6f76;
+        white-space: nowrap;
+
+        border-radius: 1px;
+        background-color: rgba(205, 212, 214, .5);
+
+        @include below($tablet-small) {
+            font-size: rem(8);
         }
+
+        @include below($mobile) {
+            font-size: rem(10);
+        }
+
+        &:not(:last-of-type) {
+            margin-right: rem(2);
+        }
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+
+    &__prices {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: rem(20);
+    }
+
+
+    &__thumbs {
+        position: relative;
+
+        display: flex;
+        flex-shrink: 9999;
+        height: rem(208);
+        overflow: hidden;
+        overflow: hidden;
+
+        border-radius: rem(8);
+    }
+
+    &__thumbs-navs {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        opacity: 0;
+    }
+
+    &__thumbs-item {
+        width: 100%;
+        height: 100%;
+        margin-right: rem(1);
+
+        border-bottom: rem(5) solid #00b6ff;
+        cursor: pointer;
+        background: none;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &--active {
+            border-color: #ffdf00;
+        }
+    }
+
+    .stars-rate {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 50%;
+        margin: 0;
+
+        .stars {
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    &__main-info {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        width: 100%;
+    }
+
+    &__book {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 100%;
+        height: 0;
+        padding-top: rem(0);
+        margin-top: rem(-8);
+
+        font-family: $lato;
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: rem(20);
+        color: #042450;
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: rem(-.1);
+        text-indent: -9999px;
+
+        cursor: pointer;
+        background-color: #71c8e9;
+
+        transition: height .3s, background-color .3s;
+
+        &:hover {
+            background-color: #ffdd00;
+        }
+    }
+
+    &__info {
+        z-index: 2;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 4;
+        flex-shrink: 0;
+        padding: rem(20) rem(16);
+        padding-bottom: rem(26);
+        overflow: hidden;
+
+        text-decoration: none;
+
+        border-radius: 8px;
+        background-color: #ffffff;
+
+        @include below($tablet-small) {
+            padding: rem(14) rem(8);
+            padding-bottom: rem(26);
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+
+        object-fit: cover;
     }
 
     &__name {
-        margin-top: 0;
-        margin-bottom: rem(5);
-        overflow: hidden;
-
-        font-family: $open_sans;
-        font-size: rem(18);
-        color: $dim-grey;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-
-        @include below($tablet) {
-            margin-bottom: 0;
-
-            color: $rich-blue;
-        }
-    }
-
-    &__place {
         display: flex;
-        align-items: flex-end;
-
-        @include below($tablet) {
-            display: none;
-        }
-    }
-
-    &__place-icon {
-        margin-right: rem(5);
-
-        fill: $ash-grey;
-    }
-
-    &__place-text {
-        margin-left: auto;
-    }
-
-    &__text {
-        margin: 0;
-        overflow: hidden;
-
-        font-family: $open_sans;
-        font-size: rem(12);
-        color: $ash-grey;
-        white-space: nowrap;
-        text-decoration: none;
-        text-overflow: ellipsis;
-
-        @include below($tablet) {
-            font-size: rem(14);
-        }
-    }
-
-    &__rating {
-        padding: 0;
-        margin-bottom: rem(10);
-
-        @include below($tablet) {
-            margin-bottom: 0;
-        }
-    }
-
-    &__rating-text {
-        @include below($tablet) {
-            display: none;
-        }
-    }
-
-    &__body {
-        display: flex;
-        flex-wrap: nowrap;
-
-        @include below($tablet) {
-            flex-direction: column;
-        }
-    }
-
-    &__price-item {
         width: 50%;
+        margin: 0;
 
-        @include below($tablet) {
-            display: flex;
-            align-items: flex-end;
-            width: auto;
-        }
+        font-family: $avenir;
+        font-size: rem(20);
+        font-weight: 600;
+        line-height: rem(24);
+        color: #143250;
+        text-decoration: none;
+        letter-spacing: rem(-.5);
+
+        transition: color .3s;
     }
 
     &__price {
-        font-family: $open_sans;
-        font-size: rem(18);
-        color: $dim-grey;
-        text-transform: uppercase;
-
-        @include below($tablet) {
-            position: relative;
-
-            padding-right: rem(10);
-            margin-right: rem(5);
-
-            &::after {
-                content: '-';
-
-                position: absolute;
-                top: 50%;
-                right: 0;
-
-                color: $ash-grey;
-
-                transform: translateY(-50%);
-
-                will-change: transform;
-            }
-        }
-    }
-
-    &__price-light {
-        font-weight: 300;
-        color: $ash-grey;
-        text-transform: lowercase;
-
-        @include below($tablet) {
-            font-size: rem(14);
-            font-weight: normal;
-        }
-    }
-
-    &__footer {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        @include below($tablet) {
-            display: none;
-        }
-    }
-
-    &__button {
-        display: inline-flex;
-        justify-content: center;
-        flex-basis: 50%;
-
-        text-decoration: none;
-    }
-
-    &__sticker {
-        position: absolute;
-        z-index: 2;
-        top: rem(5);
-        right: rem(3);
-
-        display: none;
-        padding: rem(8) rem(13);
+        width: 100%;
         margin: 0;
 
-        border-radius: rem(5);
-        background-color: $yellow;
-    }
+        @include below($tablet-small) {
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    .port {
-        display: none;
-    }
+        dt {
+            width: rem(160);
+            margin: 0;
 
-    &_service-detailed {
-        margin: 0 auto;
+            font-family: $avenir;
+            font-size: rem(14);
+            font-weight: 400;
+            line-height: rem(20);
+            color: #93a2a7;
+            text-align: left;
+            letter-spacing: rem(-.1);
 
-        @include below($mobile) {
-            .boat__sticker {
-                display: block;
-            }
-
-            .port {
-                display: none;
+            @include below($tablet-small) {
+                width: auto;
             }
         }
 
-        .port {
+        dd {
+            margin: 0;
+
+            font-family: $avenir;
+            font-size: rem(20);
+            font-weight: 600;
+            line-height: rem(24);
+            color: #93a2a7;
+            text-align: left;
+            letter-spacing: rem(-.5);
+
+            span {
+                font-family: $rouble;
+                font-weight: 400;
+            }
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: rem(12);
+        }
+    }
+
+
+    &_reserved {
+        .boat__content {
+            opacity: .5;
+        }
+
+        .boat__content {
+            opacity: .5;
+        }
+
+        &::before {
+            content: 'Арендована';
+
+            position: absolute;
+            z-index: 2;
+            top: rem(27);
+            left: rem(-55);
+
             display: flex;
-        }
-        .boat__price-item:last-of-type {
-            margin-bottom: rem(10);
+            align-items: center;
+            justify-content: center;
+            width: rem(200);
+            height: rem(30);
+
+            font-size: rem(12);
+            line-height: rem(12);
+            color: #143250;
+            text-align: center;
+            text-transform: uppercase;
+
+            background-color: #ffdd00;
+            transform: rotate(-45deg);
         }
     }
 }

@@ -1,40 +1,36 @@
 <div class="popular {{className}}">
-    <div class="container">
-        <div class="popular__content">
-            <div class="popular__caption">
-                <h2 class="title title_color_grey title_size_big popular__title">Популярное</h2>
-                <div class="popular__filter js-popular-filter">
-                    <a href="javascript:void(0);" class="popular__item popular__item_active">Парусные</a>
-                    <a href="javascript:void(0);" class="popular__item">Моторные</a>
-                    <a href="javascript:void(0);" class="popular__item">Гидроциклы</a>
-                    <a href="javascript:void(0);" class="popular__item">Для рыбалки</a>
-                    <a href="javascript:void(0);" class="popular__item">Премиум класс</a>
-                    <a href="javascript:void(0);" class="popular__item">Скоростные</a>
-                </div>
-                <div class="select select_content popular__location">
-                    <select name="location" id="" class="js-select-popular">
-                        <option value="0">Во всех портах г. Сочи</option>
-                        <option value="">Порт Адлерский</option>
-                        <option value="">Порт Хостинский</option>
-                        <option value="">Яхтклуб Имеретинский другой</option>
-                        <option value="">Порт г. Сочи</option>
-                        <option value="">Порт Лазаревский</option>
-                        <option value="">Гавань Сталина</option>
-                        <option value="">Порт Дагомыса</option>
-                        <option value="">Яхтклуб Секретный</option>
-                        <option value="">Порт Новый Сочи</option>
-                    </select>
-                </div>
-            </div>
-            <div class="catalog popular__catalog">
-                {{> boat/boat}}
-                {{> boat/boat}}
-                {{> boat/boat}}
-                {{> boat/boat}}
-            </div>
-            <div class="popular__more">
-                <a href="javascript:void(0);" class="more-button">Смотреть все варианты яхт</a>
+    <div class="popular__content">
+        <div class="popular__caption">
+            <h2 class="popular__title">Каталог катеров и яхт</h2>
+            <div class="popular__filter">
+                <label class="popular__filter-item">
+                    <input type="radio" name="catalogueFilter" value="">
+                    <span>Моторные катера</span>
+                </label>
+                <label class="popular__filter-item">
+                    <input type="radio" name="catalogueFilter" value="">
+                    <span>Парусные яхты</span>
+                </label>
+                <label class="popular__filter-item">
+                    <input type="radio" name="catalogueFilter" value="">
+                    <span>Яхты-люкс</span>
+                </label>
+                <label class="popular__filter-item">
+                    <input type="radio" name="catalogueFilter" value="">
+                    <span>Теплоходы</span>
+                </label>
             </div>
         </div>
+        <div class="catalog popular__catalog">
+            {{> boat/boat}}
+            {{> boat/boat}}
+            {{> boat/boat}}
+            {{> boat/boat}}
+            {{> boat/boat}}
+            {{> boat/boat}}
+            {{> boat/boat}}
+            {{> boat/boat}}
+        </div>
+        <a href="javascript:void(0);" class="popular__more">Показать ещё 40 яхт</a>
     </div>
 </div>

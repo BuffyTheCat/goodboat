@@ -1,9 +1,14 @@
 <div class="request {{requestModifier}}">
-    <div class="container">
-        <div class="request__title">
-            <h2>У вас остались вопросы?</h2>
-            <p>Сотрудники компании с удовольствием ответят на любые интересующие вас вопросы.<br>Всегда приятно общаться с хорошим человеком лично. Укажите номер своего телефона, и <span>мы свяжемся с вами в течении трех минут!</span></p>
+    <h4 class="request__title">Остались вопросы?</h4>
+    <p class="request__subtitle">Оставьте заявку и мы перезвоним вам <br> <span>в течении 5 минут</span></p>
+    <form class="request__form" action="">
+        <div class="request__input-wrap">
+            <input class="request__input request__name" type="text" name="name" value="" placeholder="Ваше имя">
         </div>
-        {{> form/form}}
-    </div>
+        <div class="request__input-wrap">
+            <input class="request__input request__tel" type="tel" name="tel" value="" placeholder="Ваш телефон ">
+        </div>
+        <p class="request__desc">Оставляя контактную информацию, вы соглашаетесь на обработку персональных данных</p>
+        <button class="request__submit" type="submit" name="button">Отправить заявку</button>
+    </form>
 </div>

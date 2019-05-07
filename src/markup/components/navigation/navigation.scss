@@ -17,14 +17,18 @@
 
         display: inline-flex;
         align-items: center;
-        padding: rem(25) 0;
-        margin: 0 rem(22);
+        padding: rem(24) 0;
+        margin: 0;
 
         cursor: pointer;
 
         @include below($tablet) {
             padding: 0;
             margin: 0;
+        }
+
+        &:not(:last-of-type) {
+            margin-right: rem(40);
         }
 
         &::before {
@@ -107,10 +111,13 @@
     }
 
     &__link {
-        font-family: $open_sans;
+        font-family: $avenir;
         font-size: rem(14);
+        font-weight: 600;
         color: $dim-grey;
         text-decoration: none;
+
+        cursor: pointer;
 
         transition: color .25s;
     }
@@ -143,9 +150,9 @@
         display: block;
         padding: rem(6) rem(20);
 
-        font-family: $open_sans;
+        font-family: $avenir;
         font-size: rem(14);
-        font-weight: 300;
+        font-weight: 400;
         color: $rich-blue;
         text-decoration: none;
 

@@ -138,9 +138,9 @@ $('.popup__close').on('click', function () {
 
 $('.popup__tab').on('click', function () {
     $(this)
-    .addClass('active').siblings().removeClass('active')
-    .closest('.popup__body').find('.popup__content').removeClass('active')
-    .eq($(this).index()).addClass('active');
+        .addClass('active').siblings().removeClass('active')
+        .closest('.popup__body').find('.popup__content').removeClass('active')
+        .eq($(this).index()).addClass('active');
 });
 
 $('.popup__button-next').on('click', function () {

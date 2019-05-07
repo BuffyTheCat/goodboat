@@ -3,6 +3,8 @@ $('.my-flipster').flipster({
     style: 'carousel',
     loop: true,
     spacing: -0.3,
-    buttons: true,
+    touch: true,
+    buttons: $(document).width() > 960,
+    nav: $(document).width() < 960,
     scrollwheel: false
 });

@@ -1,64 +1,207 @@
 .request {
     position: relative;
 
-    padding-top: rem(100);
+    @include below($tablet-small) {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-    background-color: $dark-blue;
+    @include below($mobile) {
+        margin-bottom: rem(96);
+    }
 
     &__title {
-        h2 {
-            position: relative;
+        margin: 0;
+        margin-bottom: rem(8);
 
-            margin-top: 0;
-            margin-bottom: rem(50);
+        font-family: $avenir;
+        font-size: rem(36);
+        font-weight: 600;
+        line-height: rem(44);
+        color: #ffffff;
+        letter-spacing: rem(-1.2);
 
-            font-family: $open_sans;
-            font-size: rem(30);
-            font-weight: 300;
-            color: $white;
-            text-align: center;
+        @include below($tablet-small) {
+            width: 100%;
+            margin-bottom: rem(4);
 
-            @include below($mobile) {
-                margin-bottom: rem(33);
+            font-size: rem(48);
+            font-weight: 600;
+            line-height: rem(54);
+        }
 
-                font-size: rem(24);
-            }
+        @include below($mobile) {
+            font-size: rem(32);
+            font-weight: 600;
+            line-height: rem(44);
+        }
+    }
 
-            &::after {
-                content: '';
+    &__subtitle {
+        margin: 0;
+        margin-bottom: rem(16);
 
-                position: absolute;
-                bottom: rem(-12);
-                left: 50%;
+        font-family: $lato;
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: rem(24);
+        color: #93a2a7;
+        letter-spacing: rem(-.2);
 
-                width: rem(580);
-                height: rem(1);
-                margin-left: - rem(290);
+        @include below($tablet-small) {
+            width: 100%;
+        }
 
-                background: $white;
 
-                @include below($mobile) {
-                    background: none;
-                }
+        span {
+            color: #069edb;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        @include below($tablet-small) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        @include below($mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__desc {
+        width: rem(280);
+        margin: 0;
+        margin-bottom: rem(16);
+
+        font-family: $lato;
+        font-size: rem(10);
+        font-weight: 400;
+        line-height: rem(16);
+        color: #cdd4d6;
+
+        @include below($tablet-small) {
+            order: 5;
+            width: 100%;
+        }
+
+        @include below($mobile) {
+            order: 0;
+        }
+    }
+
+    &__input-wrap {
+        position: relative;
+
+        width: rem(320);
+        margin-bottom: rem(32);
+
+        @include below($tablet-small) {
+            display: flex;
+            align-items: flex-end;
+            height: rem(48);
+            margin-bottom: rem(16);
+        }
+
+        label.error {
+            position: absolute;
+            top: calc(100% + 2px);
+            left: 0;
+
+            font-family: $lato;
+            font-size: rem(14);
+            font-weight: 400;
+            line-height: rem(20);
+            color: #ff0000;
+            letter-spacing: rem(-.1);
+
+            @include below($tablet-small) {
+                font-size: rem(10);
             }
         }
 
-        p {
-            margin-top: 0;
-            margin-bottom: rem(30);
-
-            font-family: $open_sans;
-            font-size: rem(14);
-            font-weight: 300;
-            color: $rackley-blue;
-            text-align: center;
-
-            span {
-                font-family: $open_sans;
-                font-size: rem(14);
-                font-weight: 300;
-                color: $gold-yellow;
+        &:nth-of-type(1) {
+            @include below($tablet-small) {
+                margin-right: rem(16);
             }
+
+            @include below($mobile) {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+
+        &:nth-of-type(2) {
+            @include below($tablet-small) {
+                width: rem(200);
+                margin-right: auto;
+            }
+
+            @include below($mobile) {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+
+        font-family: $lato;
+        font-size: rem(14);
+        font-weight: 400;
+        line-height: rem(20);
+        color: #cdd4d6;
+        letter-spacing: rem(-.1);
+
+        border: none;
+        border-bottom: rem(1) solid #93a2a7;
+        outline: none;
+        background-color: transparent;
+
+        &::-webkit-input-placeholder {
+            font-family: $lato;
+            font-size: rem(14);
+            font-weight: 400;
+            line-height: rem(20);
+            color: #cdd4d6;
+            letter-spacing: rem(-.1);
+        }
+
+        &::-moz-placeholder {
+            font-family: $lato;
+            font-size: rem(14);
+            font-weight: 400;
+            line-height: rem(20);
+            color: #cdd4d6;
+            letter-spacing: rem(-.1);
+        }
+
+        &:-ms-input-placeholder {
+            font-family: $lato;
+            font-size: rem(14);
+            font-weight: 400;
+            line-height: rem(20);
+            color: #cdd4d6;
+            letter-spacing: rem(-.1);
+        }
+    }
+
+    &__submit {
+        width: rem(280);
+
+        @extend .button;
+        @extend .button_color_yellow;
+        @include below($tablet-small) {
+            width: rem(180);
+        }
+
+        @include below($mobile) {
+            width: 100%;
         }
     }
 }

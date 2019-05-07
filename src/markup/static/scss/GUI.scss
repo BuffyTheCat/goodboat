@@ -486,12 +486,18 @@
 }
 
 .button {
-    padding: rem(10) 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: rem(10);
 
     font-family: $open_sans;
     font-size: rem(18);
     font-weight: 300;
     text-align: center;
+    text-decoration: none;
 
     border: 0 none;
     border-radius: 0;
@@ -503,12 +509,20 @@
 
     &_color {
         &_yellow {
-            color: $prussian-blue;
+            color: #042450;
+            font-family: $lato;
+            font-size: rem(24);
+            font-weight: 400;
+            letter-spacing: rem(-0.2);
+            line-height: rem(24);
+            height: rem(64);
+            box-shadow: 0 16px 16px rgba(255, 221, 0, 0.2), 0 0 8px rgba(255, 221, 0, 0.08);
+            border-radius: 8px;
+            background-color: #f0c010;
 
-            background-color: $gold-yellow;
-
-            &:hover {
-                background-color: $white;
+            @include below($tablet-small) {
+                font-size: rem(16);
+                height: rem(48);
             }
         }
 

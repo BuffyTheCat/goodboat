@@ -1,53 +1,112 @@
 .copyright {
+    position: relative;
+
     padding-top: rem(20);
     padding-bottom: rem(25);
 
     background-color: $white;
 
-    &__content {
-        display: flex;
-        justify-content: space-between;
+    &::before {
+        content: '';
+
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+
         width: 100%;
+        height: rem(227);
+
+        background-image: url('%=static=%general/ships.png');
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: 100% auto;
+        background-size: cover;
     }
 
-    &__content-left {
-        @include below($phablet) {
-            display: flex;
-            flex-direction: column;
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        @include below($tablet-small) {
+            flex-wrap: wrap;
             align-items: flex-start;
         }
     }
 
-    &__item {
-        @include below($phablet) {
-            &:not(:last-child) {
-                margin-bottom: rem(20);
+    &__content-left {
+        display: flex;
+        align-items: center;
+
+        @include below($tablet-small) {
+            margin-bottom: rem(33);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+            flex-direction: column;
+            margin-bottom: rem(38);
+            align-items: flex-start;
+        }
+
+        .logo {
+            position: relative;
+
+            margin-right: rem(37);
+
+            @include below($mobile) {
+                margin-right: 0;
+                margin-bottom: rem(32);
+
+                .logo__text {
+                    display: block;
+                }
             }
+
+            &::after {
+                content: '';
+
+                position: absolute;
+                top: 0;
+                right: rem(-23);
+
+                width: rem(1);
+                height: 100%;
+
+                background-color: #93a2a7;
+
+                @include below($mobile) {
+                    height: rem(1);
+                    width: 100%;
+                    left: 0;
+                    top: auto;
+                    right: auto;
+                    bottom: rem(-16);
+                }
+            }
+        }
+
+        .copyright__text {
+            font-family: $lato;
+            font-size: rem(12);
+            font-weight: 400;
+            line-height: rem(18);
+            color: #93a2a7;
         }
     }
 
     &__text {
+        font-family: $lato;
         font-size: rem(12);
-        color: $dim-grey;
-        text-align: left;
-    }
+        font-weight: 400;
+        line-height: rem(18);
+        color: #93a2a7;
 
-    &__goodboat {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: rem(30);
-        margin-bottom: rem(13);
-    }
-
-    &__logo {
-        display: inline-flex;
-        margin-right: rem(5);
-
-        text-decoration: none;
-
-        @include below($phablet) {
-            align-items: center;
+        @include below($mobile) {
+            font-size: rem(16);
+            line-height: rem(24);
+            letter-spacing: rem(-0.2);
         }
     }
 
@@ -65,58 +124,115 @@
         }
     }
 
-    &__social-block {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding-right: rem(15);
-
-        @include below($phablet) {
-            padding-right: 0;
-        }
-    }
-
     &__call-block {
-        @include below($mobile) {
-            display: none;
-        }
-    }
-
-    &__call-number {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: rem(30);
-        margin-bottom: rem(19);
+        flex-direction: column;
 
-        @include below($phablet) {
-            flex-direction: column;
-            align-items: flex-end;
+        @include below($tablet-small) {
+            margin-bottom: rem(26);
+        }
+
+        @include below($mobile) {
+            width: 100%;
+            margin-bottom: rem(39);
         }
     }
 
     &__call-text {
-        @include below($phablet) {
-            display: none;
+        margin-bottom: rem(4);
+
+        @include below($mobile) {
+            margin-bottom: rem(8);
         }
     }
 
     &__phone {
-        margin-left: rem(20);
-
-        font-size: rem(19);
-        color: $dim-grey;
-        text-align: left;
+        font-family: $lato;
+        font-size: rem(20);
+        font-weight: 800;
+        line-height: rem(18);
+        color: #93a2a7;
         text-decoration: none;
-        letter-spacing: .03em;
+
+        @include below($mobile) {
+            font-size: rem(32);
+            line-height: normal;
+        }
     }
 
-    &__description {
-        display: none;
-        margin: 0;
+    .socials {
+        flex-direction: column;
+        align-items: flex-start;
 
-        @include below($phablet) {
-            display: block;
+        @include below($mobile) {
+            width: 100%;
+            margin-bottom: rem(40);
+
+            .socials__text  {
+                display: inline;
+                font-size: rem(16);
+                line-height: rem(24);
+                letter-spacing: rem(-0.2);
+            }
+        }
+
+        .socials__text {
+            margin: 0;
+            margin-bottom: rem(2);
+
+            font-family: $lato;
+            font-size: rem(12);
+            font-weight: 400;
+            line-height: rem(18);
+            color: #93a2a7;
+        }
+
+        .socials__item {
+            &:not(:last-of-type) {
+                @include below($tablet-small) {
+                    margin-right: rem(8);
+                }
+
+                @include below($mobile) {
+                    margin-right: rem(14);
+                }
+
+                @include below($mobile-small) {
+                    margin-right: rem(8);
+                }
+            }
+        }
+
+        .socials__icon {
+            @include below($tablet-small) {
+                width: rem(32);
+                height: rem(32);
+            }
+
+            @include below($mobile) {
+                width: rem(50);
+                height: rem(50);
+            }
+        }
+    }
+
+    &__trend-pro-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__trend-pro {
+        font-family: $lato;
+        font-size: rem(20);
+        font-weight: 800;
+        line-height: rem(18);
+        color: #93a2a7;
+        text-decoration: none;
+        text-transform: uppercase;
+        line-height: normal;
+
+        @include below($mobile) {
+            font-size: rem(32);
         }
     }
 
@@ -124,10 +240,14 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        margin-right: rem(50);
 
-        @include below($phablet) {
-            display: none;
+        @include below($tablet-small) {
+            margin-right: rem(72);
+        }
+
+        @include below($mobile) {
+            margin-right: 0;
+            width: 100%;
         }
 
         &_adaptive {

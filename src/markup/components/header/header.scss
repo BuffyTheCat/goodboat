@@ -3,8 +3,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100%;
 
+        @extend .container;
         @include below($tablet) {
             height: rem(62);
         }
@@ -14,21 +14,11 @@
     }
 
     &__top {
+        border-bottom: rem(1) solid #cdd4d6;
         background-color: #ffffff;
 
         @include below($tablet) {
             border-bottom: rem(1) solid #dae1dd;
-        }
-
-        .socials {
-            display: none;
-
-            @include below($tablet) {
-                display: inline-flex;
-            }
-            @include below($mobile) {
-                display: none;
-            }
         }
 
         .navigation {
@@ -36,15 +26,43 @@
                 display: none;
             }
         }
+    }
 
-        &_main {
-            border-bottom: rem(1) solid #dae1dd;
+    &__callback {
+        position: relative;
 
-            @include below($mobile) {
-                .phone {
-                    order: 0;
-                }
+        font-family: $avenir;
+        font-size: rem(14);
+        font-weight: 400;
+        line-height: rem(18);
+        color: #008cd2;
+        text-decoration: none;
+        letter-spacing: -.5px;
+
+        @include below($tablet-small) {
+            margin-left: rem(28);
+
+            &::after {
+                content: '';
+
+                position: absolute;
+                bottom: rem(-2);
+                left: 0;
+
+                width: 100%;
+                height: rem(1);
+
+                border-bottom: rem(1) dashed #008cd2;
+
+                transition: bottom .3s;
             }
+        }
+    }
+
+    &__call {
+        @include below($tablet-small) {
+            display: flex;
+            flex-direction: column;
         }
     }
 
@@ -53,39 +71,27 @@
 
         color: $white;
 
-        background-color: $dark-blue;
+        background-color: $white;
 
-        @include below($tablet) {
-            padding: 0;
-
-            border-bottom: rem(1) solid #dae1dd;
-            background-color: $white;
-        }
         @include below($mobile) {
-            .header__content {
-                display: none;
+            padding: rem(10) 0;
+        }
+
+
+        .whatsapp {
+            margin-right: rem(44);
+        }
+
+        .phone {
+            margin-right: rem(16);
+
+            @include below($tablet-small) {
+                margin-right: 0;
             }
         }
 
-        .socials {
-            @include below($tablet) {
-                display: none;
-            }
-        }
-
-        .navigation {
-            display: none;
-
-            @include below($tablet) {
-                display: flex;
-            }
-        }
 
         &_transparent {
-            background-color: transparent;
-
-
-
             .header__breadcrumbs {
                 display: none;
             }
@@ -98,16 +104,49 @@
 
     &__logo {
         display: inline-flex;
+        align-items: center;
+
+        p {
+            position: relative;
+
+            margin: 0;
+            margin-left: rem(32);
+
+            font-family: $avenir;
+            font-size: rem(18);
+            font-weight: 600;
+            line-height: rem(22);
+            color: #5b6f76;
+            letter-spacing: -.6px;
+
+            &::after {
+                content: '';
+
+                position: absolute;
+                top: 50%;
+                left: rem(-16);
+
+                width: rem(1);
+                height: rem(32);
+
+                background-color: #bcc5c8;
+                transform: translateY(-50%    );
+            }
+        }
     }
 
     &__socials {
-        margin-left: auto;
+        margin-right: auto;
+
+        @include below($mobile) {
+            display: none;
+        }
     }
 
     &__menu {
         display: none;
 
-        @include below($mobile) {
+        @include below($tablet-small) {
             display: inline-flex;
             flex-direction: column;
             align-items: center;

@@ -1,36 +1,27 @@
 <header id="header" class="header {{headerModifier}} {{className}}">
     <div class="header__top {{headerTopModifier}}">
-        <div class="container">
-            <div class="header__content">
-                <div class="header__logo">
-                    {{> logo/logo}}
-                </div>
-                {{> socials/socials socials.main}}
-                {{> navigation/navigation}}
-                {{> phone/phone}}
-                <button type="button" class="header__menu js-open-menu">
-                    {{Icon iconName='menu-mobile' className='header__menu-icon'  iconWidth='40' iconHeight='30'}}
-                </button>
+        <div class="header__content">
+            <div class="header__logo">
+                {{> logo/logo}}
+                <p>Аренда яхт</p>
             </div>
+            {{> navigation/navigation}}
+            <button type="button" class="header__menu js-open-menu">
+                {{Icon iconName='menu-mobile' className='header__menu-icon'  iconWidth='40' iconHeight='30'}}
+            </button>
         </div>
     </div>
     <div class="header__bottom {{headerBottomModifier}}">
-        <div class="container">
-            <div class="header__content">
-                <div class="header__breadcrumbs">
-                    {{> breadcrumbs/breadcrumbs}}
-                </div>
-
-                <div class="header__socials">
-                    {{> socials/socials socials.main}}
-                </div>
-                {{> navigation/navigation}}
+        <div class="header__content">
+            <div class="header__socials">
+                {{> socials/socials socials.main}}
             </div>
-        </div>
-        <div class="header__breadcrumbs header__breadcrumbs_mobile">
-            {{> breadcrumbs/breadcrumbs}}
+            {{> whatsapp/whatsapp}}
+            <div class="header__call">
+                {{> phone/phone}}
+                <a href="javascript:void(0);" data-fancybox data-src="#requestForm" class="header__callback">Заказать звонок</a>
+            </div>
         </div>
     </div>
     {{> menu-mobile/menu-mobile}}
-    {{> message-dir-button/message-dir-button}}
 </header>

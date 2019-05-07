@@ -1,164 +1,161 @@
 <p align="right">
-<a href="README.md">English description</a> | Описание на русском
+English description | <a href="README_RU.md">Описание на русском</a>
 </p>
 
 # ![Tars](https://raw.githubusercontent.com/artem-malko/artwork/master/tars/logo.png)
 
 [![Downloads][downloads-image]][npm-url] [![Mac/Linux Build Status](https://img.shields.io/travis/tars/tars/master.svg?label=Mac%20OSX%20%26%20Linux&style=flat-square)](https://travis-ci.org/tars/tars) [![Windows Build status](https://img.shields.io/appveyor/ci/artem-malko/tars/master.svg?label=Windows&style=flat-square)](https://ci.appveyor.com/project/artem-malko/tars/branch/master) [![Gitter](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg?style=flat-square)](https://gitter.im/tars/tars?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-TARS — сборщик frontend'а любой сложности, основанный на [Gulp](http://gulpjs.com/). Облегчает и ускоряет процесс разработки веб-сайтов/приложений, делая работу приятной и продуктивной.
-Подойдет как командам, так и отдельному разработчику. TARS решает большинство рутинных дел, связанных с веб-разработкой, чтобы вы получали больше удовольствия от работы.
+TARS is a builder for modern frontend of any complexity, which is based on [Gulp.js](http://gulpjs.com/). It facilitates and accelerates process of web-development. TARS will be suitable for teams and individual developers. It solves the most routine cases associated with web-development and brings you more pleasure from work.
 
-TARS — сборщик-фреймворк, включающий в себя набор gulp-тасков, предоставляющий возможность легкого расширения (создания новых тасков) и модифицирования уже существующих, предоставляет удобную архитектуру хранения тасков и вотчеров в проекте.
+TARS is a framework for gulp, including a set of gulp-tasks. It allows for easy expansion (creating new tasks) and customization (modification of existing tasks),  provides comfortable architecture for tasks and watchers storage in the project. 
 
-Для того, чтобы не скачивать и не ставить все пакеты для TARS каждый раз, был создан [TARS-CLI](https://github.com/tars/tars-cli). Сам TARS — не npm-пакет. Такое решение было принято, чтобы каждый мог максимально комфортно кастомизировать сборщик под себя. CLI — просто удобный интерфейс над сборщиком, который содержит в себе все зависимости для TARS.
+To bypass dependencies installation for every TARS project, [TARS-CLI](https://github.com/tars/tars-cli) was created. As such, TARS is not a npm-package by itself. This decision was made so that everyone could comfortably customize the builder for themselves. TARS-CLI is just a simple builder interface, which includes all dependencies for TARS.
 
-**Желательно пользоваться именно CLI-версией для разработки.**
+**It is strongly recommended to use TARS-CLI for development.**
 
-Вы можете установить TARS-CLI через npm. Больше информации в [репозитории проекта](https://github.com/tars/tars-cli).
+You can install TARS-CLI via NPM. More info in [project's repository](https://github.com/tars/tars-cli).
 
-**Обратите внимание, документация, которая находится в ветке «master» соответствует последней версии TARS. Если у вас используется другая версия, прошу открыть соответствующий релиз и смотреть документацию там! Кроме того, в корневой папке вашего проекта всегда есть папка с документацией, которая на 100% подходит к используемой версии TARS!**
+**Attention! All docs from branch "master" are written for the last version of TARS. If you have another version of TARS, please, open appropriate release and take docs from there. Besides, you have all docs, which are 100% compatible with your project in the root folder of your project!**
 
-## Основные фичи
+## Basic features
 
-Ниже перечислена только малая часть особенностей, на самом деле их гораздо больше)
+Listed below are just a little part of the features. In fact builder has much more.
 
-* [Jade](http://jade-lang.com/), [Pug](https://pugjs.org/api/getting-started.html) или [Handlebars](http://handlebarsjs.com/) на выбор в качестве html-шаблонизатора. Также можно использовать обычный html. Подробности [здесь](/docs/ru/html-processing.md).
-* [Webpack](https://webpack.github.io) (вместе с [Hot Module Replacing](https://webpack.github.io/docs/hot-module-replacement.html)) или простая конкатинация JavaScript-кода в один файл.
-* Использование json (а точнее js-объекта, который может быть описан в json) для передачи данных в шаблоны (опционально, но очень крутая штука, которая позволит избавиться от копипаста). Подробнее [тут](/docs/ru/html-processing.md#%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F%D0%BC%D0%B8-%D0%B8-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8-%D0%B2-handlebars).
-* [CLI-утилита](https://github.com/tars/tars-cli) и **автообновление проекта**.
-* Вы можете ипользовать ES6 (и некоторые фичи из ES7) уже сегодня. Подробнее в [документации](/docs/ru/js-processing.md).
-* [SCSS (SASS)](http://sass-lang.com/), [LESS](http://www.lesscss.org/) или [Stylus](http://learnboost.github.io/stylus/) в качестве препроцессора для css. Также в комплекте идет небольшой набор миксинов. Доступны sourcemaps. При выборе scss в качестве препроцессора, вы можете использовать как расширение scss, так и sass + можете миксовать их использование. Подробности [здесь](/docs/ru/css-processing.md). В комплекте идет [PostCSS](https://github.com/postcss/postcss) с [autoprefixer'ом](https://github.com/postcss/autoprefixer). Также очень [легко подключить дополнительные плагины для PostCSS](/docs/ru/options.md#postcss).
-* Никаких внешних библиотек и плагинов (кроме [html5shiv](https://ru.wikipedia.org/wiki/Html5_Shiv)). И да, это фича, так как вы вольны сами выбирать, какие библиотеки использовать. Доступны sourcemaps для JavaScript.
-* Используется модуль [chokidar](https://github.com/paulmillr/chokidar) для вотчинга файлов.
-* Расшариванием верстки с вашего компьютера во внешний веб, опционально. Ну и конечно же livereload в браузере (и не только локально) + графический интерфейс к панели управления устройствами, на которые расшаривается верстка.
-* [Можно легко добавлять новые таски и вотчеры](/docs/ru/tasks-and-watchers.md). Есть примеры того, как создать и использовать новый таск или вотчер внутри TARS. Это позволяет действительно легко интегрировать TARS в ваш проект или таски из вашего проекта в TARS.
-* Умная работа с изображениями. В первую очередь с вектором (svg). Больше не будет ада при верстке сайтов для экранов с высокой плотностью пикселей. Для работы с SVG поддерживаются два подхода: [SVG-спрайты](docs/en/svg-processing.md#svg-спрайты) и [SVG-symbols](docs/ru/svg-processing.md#svg-symbols).
-* Несколько режимов сборки (обычная, с минифицированными файлами, с хешем в названии css- и js-файлов для выкладки в продакшн).
-* Создание архива с готовой сборкой.
+* [Jade](http://jade-lang.com/), [Pug](https://pugjs.org/api/getting-started.html) or [Handlebars](http://handlebarsjs.com/) as html templater. You can also use a regular html. Read more [in docs](/docs/en/html-processing.md).
+* [Webpack](https://webpack.github.io) (with [Hot Module Replacing](https://webpack.github.io/docs/hot-module-replacement.html)) or simple JavaScript code concatenation into one bundle.
+* Using json (js-object actually, which can be described in json) to transfer data in templates (optional, but it is a very cool thing that will let you get rid of copypaste). Read more [in docs](/docs/en/html-processing.md#%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%BC%D0%BE%D0%B4%D1%83%D0%BB%D1%8F%D0%BC%D0%B8-%D0%B8-%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8-%D0%B2-handlebars).
+* [TARS-CLI](https://github.com/tars/tars-cli) and **auto update of your project**.
+* You can use ES6 (and some experimental features from ES7) right now. [More info](/docs/en/js-processing.md).
+* [SCSS (SASS)](http://sass-lang.com/), [LESS](http://www.lesscss.org/) or [Stylus](http://learnboost.github.io/stylus/) as a preprocessor for css. Also it includes a small set of mixins. Sourcemaps are included. You can use .scss and .sass extension then scss is selected as preprocessor. You can use .scss and .sass files together. Read more [in docs](/docs/en/css-processing.md). [PostCSS](https://github.com/postcss/postcss) with [autoprefixer](https://github.com/postcss/autoprefixer) is supported by default and it is really easy [to use additional plugins for PostCSS](/docs/en/options.md#postcss).
+* No external libraries or plugins (except [html5shiv](https://ru.wikipedia.org/wiki/Html5_Shiv)). Yes, this is a feature because you can choose which library to use. Sourcemaps for JavaScript are included.
+* [Chokidar](https://github.com/paulmillr/chokidar) module is used to watch files
+* Optional markup sharing from your local computer to the world. And of course it has livereload in browser (and not just locally) + GUI control panel for devices, to which markup is shared.
+* [You can easily add new tasks and watchers](/docs/en/tasks-and-watchers.md). There are several examples of how to create and use a new task or watcher inside the TARS. Thereby, it is really easy to add any task from your builder to TARS or integrate TARS into your project.
+* Smart work with images. First of all with vector (svg). There will be no more hell with markup for screens with high pixel density. TARS supports two workflows of working with SVG: [SVG-sprites](docs/en/svg-processing.md#svg-sprites) and [SVG-symbols](docs/en/svg-processing.md#svg-symbols).
+* Several modes of assembly (common, with minified files, with hash in the title of css and js files for deployment).
+* Creating archive with a complete build.
 
-В 2015 году я выступал с докладом о TARS на конференции DUMP. Можно ознакомиться с [видео с выступления](http://www.youtube.com/watch?v=JZ3thYdmQ3E&index=2&list=PLRdS-n5seLRrvvG0yU3uoYPKQDXvVW2nn), на котором рассказывается об одной из первых версий TARS, но оно все еще актуально.
+## Documentation
 
-## Документация
+It is important! All examples in documentation use the default settings.
 
-Важно! Все примеры в документации используют настройки по умолчанию.
+* [File structure](/docs/en/file-structure.md)
+* [Working with tasks and watchers](/docs/en/tasks-and-watchers.md)
+* [TARS Options](/docs/en/options.md)
+* [Plugins configuration](/docs/en/plugins-options.md)
+* [Html](/docs/en/html-processing.md)
+* [Css](/docs/en/css-processing.md)
+* [Js](/docs/en/js-processing.md)
+* [Working with images](/docs/en/images-processing.md)
+* [Working with fonts and misc-files](/docs/en/fonts-and-misc.md)
+* [Usage script (scenarios)](/docs/en/scenarios.md)
+* [Upgrade guide](/docs/en/update-guide.md)
+* [FAQ](/docs/en/faq.md)
 
-* [Файловая структура](/docs/ru/file-structure.md)
-* [Работа с тасками и вотчерами](/docs/ru/tasks-and-watchers.md)
-* [Опции TARS](/docs/ru/options.md)
-* [Конфигурирование плагинов](/docs/ru/plugins-options.md)
-* [Html](/docs/ru/html-processing.md)
-* [Css](/docs/ru/css-processing.md)
-* [Js](/docs/ru/js-processing.md)
-* [Работа с изображениями](/docs/ru/images-processing.md)
-* [Работа со шрифтами и misc-файлами](/docs/ru/fonts-and-misc.md)
-* [Сценарии использования](/docs/ru/scenarios.md)
-* [Руководство по обновлению](/docs/ru/update-guide.md)
-* [Руководство для контрибуторов](/docs/ru/for-contributors.md)
-* [FAQ](/docs/ru/faq.md)
 
-## Установка
+## Installation
 
-**Обращаем ваше внимание, что предпочтительно использовать [TARS-CLI](https://github.com/tars/tars-cli). Это удобнее, нагляднее, занимает меньше места. При работе с TARS через TARS-CLI, все дальнейшие шаги по установке не требуются!**
+**Attention, [TARS-CLI](https://github.com/tars/tars-cli) is the preferred
+ way to work with TARS. It is faster and more comfortable to work with TARS-CLI. In case of using TARS with TARS-CLI all installation steps are not necessary!**
 
-Необходимо [установить `Node.js`](http://nodejs.org/) версии >= 4.x.x Если вы используете Node.js версии 5.x.x, убедитесь, что вы используете npm версии 3.x.x и выше. В противном случае обновите npm:
+You need to [install `Node.js`](http://nodejs.org/) with version equal to 4.x.x and higher. If you use Node.js version 5.x.x, please, make sure, that you use npm version 3.x.x and higher. Otherwise update npm by using command:
 
 ```bash
 npm i -g npm
 ```
 
-Пользователям Windows необходимо выполнить еще пару шагов:
+For Windows you have to do some more steps:
 
-* перейти в C:\Program Files (x86)\nodejs или C:\Program Files\nodejs в cmd.exe или в любом другом терминале. Путь зависит от того, куда Node.js был установлен;
-* запустите команду `npm install npm@latest`.
+* navigate to C:\Program Files (x86)\nodejs or C:\Program Files\nodejs via cmd.exe or any available terminal. The path depends on how Node.js was installed;
+* run command `npm install npm@latest`.
 
-Возможно потребуются права суперюзера.
+If you get a **Permission denied** or **Error: EACCES** error, you should run the previous command again in sudo (as Administrator for Windows).
 
-Далее необходимо установить gulp глобально. (Возможно потребуются права суперюзера или администратора)
+Next you need to install gulp globally. (You may need rights of superuser or administrator).
 
 ```shell
 npm install -g gulp
 ```
 
-[Скачайте TARS](../../../tars/archive/master.zip) и распакуйте в рабочую директорию у себя на компьютере.
-Затем устанавливаем зависимости. Команда запускается из папки с файлами TARS (обычно это tars-master).
+[Download TARS](../../../tars/archive/master.zip) and unzip it in the working directory. Then install dependencies. Command is run from a folder with TARS files (usually it is a tars-master).
 
 ```shell
 npm install
 ```
 
-Если не все зависимости были установлены, то последнюю операцию нужно повторить.
+If not all of the dependencies have been installed, the last operation must be repeated. 
 
-После установки всех зависимостей необходимо открыть tars-config (подробное описание опций [здесь](/docs/ru/options.md)) и настроить проект под себя.
-В конфиге вы можете выбрать шаблонизатор, css-препроцессор, использование уведомлений, имена папок для различной статики и т.д.
-После настройки проекта, выполняем следующую команду:
+After installing of all dependencies you need to open tars-config (detailed description of the options are [here](/docs/en/options.md)) and set up the project for yourself. In that config file, you can select the templater, css-preprocessor, using the notifications, folder names for different static and etc. After setting up the project, execute the following command:
 
 ```shell
 gulp init
 ```
 
-**Обращаем ваше внимание, что предпочтительно использовать [TARS-CLI](https://github.com/tars/tars-cli). [Команда инициализации доступна в TARS-CLI](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md#tars-init).**
+**Attention, [TARS-CLI](https://github.com/tars/tars-cli) is the preferred 
+way to work with TARS. It is faster and more comfortable to work with TARS-CLI. [Init command is available in TARS-CLI too](https://github.com/tars/tars-cli/blob/master/docs/en/commands.md#tars-init).**
 
-Данная команда создаст базовую файловую структуру, подтянет таски для выбранных вами шаблонизатора и css-препроцессора.
-
-Все готово, можно колбасить :)
-
-
-## Основные команды
-
-**Обращаем ваше внимание, что предпочтительно использовать [TARS-CLI](https://github.com/tars/tars-cli). Это удобнее, нагляднее, занимает меньше места! Все команды, описанные ниже, [доступны в TARS-CLI](https://github.com/tars/tars-cli/blob/master/docs/ru/commands.md), используйте именно его для работы над проектом. TARS запускался через Gulp, когда не было CLI.**
-
-`gulp init` — Инициализирует проект с заданными опциями в tars-config. Создает файловую структуру.
-
-`gulp re-init` — **команда будет удалена в одном из следующих релизов** Переинициализирует проект с заданными опциями в tars-config. Предлагается использовать данную команду, если вы инициализировали проект с неверными опциями. **Внимание, при переинициализации все папки и файлы удаляются.**
-
-`gulp` или `gulp build` — делает сборку проекта. Подключаются не минимизированные файлы. Тип сборки зависит от переданных ключей вместе с этой командой. Доступные ключи:
-
-* `--min` – в html подключаются минимизированные файлы.
-* `--release` – в html подключаются минимизированные файлы, в названии которых есть hash. Данный режим полезен, если вы напрямую выкладываете верстку на сервер. 
-
-`gulp dev` — инициализация сборщика в режиме разработки. Создается dev-версия проекта, без всех минификаций. Также запускает вотчеры за файлами проекта. Доступные ключи:
-
-* `--lr` – инициализация livereload (живая презагрузка страницы при изменениях в файлах проекта), если он включен в конфиге проекта.
-* `--tunnel` – инициализация проекта с расшариванием верстки во внешний веб.
-
-Ссылка будет указана в консоли. Также будет указана ссылка на панель управления устройствами, на которые расшарена верстка.
-
-`gulp build-dev` — генерация dev-версии проекта без вотчеров.
-
-Ключи, доступные при любом режиме сборки:
-
-* `--ie8` – включить в сборку стили для ie8.
-* `--ie9` – включить в сборку стили для ie9.
-* `--ie` – включить в сборку стили для ie9 и ie8.
+This command will create the basic file structure, download tasks for selected templater and css-preprocessor. 
+Everything is ready, get to work! :)
 
 
-## Документация
+## Basic commands
 
-Важно! Все примеры в документации используют настройки по умолчанию.
+**Attention, [TARS-CLI](https://github.com/tars/tars-cli) is the preferred
+ way to work with TARS. It is faster and more comfortable to work with TARS-CLI. All commands are available and [described in TARS-CLI](https://github.com/tars/tars-cli/blob/master/docs/en/commands.md), so use only TARS-CLI for working with your project. TARS used Gulp to start tasks, when CLI was not created.**
 
-* [Файловая структура](/docs/ru/file-structure.md)
-* [Работа с тасками и вотчерами](/docs/ru/tasks-and-watchers.md)
-* [Опции TARS](/docs/ru/options.md)
-* [Конфигурирование плагинов](/docs/ru/plugins-options.md)
-* [Html](/docs/ru/html-processing.md)
-* [Css](/docs/ru/css-processing.md)
-* [Js](/docs/ru/js-processing.md)
-* [Работа с изображениями](/docs/ru/images-processing.md)
-* [Работа со шрифтами и misc-файлами](/docs/ru/fonts-and-misc.md)
-* [Сценарии использования](/docs/ru/scenarios.md)
-* [Руководство по обновлению](/docs/ru/update-guide.md)
-* [Руководство для контрибуторов](/docs/ru/for-contributors.md)
-* [FAQ](/docs/ru/faq.md)
+`gulp init` — initializes project with the specified settings in the tars-config. Creates a file structure.
+
+`gulp re-init` — **This command is deprecated!** reinitialize the project with specified settings in the tars-config. It is advised to use this command if you initialize the project with incorrect options. **Attention, files from pages and static folder will be deleted.**
+
+`gulp` or `gulp build` — build project. Non-minimized files are used by default. Build type depends on command parameters.
+Available parameters:
+
+* `--min` – minimized files are connected to html.
+* `--release` – minimized  files are connected to html whose names have hash. This mode is useful if you are trying to directly deploy ready markup to the server.
+
+`gulp dev` — initialize of builder in development mode. Dev-version of the project is created  without any minifications. It also launches watchers for project files.
+Available parameters:
+
+* `--lr` – initialize livereload (live page reloads with changes in project files), if it is included in the configuration of the project.
+* `--tunnel` – initialize project with markup sharing to the external web.
+
+The link will be shown in the console. There also will be a link to the control panel for devices to which markup is shared.
+
+`gulp build-dev` — generation of dev-version of the project without watchers.
+
+These parameters are available in any mode of assembly:
+
+* `--ie8` – to include in the build styles for ie8.
+* `--ie9` – to include in the build styles for ie9.
+* `--ie` – to include in the build styles for ie8 and ie9.
 
 
-## Последние изменения
+## Documentation
 
-Все последние изменения доступны по ссылке: [История изменений](/docs/ru/changelog.md).
+It is important! All examples in documentation use the default settings.
 
-По всем вопросам можно писать в [gitter](https://gitter.im/tars/tars?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) или на почту [tars.builder@gmail.com](mailto:tars.builder@gmail.com)
+* [File structure](/docs/en/file-structure.md)
+* [Working with tasks and watchers](/docs/en/tasks-and-watchers.md)
+* [TARS Options](/docs/en/options.md)
+* [Plugins configuration](/docs/en/plugins-options.md)
+* [Html](/docs/en/html-processing.md)
+* [Css](/docs/en/css-processing.md)
+* [Js](/docs/en/js-processing.md)
+* [Working with images](/docs/en/images-processing.md)
+* [Working with fonts and misc-files](/docs/en/fonts-and-misc.md)
+* [Usage script (scenarios)](/docs/en/scenarios.md)
+* [Upgrade guide](/docs/en/update-guide.md)
+* [FAQ](/docs/en/faq.md)
 
-Баги и фича-реквесты сюда: [issues](https://github.com/tars/tars/issues/new).
+
+## Last changes
+
+All recent changes are available here: [changelog](/docs/en/changelog.md).
+
+If you have a question you can write in [gitter](https://gitter.im/tars/tars?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) or mail [tars.builder@gmail.com](mailto:tars.builder@gmail.com)
+
+Bugs and feature-request here: [issues](https://github.com/tars/tars/issues/new).
 
 [downloads-image]: http://img.shields.io/npm/dm/tars-cli.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/tars-cli

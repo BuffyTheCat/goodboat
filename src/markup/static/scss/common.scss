@@ -42,34 +42,23 @@ textarea {
     }
 
     &__slider {
-        margin-top: rem(-52);
 
-        @include below($tablet) {
-            margin-top: 0;
-        }
-
-        @include below($mobile) {
-            padding-bottom: rem(250);
-        }
     }
 
     &__entertainment {
         position: relative;
         z-index: 1;
 
-        margin-top: rem(-220);
-        margin-bottom: rem(110);
+        margin-top: rem(-68);
+        margin-bottom: rem(90)!important;
 
-        @include below($tablet) {
-            margin-top: 0;
-            margin-bottom: rem(70);
+		@include below($tablet-small) {
+            margin-bottom: rem(74)!important;
         }
 
         @include below($mobile) {
-            margin-bottom: rem(45);
-            padding-bottom: rem(45);
-
-            border-bottom: rem(1) solid $platinum-grey;
+            margin-top: rem(-197)!important;
+            margin-bottom: rem(74)!important;
         }
     }
 
@@ -104,16 +93,22 @@ textarea {
 }
 
 .container {
-    width: rem(1220);
+    width: rem(1180);
     margin: 0 auto;
 
     @include below($tablet) {
-        width: auto;
-        margin: 0 rem(10);
+        width: calc(100% - 32px);
+        margin: 0 rem(16);
     }
 
     @include below($mobile) {
-        margin: 0 rem(10);
+        width: calc(100% - 32px);
+        margin: 0 rem(16);
+    }
+
+    @include below($mobile-small) {
+        width: calc(100% - 16px);
+        margin: 0 rem(8);
     }
 }
 
@@ -402,13 +397,57 @@ textarea {
 
 .flipster {
     margin-bottom: rem(25);
-    padding-bottom: rem(25);
+    padding-bottom: rem(10);
+
+	@include below($tablet) {
+		padding-bottom: rem(25);
+	}
 
     &__item {
-        img{
-            border-radius: rem(5);
+
+        &__content {
+            border-radius: rem(18);
+            overflow: hidden;
         }
     }
+
+	&__nav {
+		position: absolute!important;
+	    bottom: 0!important;
+	    left: 50%!important;
+	    transform: translateX(-50%)!important;
+	    margin: 0!important;
+	    z-index: 999;
+	    display: flex;
+
+		&__item {
+			margin: 0!important;
+
+
+			&:not(:last-of-type) {
+				margin-right: rem(8)!important;
+			}
+
+			&--current {
+				.flipster__nav__link {
+					background-color: #dc1414;
+				}
+			}
+		}
+
+		&__link {
+			width: rem(8);
+			height: rem(8);
+			background-color: #e6e8ea;
+			text-indent: -999px;
+			padding: 0!important;
+			border-radius: 50%;
+
+			&::after {
+				display: none;
+			}
+		}
+	}
 
     &__item--future-1,
     &__item--past-1 {
@@ -426,9 +465,9 @@ textarea {
                 bottom: rem(5);
                 left: 0;
 
-                background-color: rgba(8, 86, 194, 0.2);
-                -webkit-transition: background-color .5s;
-                transition: background-color .5s;
+                background-image: linear-gradient(to right, #042450 0%, rgba(4, 36, 80, 0.5) 100%);
+                transition:background-image .5s;
+                opacity: 0.6;
             }
         }
     }
@@ -448,9 +487,8 @@ textarea {
                 bottom: rem(5);
                 left: 0;
 
-                background-color: rgba(8, 86, 194, 0.4);
-                -webkit-transition: background-color .5s;
-                transition: background-color .5s;
+                background-image: linear-gradient(to right, #042450 0%, rgba(4, 36, 80, 0.5) 100%);
+                transition: background-image .5s;
             }
         }
     }
