@@ -1,9 +1,12 @@
 .gallery {
     margin-top: rem(-250);
-    margin-bottom: rem(60);
+    margin-bottom: rem(106);
 
     @include below($tablet) {
         margin-top: rem(-150);
+    }
+    @include below($mobile) {
+        margin-bottom: rem(80);
     }
 
     .flipster__button--prev,
@@ -124,7 +127,6 @@
 
     &__title {
         position: relative;
-        @extend .container;
 
         margin-top: 0;
         margin-bottom: rem(28);
@@ -137,12 +139,14 @@
         text-align: center;
         letter-spacing: rem(-1.8);
 
+        @extend .container;
         @include below($mobile) {
+            margin-bottom: rem(32);
+
             font-size: rem(36);
             line-height: rem(44);
             text-align: left;
             letter-spacing: rem(-1.2);
-            margin-bottom: rem(32);
         }
     }
 

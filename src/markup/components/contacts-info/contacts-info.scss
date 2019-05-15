@@ -1,145 +1,59 @@
 .contacts-info {
-    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    top: rem(48);
+    left: 0;
 
-    border-radius: rem(5);
+    display: flex;
+    flex-direction: column;
 
-    @include above($phablet) {
-        background-color: rgba(0, 16, 41, .1);
-    }
-    @include below($phablet) {
-        border-radius: 0;
-        border-bottom-right-radius: rem(5);
-        border-bottom-left-radius: rem(5);
-    }
-    @include below($mobile) {
-        margin: 0 rem(-10);
-    }
+    @extend .container;
+    @include above($tablet-small) {
+        left: 50%;
 
-    &__content {
-        padding: rem(20) rem(20) rem(30) rem(20);
-
-        border-radius: rem(5);
-        background-color: $white;
-
-        @include below($phablet) {
-            border-radius: 0;
-            border-bottom-right-radius: rem(5);
-            border-bottom-left-radius: rem(5);
-        }
-        @include below($mobile) {
-            padding: rem(20) rem(10);
-        }
-    }
-
-    &__title {
-        margin-top: 0;
-        margin-bottom: rem(20);
-
-        color: $rich-blue;
-
-        @include below($mobile) {
-            display: none;
-        }
+        transform: translateX(-50%);
     }
 
     &__item {
-        padding-top: rem(20);
-        padding-left: rem(20);
+        width: rem(396);
+        padding: rem(24) rem(16);
 
-        font-family: $open_sans;
+        border-radius: rem(12);
+        background-color: $white;
+        box-shadow: 0 0 rem(2) rgba(0, 0, 0, .16), inset 0 rem(-1) 0 rgba(0, 0, 0, .12);
 
-        border-top: rem(1) solid $platinum-grey;
-
-        &:not(:last-child) {
-            margin-bottom: rem(20);
+        @include below($tablet-small) {
+            width: rem(359);
+        }
+        @include below($mobile) {
+            width: 100%;
         }
 
-        &:first-child {
-            @include below($mobile) {
-                padding-top: 0;
-
-                border-top: 0 none;
-            }
-        }
-    }
-
-    &__caption {
-        position: relative;
-
-        margin-top: 0;
-        margin-bottom: rem(10);
-
-        font-size: rem(18);
-        font-weight: normal;
-        color: $black;
-
-        &::before {
-            content: '';
-
-            position: absolute;
-            top: 50%;
-            left: rem(-20);
-
-            transform: translateY(-50%);
-
-            will-change: transform;
-
-            @include bg($marker-contacts);
+        &:not(:last-of-type) {
+            margin-bottom: rem(16);
         }
     }
 
-    &__text,
-    &__mark {
+    &__adress {
+        margin: 0;
+        margin-bottom: rem(8);
+
+        font-family: $avenir;
+        font-size: rem(24);
+        font-weight: 600;
+        line-height: rem(30);
+        color: #5b6f76;
+        letter-spacing: rem(-.8);
+    }
+
+    &__time {
         margin: 0;
 
-        font-size: rem(14);
-        font-weight: 300;
-        line-height: rem(25);
-        color: $dim-grey;
-    }
-
-    &__mark {
-        color: $forest-green;
-    }
-
-    &__footer {
-        padding: rem(20);
-
-        @include below($mobile) {
-            padding: rem(20) 0;
-            margin: 0 rem(10);
-
-            border-top: rem(1) solid $platinum-grey;
-        }
-    }
-
-    &__footer-item {
-        &:not(:last-child) {
-            margin-bottom: rem(15);
-        }
-    }
-
-    &__footer-text,
-    &__footer-link {
-        margin: 0;
-
-        font-family: $open_sans;
-        font-size: rem(14);
-        font-weight: 300;
-    }
-
-    &__footer-text {
-        color: $black;
-    }
-
-    &__footer-link {
-        margin-left: rem(10);
-
-        color: $white;
-        text-decoration: underline;
-
-        @include below($mobile) {
-            color: $rich-blue;
-        }
+        font-family: $lato;
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: rem(24);
+        color: #93a2a7;
+        letter-spacing: rem(-.2);
     }
 }

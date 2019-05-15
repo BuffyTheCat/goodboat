@@ -509,7 +509,7 @@
 
     &_color {
         &_yellow {
-            color: #042450;
+            color: #004080;
             font-family: $lato;
             font-size: rem(24);
             font-weight: 400;
@@ -519,10 +519,17 @@
             box-shadow: 0 16px 16px rgba(255, 221, 0, 0.2), 0 0 8px rgba(255, 221, 0, 0.08);
             border-radius: 8px;
             background-color: #f0c010;
+            transition: all .3s;
+            will-change: transform;
 
             @include below($tablet-small) {
                 font-size: rem(16);
                 height: rem(48);
+            }
+
+            &:hover {
+                background-color: #71c8e9;
+                box-shadow: 0 16px 16px rgba(6, 158, 219, 0.16), 0 0 8px rgba(6, 158, 219, 0.08);
             }
         }
 

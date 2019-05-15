@@ -39,30 +39,45 @@
         text-decoration: none;
         letter-spacing: -.5px;
 
-        @include below($tablet-small) {
-            margin-left: rem(28);
+        &::after {
+            content: '';
 
+            position: absolute;
+            bottom: rem(-2);
+            left: 0;
+
+            width: 100%;
+            height: rem(1);
+
+            border-bottom: rem(1) dashed #008cd2;
+
+            transition: bottom .3s;
+        }
+
+        &:hover {
             &::after {
-                content: '';
-
-                position: absolute;
-                bottom: rem(-2);
-                left: 0;
-
-                width: 100%;
-                height: rem(1);
-
-                border-bottom: rem(1) dashed #008cd2;
-
-                transition: bottom .3s;
+                bottom: rem(-4);
             }
         }
     }
 
     &__call {
+        display: flex;
+        align-items: center;
+
         @include below($tablet-small) {
+            position: relative;
+
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
+            padding-left: rem(32);
+
+            .phone__icon {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         }
     }
 
@@ -179,5 +194,10 @@
                 display: flex;
             }
         }
+    }
+
+    .socials__icon {
+        width: rem(24);
+        height: rem(24);
     }
 }

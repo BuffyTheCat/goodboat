@@ -41,6 +41,14 @@
             align-items: center;
             justify-content: center;
         }
+
+        .seo {
+            padding-top: rem(24);
+        }
+
+        .seo__logo {
+            display: none;
+        }
     }
 
     &_main {
@@ -68,6 +76,7 @@
             }
             @include below($mobile) {
                 padding-top: rem(302);
+
                 background-size: 200%;
 
                 &::after {

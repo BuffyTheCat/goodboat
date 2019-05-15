@@ -8,3 +8,10 @@ $('.js-slider').slick({
     arrows: false,
     dots: false
 });
+
+// let typewriter = new Typewriter('.slider__item-title', {
+//     strings: ['Hello', 'World'],
+//     autoStart: true,
+//     loop: true,
+//     delay: 70
+// });

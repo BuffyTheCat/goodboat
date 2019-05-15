@@ -19,8 +19,7 @@
         background-image: url('%=static=%general/ships.png');
         background-repeat: no-repeat;
         background-position: bottom;
-        background-size: 100% auto;
-        background-size: cover;
+        background-size: 1920px auto;
     }
 
     &__content {
@@ -42,12 +41,11 @@
         @include below($tablet-small) {
             margin-bottom: rem(33);
         }
-
         @include below($mobile) {
-            width: 100%;
             flex-direction: column;
-            margin-bottom: rem(38);
             align-items: flex-start;
+            width: 100%;
+            margin-bottom: rem(38);
         }
 
         .logo {
@@ -77,12 +75,13 @@
                 background-color: #93a2a7;
 
                 @include below($mobile) {
-                    height: rem(1);
-                    width: 100%;
-                    left: 0;
                     top: auto;
                     right: auto;
                     bottom: rem(-16);
+                    left: 0;
+
+                    width: 100%;
+                    height: rem(1);
                 }
             }
         }
@@ -106,7 +105,7 @@
         @include below($mobile) {
             font-size: rem(16);
             line-height: rem(24);
-            letter-spacing: rem(-0.2);
+            letter-spacing: rem(-.2);
         }
     }
 
@@ -131,16 +130,64 @@
         @include below($tablet-small) {
             margin-bottom: rem(26);
         }
-
         @include below($mobile) {
             width: 100%;
             margin-bottom: rem(39);
         }
     }
 
-    &__call-text {
-        margin-bottom: rem(4);
+    &__wrap {
+        display: flex;
+        align-items: center;
 
+        @include below($mobile) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__callback {
+        position: relative;
+
+        display: flex;
+        margin-left: rem(10);
+
+        font-family: $avenir;
+        font-size: rem(14);
+        font-weight: 400;
+        line-height: rem(18);
+        color: #008cd2;
+        text-decoration: none;
+        letter-spacing: -.5px;
+
+        @include above($tablet-small) {
+            top: rem(-3);
+        }
+        @include below($mobile) {
+            margin-left: 0;
+        }
+
+        &::after {
+            content: '';
+
+            position: absolute;
+            bottom: rem(-2);
+            left: 0;
+
+            width: 100%;
+            height: rem(1);
+
+            border-bottom: rem(1) dashed #008cd2;
+
+            transition: bottom .3s;
+        }
+    }
+
+    &__call-text {
+        @include below($tablet-small) {
+            padding-right: rem(10);
+            margin-bottom: rem(6);
+        }
         @include below($mobile) {
             margin-bottom: rem(8);
         }
@@ -168,11 +215,12 @@
             width: 100%;
             margin-bottom: rem(40);
 
-            .socials__text  {
+            .socials__text {
                 display: inline;
+
                 font-size: rem(16);
                 line-height: rem(24);
-                letter-spacing: rem(-0.2);
+                letter-spacing: rem(-.2);
             }
         }
 
@@ -185,6 +233,14 @@
             font-weight: 400;
             line-height: rem(18);
             color: #93a2a7;
+
+            @include below($mobile) {
+                margin-bottom: rem(8);
+
+                font-size: rem(16);
+                line-height: rem(24);
+                letter-spacing: rem(-.2);
+            }
         }
 
         .socials__item {
@@ -192,11 +248,9 @@
                 @include below($tablet-small) {
                     margin-right: rem(8);
                 }
-
                 @include below($mobile) {
                     margin-right: rem(14);
                 }
-
                 @include below($mobile-small) {
                     margin-right: rem(8);
                 }
@@ -208,7 +262,6 @@
                 width: rem(32);
                 height: rem(32);
             }
-
             @include below($mobile) {
                 width: rem(50);
                 height: rem(50);
@@ -226,10 +279,10 @@
         font-size: rem(20);
         font-weight: 800;
         line-height: rem(18);
+        line-height: normal;
         color: #93a2a7;
         text-decoration: none;
         text-transform: uppercase;
-        line-height: normal;
 
         @include below($mobile) {
             font-size: rem(32);
@@ -242,12 +295,11 @@
         align-items: flex-start;
 
         @include below($tablet-small) {
-            margin-right: rem(72);
+            margin-right: rem(80);
         }
-
         @include below($mobile) {
-            margin-right: 0;
             width: 100%;
+            margin-right: 0;
         }
 
         &_adaptive {

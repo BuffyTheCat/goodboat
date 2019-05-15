@@ -9,10 +9,10 @@
 
         @include below($tablet-small) {
             width: calc(100% + 16px);
+            margin-top: rem(-100);
             margin-right: rem(-8);
             margin-left: rem(-8);
         }
-
         @include below($mobile) {
             flex-direction: column;
             width: 100%;
@@ -42,10 +42,11 @@
             width: calc(33.3% - 16px);
             margin: 0 rem(8);
         }
-
         @include below($mobile) {
             width: 100%;
             margin: 0;
+
+            border-radius: rem(8);
 
             &:not(:last-of-type) {
                 margin-bottom: rem(32);
@@ -66,8 +67,13 @@
         width: 100%;
         height: rem(256);
 
+        border-radius: rem(16);
+
         @include below($tablet-small) {
             height: rem(176);
+        }
+        @include below($mobile) {
+            border-radius: rem(8);
         }
 
         object-fit: cover;
@@ -81,7 +87,7 @@
 
         font-family: $avenir;
         font-size: rem(32);
-        font-weight: 600;
+        font-weight: 400;
         line-height: rem(40);
         color: #5b6f76;
         text-align: center;

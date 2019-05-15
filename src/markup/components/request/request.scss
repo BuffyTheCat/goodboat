@@ -5,7 +5,6 @@
         display: flex;
         flex-wrap: wrap;
     }
-
     @include below($mobile) {
         margin-bottom: rem(96);
     }
@@ -29,7 +28,6 @@
             font-weight: 600;
             line-height: rem(54);
         }
-
         @include below($mobile) {
             font-size: rem(32);
             font-weight: 600;
@@ -39,7 +37,7 @@
 
     &__subtitle {
         margin: 0;
-        margin-bottom: rem(16);
+        margin-bottom: rem(32);
 
         font-family: $lato;
         font-size: rem(16);
@@ -50,6 +48,9 @@
 
         @include below($tablet-small) {
             width: 100%;
+        }
+        @include below($mobile) {
+            margin-bottom: rem(4);
         }
 
 
@@ -67,9 +68,9 @@
             flex-wrap: wrap;
             align-items: flex-start;
         }
-
         @include below($mobile) {
             flex-direction: column;
+            width: 100%;
         }
     }
 
@@ -88,9 +89,9 @@
             order: 5;
             width: 100%;
         }
-
         @include below($mobile) {
-            order: 0;
+            order: 3;
+            margin: 0;
         }
     }
 
@@ -128,7 +129,6 @@
             @include below($tablet-small) {
                 margin-right: rem(16);
             }
-
             @include below($mobile) {
                 width: 100%;
                 margin-right: 0;
@@ -140,10 +140,10 @@
                 width: rem(200);
                 margin-right: auto;
             }
-
             @include below($mobile) {
                 width: 100%;
                 margin-right: 0;
+                margin-bottom: rem(48);
             }
         }
     }
@@ -199,9 +199,9 @@
         @include below($tablet-small) {
             width: rem(180);
         }
-
         @include below($mobile) {
             width: 100%;
+            margin-bottom: rem(16);
         }
     }
 }

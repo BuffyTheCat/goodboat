@@ -1,4 +1,3 @@
-
 $('.my-flipster').flipster({
     style: 'carousel',
     loop: true,

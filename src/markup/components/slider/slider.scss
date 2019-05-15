@@ -14,8 +14,8 @@
         height: rem(724);
 
         background-image: url('%=static=%assets/slider/slider_image.jpg');
-        background-size: cover;
         background-position: center bottom;
+        background-size: cover;
 
         &::before {
             content: '';
@@ -59,7 +59,6 @@
                 padding-top: rem(76);
                 padding-bottom: rem(196);
             }
-
             @include below($mobile) {
                 padding-top: rem(48);
                 padding-bottom: rem(265);
@@ -80,8 +79,8 @@
 
             @include below($mobile) {
                 font-size: rem(12);
-                letter-spacing: rem(4);
                 line-height: rem(19);
+                letter-spacing: rem(4);
             }
         }
 
@@ -99,22 +98,25 @@
             letter-spacing: rem(-3);
 
             @include below($mobile) {
-                font-size: rem(48);
-                letter-spacing: rem(-1.8);
-                line-height: rem(54);
                 margin-bottom: rem(31);
+
+                font-size: rem(48);
+                line-height: rem(54);
+                letter-spacing: rem(-1.8);
             }
 
             span {
+                margin-top: rem(10);
+
                 font-size: rem(48);
                 line-height: rem(54);
+                color: #f0c010;
                 letter-spacing: rem(-1.8);
 
                 @include below($mobile) {
                     font-size: rem(24);
-                    letter-spacing: rem(-0.8);
                     line-height: rem(30);
-                    color: #f0c010;
+                    letter-spacing: rem(-.8);
                 }
             }
         }
@@ -131,8 +133,8 @@
 
             @include below($mobile) {
                 font-size: rem(18);
-                letter-spacing: rem(-0.3);
                 line-height: rem(24);
+                letter-spacing: rem(-.3);
             }
 
 
@@ -144,15 +146,16 @@
                 }
             }
             &:last-of-type {
-                margin-bottom: rem(42);
+                margin-bottom: rem(48);
 
                 @include below($mobile) {
                     margin-bottom: rem(31);
                 }
             }
 
-            &-small {
+            &_small {
                 font-size: rem(20);
+                line-height: rem(34);
                 letter-spacing: rem(-.33);
 
                 @include below($mobile) {
@@ -168,7 +171,6 @@
 
         @extend .button;
         @extend .button_color_yellow;
-
         @include below($mobile) {
             width: 100%;
         }

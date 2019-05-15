@@ -5,7 +5,7 @@ $('.stars').rateYo({
     rating: $(this).attr('data-rateyo-rating'),
     starWidth: '16px',
     normalFill: '#DDDEDE',
-    ratedFill: '#FFE000',
+    ratedFill: '#f0c010',
     fullStar: true,
     readOnly: true
 });

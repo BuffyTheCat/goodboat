@@ -6,18 +6,25 @@ var myMap,
     myPlacemarkLoo;
 
 function init() {
-    if ( $(window).width() > 768 ) {
+    if ( $(window).width() > 960 ) {
         myMap = new window.ymaps.Map('map', {
             center: [43.564220, 39.657404],
             zoom: 11,
             controls: ['zoomControl']
         });
-    } else if ( $(window).width() < 720 ) {
+    } else if ( $(window).width() < 960 ) {
         myMap = new window.ymaps.Map('map', {
             center: [43.564220, 39.657404],
             zoom: 9,
-            controls: ['zoomControl']
+            controls: []
         });
+        var pixelCenter = myMap.getGlobalPixelCenter(43.564220, 39.657404);
+        pixelCenter = [
+            pixelCenter[0],
+            pixelCenter[1] - 150
+        ];
+        var geoCenter = myMap.options.get('projection').fromGlobalPixels(pixelCenter, myMap.getZoom());
+        myMap.setCenter(geoCenter);
     } else {
         myMap = new window.ymaps.Map('map', {
             center: [43.564220, 39.657404],

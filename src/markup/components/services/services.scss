@@ -3,7 +3,7 @@
 
     padding-top: rem(150);
     padding-bottom: rem(338);
-    margin-top: rem(-32);
+    margin-top: rem(32);
 
     background-image: url('%=static=%assets/services/services-bkg.jpg');
     background-repeat: no-repeat;
@@ -15,8 +15,6 @@
         padding-bottom: 0;
         margin-top: rem(64);
     }
-
-
     @include below($tablet-small) {
         overflow: hidden;
 
@@ -25,15 +23,15 @@
         background-size: auto 100%;
     }
     @include below($mobile) {
+        height: rem(820);
         padding-top: rem(84);
         padding-bottom: 0;
-        height: rem(865);
+        margin-top: rem(80);
 
         background-color: #0c91d6;
         background-image: url('%=static=%assets/services/services-bkg_mobile.jpg');
-        background-size: auto 100%;
         background-position: left;
-        margin-top: rem(80);
+        background-size: auto 100%;
     }
 
     &__content {
@@ -60,13 +58,15 @@
 
             @include below($mobile) {
                 margin-bottom: rem(16);
+
                 font-size: rem(36);
-                letter-spacing: rem(-1.2);
                 line-height: rem(44);
+                letter-spacing: rem(-1.2);
             }
         }
 
         p {
+            width: rem(518);
             margin: 0;
             margin-bottom: rem(72);
 
@@ -77,10 +77,12 @@
             text-align: left;
 
             @include below($mobile) {
-                font-size: rem(16);
-                letter-spacing: rem(-0.2);
-                line-height: rem(24);
+                width: 100%;
                 margin-bottom: rem(42);
+
+                font-size: rem(16);
+                line-height: rem(24);
+                letter-spacing: rem(-.2);
             }
         }
     }
@@ -129,6 +131,7 @@
 
         @include below($tablet-small) {
             display: none;
+            width: auto;
 
             &:nth-of-type(4) {
                 display: flex;
@@ -150,7 +153,6 @@
                 order: 4;
             }
         }
-
         @include below($mobile) {
             width: 50%;
         }

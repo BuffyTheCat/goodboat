@@ -14,7 +14,7 @@
 
     @include below($tablet-small) {
         flex-direction: column;
-        padding-left: rem(28);
+        padding-left: rem(32);
         margin-right: rem(32);
 
         &:hover {
@@ -37,6 +37,8 @@
     }
 
     &__text-desctop {
+        margin-right: rem(4);
+
         @include below($tablet-small) {
             display: none;
         }
@@ -46,7 +48,7 @@
         position: relative;
 
         font-family: $avenir;
-        font-size: rem914;
+        font-size: rem(14);
         font-weight: 400;
         line-height: rem(18);
         color: #93a2a7;

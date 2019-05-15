@@ -112,7 +112,7 @@
 
     &__link {
         font-family: $avenir;
-        font-size: rem(14);
+        font-size: rem(18);
         font-weight: 600;
         color: $dim-grey;
         text-decoration: none;
@@ -124,7 +124,7 @@
 
     &__sub-list {
         position: absolute;
-        top: rem(68);
+        top: 100%;
         left: rem(-20);
 
         display: none;

@@ -1,10 +1,23 @@
 <div class="contacts">
-    <div class="contacts__info">
-        <div class="container">
-            {{> contacts-info/contacts-info}}
-        </div>
-    </div>    
+    <div class="contacts__adress">
+        {{> contacts-info/contacts-info}}
+    </div>
     <div class="contacts__map">
         {{> map/map}}
+    </div>
+    <div class="contacts__info">
+        <div class="contacts__info-item">
+            <p class="contacts__info-name">Единый номер</p>
+            <a href="tel:8 800 333-62-16" class="contacts__info-link">8 800 333-62-16</a>
+            <p class="contacts__info-desc">Звонок по России бесплатный</p>
+        </div>
+        <div class="contacts__info-item">
+            <p class="contacts__info-name">Почта</p>
+            <a href="mailto:good-boat@yandex.ru" class="contacts__info-link">good-boat@yandex.ru</a>
+        </div>
+        <div class="contacts__info-item">
+            <p class="contacts__info-name">Реквизиты</p>
+            <a href="javascript:void(0);" class="contacts__info-link">Скачать</a>
+        </div>
     </div>
 </div>

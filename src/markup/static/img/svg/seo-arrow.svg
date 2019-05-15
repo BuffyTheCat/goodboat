@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="16" viewBox="0 0 32 16"><g><g><g><g><g><path fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" d="M33 1v0L17 17v0L1 1v0"/></g></g></g></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="16px" viewBox="0 0 34 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Icons / Basic</title>
+    <desc>Created with Sketch.</desc>
+    <g id="0.-Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="GB_1440-Home" transform="translate(-498.000000, -7096.000000)" stroke="#FFFFFF">
+            <g id="Icons-/-Basic" transform="translate(495.000000, 7088.000000)">
+                <g id="Components-/-Mixin-/-Icons-basic-/-White">
+                    <g id="Components-/-Mixin-/-Icons-basic-/-Chevrone-down">
+                        <polyline id="Rectangle-9" points="36 8 20 24 4 8"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

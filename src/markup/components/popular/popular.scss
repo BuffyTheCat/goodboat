@@ -19,7 +19,6 @@
             flex-direction: column;
             margin-bottom: rem(46);
         }
-
         @include below($mobile) {
             margin-bottom: rem(25);
         }
@@ -56,7 +55,7 @@
 
                     position: absolute;
                     right: 0;
-                    bottom: 0;
+                    bottom: rem(-2);
                     left: 0;
 
                     width: 100%;
@@ -64,7 +63,7 @@
 
                     border-bottom: rem(1) dashed $ash-grey;
 
-                    transition: border .25s;
+                    transition: border .3s, bottom .25s;
                 }
             }
 
@@ -95,6 +94,8 @@
                     color: #069edb;
 
                     &::after {
+                        bottom: rem(-4);
+
                         border-bottom: rem(1) dashed #069edb;
                     }
                 }
@@ -117,12 +118,12 @@
             width: 100%;
             margin-bottom: rem(19);
         }
-
         @include below($mobile) {
+            margin-bottom: rem(22);
+
             font-size: rem(36);
             line-height: rem(44);
             letter-spacing: rem(-1.2);
-            margin-bottom: rem(22);
         }
     }
 
@@ -140,7 +141,6 @@
             margin-bottom: rem(48);
             margin-left: rem(-8);
         }
-
         @include below($mobile) {
             flex-direction: column;
             width: 100%;
@@ -163,7 +163,6 @@
                     display: none;
                 }
             }
-
             @include below($mobile) {
                 width: 100%;
                 margin: 0;
@@ -182,7 +181,6 @@
 
         @extend .button;
         @extend .button_color_yellow;
-
         @include below($mobile) {
             width: 100%;
         }

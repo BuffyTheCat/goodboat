@@ -24,9 +24,11 @@
     "select2": "^4.0.3"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "csscomb": "^4.2.0",
     "gulp": "^3.9.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "typewriter-effect": "^2.5.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,5 +1,5 @@
 .contacts {
-    padding-bottom: rem(160);
+    position: relative;
 
     @include below($mobile) {
         padding-bottom: rem(60);
@@ -9,56 +9,100 @@
         flex-direction: column;
     }
 
-    .contacts-info {
-        position: relative;
-        z-index: 1;
-        top: rem(50);
-
-        display: inline-block;
-        width: rem(270);
-        margin-bottom: rem(20);
-
-        @include below($phablet) {
-            top: 0;
-            left: rem(-10);
-        }
-        @include below($mobile) {
-            left: 0;
-
-            display: block;
-            width: auto;
-        }
-    }
-
     .map {
         width: 100%;
         height: 100%;
-
-        @include below($mobile) {
-            height: rem(350);
-        }
     }
 
-    &__info {
+    &__adress {
+        @extend .container;
         @include below($mobile) {
             order: 1;
             margin-top: rem(-50);
         }
     }
 
-    &__map {
-        @include above($phablet) {
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+    &__info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: rem(48);
+        padding-bottom: rem(100);
 
-            width: 100%;
-            height: 100%;
+        @include below($mobile) {
+            padding-bottom: rem(90);
+        }
+        @include below($tablet-small) {
+            justify-content: space-between;
         }
         @include below($mobile) {
-            order: 0;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+        @extend .container;
+
+        &-item {
+            display: flex;
+            flex-direction: column;
+
+            &:not(:last-of-type) {
+                margin-right: rem(164);
+
+                @include below($tablet-small) {
+                    margin: 0;
+                }
+                @include below($mobile) {
+                    margin-bottom: rem(30);
+                }
+            }
+        }
+
+        &-name {
+            margin: 0;
+
+            font-family: $avenir;
+            font-size: rem(36);
+            font-weight: 600;
+            line-height: rem(44);
+            color: #5b6f76;
+            letter-spacing: rem(-1.2);
+
+            @include below($tablet-small) {
+                font-size: rem(32);
+                line-height: rem(44);
+            }
+        }
+
+        &-link {
+            margin: 0;
+
+            font-family: $lato;
+            font-size: rem(24);
+            font-weight: 400;
+            line-height: rem(34);
+            color: #93a2a7;
+            text-decoration: none;
+            letter-spacing: rem(-.4);
+        }
+
+        &-desc {
+            margin: 0;
+
+            font-family: $lato;
+            font-size: rem(12);
+            font-weight: 400;
+            line-height: rem(18);
+            color: #93a2a7;
+        }
+    }
+
+    &__map {
+        width: 100%;
+        height: rem(512);
+
+        @include below($mobile) {
+            height: rem(576);
         }
     }
 }
