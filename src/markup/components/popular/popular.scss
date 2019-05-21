@@ -125,6 +125,12 @@
             line-height: rem(44);
             letter-spacing: rem(-1.2);
         }
+
+        span {
+            @include below($mobile) {
+                display: none;
+            }
+        }
     }
 
     &__catalog {
@@ -167,10 +173,6 @@
                 width: 100%;
                 margin: 0;
                 margin-bottom: rem(32);
-
-                &:nth-of-type(n + 4) {
-                    display: block;
-                }
             }
         }
     }

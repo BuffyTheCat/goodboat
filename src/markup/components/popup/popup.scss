@@ -1,387 +1,104 @@
 .popup {
     display: none;
-    width: rem(561);
+    width: rem(380);
     padding: 0;
     overflow: hidden;
 
-    border-radius: rem(5);
+    border-radius: rem(16);
     background: none;
 
     @include below($mobile) {
-        width: auto;
+        width: rem(304);
     }
 
     &__body {
+        position: relative;
+
+        display: none;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
         height: 100%;
-        margin-bottom: rem(20);
+        padding: rem(52) rem(32);
+        padding-bottom: rem(44);
 
-        border-radius: 0 0 rem(5) rem(5);
         background-color: $white;
 
-        &_height {
-            &_auto {
-                height: auto;
-            }
-        }
-    }
-
-    &__mobile-hours {
-        display: none;
-        margin: 0;
-
         @include below($mobile) {
+            padding: rem(34) rem(16);
+            padding-bottom: rem(16);
+        }
+
+        &.active {
             display: flex;
-            align-items: center;
-            margin-left: rem(5);
         }
     }
+
 
     &__title {
-        position: relative;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: rem(60);
-        padding: 0 rem(30);
-
-        border-radius: rem(5) rem(5) 0 0;
-        background-color: $light-blue;
-
-        @include below($mobile) {
-            padding: 0 rem(10);
-        }
-    }
-
-    &__title-hidden-wrap {
-        display: flex;
-        align-items: center;
-        height: 100%;
-
-        @include below($mobile) {
-            justify-content: space-between;
-            width: 100%;
-            padding: 0 rem(20);
-            padding-top: rem(15);
-        }
-
-        .popup__close {
-            display: none;
-
-            @include below($mobile) {
-                display: block;
-
-                text-indent: rem(-9999);;
-            }
-        }
-    }
-
-    &__content-info-left {
-        position: relative;
-    }
-
-    &__title-text {
-        display: flex;
-        align-items: center;
-        margin: 0;
-
-        font-size: rem(24);
-        font-weight: 300;
-        color: $white;
-        text-align: left;
-    }
-
-    &__title-hidden {
-        display: none;
-
-        @include below($mobile) {
-            width: 100%;
-        }
-    }
-
-    &__info {
-        display: flex;
-        align-items: center;
-        height: rem(35);
-        padding-right: rem(38);
-        padding-left: rem(30);
-
-        @include below($mobile) {
-            height: auto;
-        }
-    }
-
-    &__input-name {
-        margin: 0;
-    }
-
-    &__info-text {
-        max-width: 100%;
-        margin: 0;
-
-        font-size: rem(14);
-        font-weight: 300;
-        color: $white;
-        text-align: left;
-
-        @include below($mobile) {
-            max-width: 80%;
-        }
-
-        &_size {
-            &_big {
-                color: $white;
-                text-transform: uppercase;
-            }
-        }
-    }
-
-    &__info-image {
-        margin-right: rem(15);
-
-        fill: $white;
-    }
-
-    &__input-wrap-request {
-        width: rem(230);
-
-        @include below($mobile) {
-            width: 100%;
-
-            &:not(:last-child) {
-                margin-bottom: rem(20);
-            }
-        }
-
-        &::after {
-            border-color: $ash-grey;
-        }
-
-        &_time {
-            width: rem(60);
-            margin-bottom: 0;
-        }
-    }
-
-    &__input-textarea-wrap {
-        position: relative;
-
         width: 100%;
-        margin-bottom: rem(20);
-    }
-
-    &__input-captcha {
-        width: rem(105);
-
-        @include below($mobile) {
-            width: 50%;
-        }
-    }
-
-    &__input-wrap-message {
-        margin-bottom: rem(15);
-
-        &_long {
-            width: 100%;
-        }
-    }
-
-    &__input-wrap-request-city {
-        margin-bottom: rem(25);
-    }
-
-    &__content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: calc(100% - 60px);
-        padding: rem(30) rem(30);
-
-        @include below($mobile) {
-            padding: rem(30) rem(10);
-        }
-
-        &_message-dir {
-            justify-content: flex-start;
-        }
-    }
-
-    &__content-right,
-    &__content-left {
-        display: flex;
-        flex-direction: column;
-        flex-basis: 50%;
-
-        @include below($mobile) {
-            flex-basis: 100%;
-        }
-    }
-
-    &__content-right {
-        padding-left: rem(30);
-
-        @include below($mobile) {
-            padding-left: 0;
-        }
-    }
-
-    &__list-left,
-    &__list-right {
-        display: flex;
-        flex-direction: column;
-        padding: 0;
         margin: 0;
-    }
+        margin-bottom: rem(16);
 
-    &__list-left {
-        .popup__link:last-of-type {
-            margin-bottom: rem(25);
-        }
-    }
-
-    &__content-hidden {
-        display: none;
-        height: calc(100% - 60px);
-        padding: rem(30) rem(30);
-
-        font-family: $open_sans;
-        font-size: rem(14);
-        font-weight: 500;
-        color: $dim-grey;
+        font-family: $avenir;
+        font-size: rem(36);
+        font-weight: 600;
+        line-height: rem(44);
+        color: #5b6f76;
+        letter-spacing: rem(-1.2);
 
         @include below($mobile) {
-            padding: rem(10) rem(20);
+            font-size: rem(24);
+            line-height: rem(30);
+            letter-spacing: rem(-.8);
         }
     }
 
-    &__content-hidden-text {
+    &__subtitle {
+        width: 100%;
         margin: 0;
-        margin-bottom: rem(10);
+        margin-bottom: rem(32);
 
-        font-family: $open_sans;
-        font-size: rem(14);
+        font-family: $lato;
+        font-size: rem(16);
         font-weight: 400;
-        color: $dim-grey;
-
-        &:last-of-type {
-            margin-top: rem(30);
-        }
-    }
-
-    &__content-wrapper {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: rem(30);
+        line-height: rem(24);
+        color: #93a2a7;
+        letter-spacing: rem(-.2);
 
         @include below($mobile) {
-            flex-direction: column;
+            font-size: rem(14);
+            line-height: rem(20);
+            letter-spacing: rem(-.1);
+        }
+
+        a {
+            font-family: $lato;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(24);
+            color: #93a2a7;
+            letter-spacing: rem(-.2);
+        }
+
+        span {
+            color: #069edb;
         }
     }
 
-    &__submit {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-
+    &__remarks {
         @include below($mobile) {
-            flex-direction: column;
-        }
-
-        &_big {
-            position: relative;
-
-            width: rem(230);
-            height: 100%;
-            margin-left: rem(55);
-
-            @include below($mobile) {
-                width: 100%;
-                height: auto;
-                margin-bottom: rem(10);
-                margin-left: 0;
-            }
-        }
-
-        &_review {
-            align-self: flex-end;
-            width: auto;
-            margin-left: auto;
-        }
-    }
-
-    &__submit-text {
-        max-width: rem(350);
-        margin: 0;
-
-        font-size: rem(14);
-        color: $dim-grey;
-
-        @include below($mobile) {
-            margin-bottom: rem(20);
-        }
-    }
-
-    &__submit-button {
-        position: relative;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: rem(10) rem(30);
-
-        border: rem(1) solid transparent;
-
-        @include below($mobile) {
-            padding-top: rem(20);
-            padding-bottom: rem(20);
-        }
-
-        &:hover {
-            border: rem(1) solid $gold-yellow;
-        }
-
-        &:active {
-            top: rem(1);
-        }
-    }
-
-    &__city-link {
-        font-size: rem(18);
-        font-weight: 300;
-        text-align: left;
-        text-decoration: none;
-    }
-
-
-    &__socials {
-        display: flex;
-        align-items: center;
-    }
-
-    &__social-link {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        text-decoration: none;
-
-        outline: none;
-
-        &:not(:last-of-type) {
-            margin-right: rem(10);
+            padding-bottom: rem(34);
         }
     }
 
     &__close {
-        position: relative;
-        top: 0;
-        right: 0;
+        position: absolute;
+        top: rem(16);
+        right: rem(16);
 
-        width: rem(22);
-        height: rem(22);
+        width: rem(16);
+        height: rem(16);
         padding: 0;
 
         text-indent: rem(-9999);
@@ -389,10 +106,6 @@
         border: none;
         outline: none;
         background: none;
-
-        @include below($mobile) {
-            display: none;
-        }
 
         &::before,
         &::after {
@@ -405,7 +118,7 @@
             width: rem(2);
             height: rem(23);
 
-            background-color: $white;
+            background-color: #cdd4d6;
         }
 
         &::before {
@@ -415,1881 +128,403 @@
         &::after {
             transform: rotate(-45deg);
         }
-
-        &_mobile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            height: auto;
-            padding: rem(15);
-
-            color: $dim-grey;
-            text-indent: 0;
-
-            border-radius: rem(5);
-            background-color: $platinum-grey;
-
-            &::before,
-            &::after {
-                display: none;
-            }
-        }
     }
 
-    &__request {
-        &_name {
-            width: calc(100% - 10px);
-        }
-
-        &_phone {
-            width: calc(100% - 50px);
-        }
-
-        &_textarea {
-            width: 100%;
-            height: rem(124);
-            padding: rem(10);
-            resize: none;
-
-            border: rem(1) solid $ash-grey;
-            outline: none;
-
-            @include below($mobile) {
-            }
-        }
-    }
-
-    &__director {
-        display: flex;
-        align-items: center;
-        margin-bottom: rem(30);
-    }
-
-    &__image {
-        flex-shrink: 0;
-        width: rem(70);
-        height: rem(70);
-        margin-right: rem(20);
-        overflow: hidden;
-
-        border-radius: rem(5);
-    }
-
-    &__image-dir {
-        width: 100%;
-        height: 100%;
-    }
-
-    &__name-director {
-        margin-bottom: rem(10);
-
-        font-size: rem(18);
-        color: $black;
-        text-align: left;
-
-        @include below($mobile) {
-            margin-top: 0;
-            margin-bottom: rem(5);
-        }
-    }
-
-    &__post-director {
-        font-size: rem(14);
-        color: $ash-grey;
-        text-align: left;
-
-        @include below($mobile) {
-            margin: 0;
-        }
-    }
-
-    &__form-dir {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-    &__captcha {
-        display: flex;
-        align-items: center;
-
-        @include below($mobile) {
-            margin-bottom: rem(30);
-        }
-    }
-
-    &__captcha-block {
-        width: rem(145);
-        height: rem(40);
-        margin-right: rem(20);
-
-        background-color: grey;
-    }
-
-    &__tab-wrap {
-        display: flex;
-        width: 95%;
-        height: 100%;
-        padding: rem(5);
-        margin-right: rem(20);
-
-        border-radius: rem(5);
-        background-color: $rich-blue;
-
-        @include below($mobile) {
-            width: 100%;
-            margin-right: 0;
-        }
-    }
-
-    &__submit-description {
-        margin: 0;
-    }
-
-    &__tab {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: rem(10) rem(30);
-        margin: 0;
-
-        font-family: $open_sans;
-        font-size: rem(18);
-        font-weight: 300;
-        color: $white;
-        text-align: center;
-
-        border-radius: rem(5);
-        cursor: pointer;
-
-        @include below($tablet) {
-            padding: rem(10) rem(20);
-        }
-        @include below($phablet) {
-            font-size: rem(16);
-        }
-    }
-
-    &__tab.active {
-        position: relative;
-
-        color: $prussian-blue;
-
-        background-color: $white;
-
-        &::after {
-            content: '';
-
-            position: absolute;
-            bottom: - rem(25);
-            left: calc(50% - 20px);
-
-            border: rem(20) solid transparent;
-            border-bottom: rem(13) solid $white;
-        }
-    }
-
-    &__tab-name {
-        @include below($mobile) {
-            display: none;
-        }
-    }
-
-    &__tab-info-yacht {
-        width: 60%;
-        height: 100%;
-
-        @include below($mobile) {
-            width: 50%;
-        }
-    }
-
-    &__tab-booking-fishing {
-        width: 40%;
-        height: 100%;
-
-        @include below($mobile) {
-            width: 50%;
-        }
-    }
-
-    &__content-info {
-        width: 45%;
-
-        @include below($tablet) {
-            width: rem(280);
-        }
-        @include below($mobile) {
-            width: 100%;
-        }
-    }
-
-    &__content-info-right {
-        @include below($tablet) {
-            width: rem(335);
-        }
-        @include below($mobile) {
-            width: 100%;
-        }
-    }
-
-    &__content-info-title {
-        position: relative;
-
-        margin: 0;
-        margin-bottom: rem(30);
-
-        @include below($mobile) {
-            font-size: rem(18);
-        }
-
-        &::after {
-            content: '';
-
-            position: absolute;
-            bottom: rem(-10);
-            left: 0;
-
-            width: 100%;
-            height: rem(1);
-
-            background-color: $ash-grey;
-        }
-    }
-
-    &__content-info-yacht {
-        height: rem(262);
-        margin-bottom: rem(15);
-        overflow: hidden;
-
-        &::after {
-            display: none;
-        }
-    }
-
-    &__yacht-spec {
-        display: flex;
-        align-items: baseline;
-        margin: 0;
-        margin-bottom: rem(10);
-
-        line-height: rem(20);
-    }
-
-    &__yacht-spec-name {
-        display: flex;
-        align-items: center;
-        width: 45%;
-
-        @include below($tablet) {
-            width: 55%;
-        }
-    }
-
-    &__yacht-spec-value {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        width: 55%;
-
-        @include below($tablet) {
-            width: 45%;
-            margin-left: 0;
-        }
-
-        .number-reviews {
-            align-self: flex-start;
-            margin-left: rem(10);
-
-            @include below($tablet) {
-                display: none;
-            }
-        }
-        .rouble_mini {
-            align-self: center;
-        }
-    }
-
-    &__yacht-entertiment-name {
-        width: 50%;
-
-        @include below($mobile) {
-            width: 100%;
-        }
-    }
-
-    &__yacht-entertiment-value {
-        width: 35%;
-
-        @include below($tablet) {
-            margin-left: 0;
-        }
-        @include below($mobile) {
-            width: 100%;
-        }
-    }
-
-    &__content-info-entertiment {
-        &_included {
-            margin-bottom: rem(25);
-
-            @include below($mobile) {
-                margin-bottom: 0;
-            }
-        }
-    }
-
-    &__button-open {
-        display: flex;
-        align-items: center;
-        margin-bottom: rem(30);
-
-        &:hover mini-arrow {
-            fill: $yale-blue;
-        }
-    }
-
-    &__buttons-mobile {
-        display: none;
-
-        @include below($mobile) {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-
-
-            .popup__button-next {
-                display: flex;
-                margin-bottom: rem(10);
-            }
-        }
-    }
-
-    &__button-next {
-        position: relative;
-
+    &__content {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: rem(20) rem(40);
-
-        font-family: $open_sans;
-        font-size: rem(19);
-        color: $white;
-        text-align: center;
-
-        border: none;
-        border-radius: rem(5);
-        outline: none;
-        background-color: $deep-sky-blue;
-
-        transition: background-color .3s, color .3s;
-
-        @include below($tablet) {
-            font-size: rem(14);
-        }
-        @include below($mobile) {
-            display: none;
-        }
-
-        &:hover {
-            color: $black;
-
-            background-color: $gold-yellow;
-        }
-        &:active {
-            top: rem(1);
-        }
     }
 
-    &__fishing-form {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    &__form-item {
+    &__input-wrap {
         position: relative;
 
-        width: rem(230);
+        width: 100%;
 
-        @include below($phablet) {
-            width: rem(185);
 
-            &:not(:last-child) {
-                margin-right: rem(40);
-            }
-        }
-    }
-
-    &__radio-wrap {
-        position: relative;
-
-        display: flex;
-        flex-direction: column;
-        padding-left: rem(15);
-        margin-bottom: rem(20);
-
-        @include below($tablet) {
-            padding-left: rem(10);
+        &:not(:last-of-type) {
+            margin-bottom: rem(32);
         }
 
         &:last-of-type {
-            margin-bottom: rem(30);
+            margin-bottom: rem(48);
         }
 
-        &::before {
-            content: '';
-
+        label.error {
             position: absolute;
+            bottom: calc(100% + 3px);
             left: 0;
 
-            width: rem(4);
-            height: 100%;
-
-            border-top: rem(1) solid $ash-grey;
-            border-bottom: rem(1) solid $ash-grey;
-            border-left: rem(1) solid $ash-grey;
+            font-family: $lato;
+            font-size: rem(10);
+            font-weight: 400;
+            line-height: rem(14);
+            color: #db0634;
+            letter-spacing: rem(-.1);
         }
 
-        &:first-of-type {
-            @include below($tablet) {
-                .radio-custom__title {
-                    display: none;
+        &_textarea {
+            label.error {
+                bottom: 100%;
 
-                    &_tablet {
-                        display: block;
-                    }
-                }
-            }
-        }
-    }
+                padding-right: rem(10);
 
-    &__time-for-rent {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        margin-bottom: rem(7);
-
-        @include below($tablet) {
-            display: none;
-        }
-
-        &_tablet {
-            display: none;
-
-            @include below($tablet) {
-                display: flex;
-                align-items: baseline;
-            }
-        }
-    }
-
-    &__date-for-rent {
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        margin-bottom: rem(35);
-
-        @include below($mobile) {
-            display: none;
-        }
-    }
-
-    &__entertainment {
-        margin-bottom: rem(14);
-    }
-
-    &__entertainment-text {
-        display: flex;
-        align-items: center;
-        padding-left: rem(30);
-        margin: 0;
-
-        @include below($mobile) {
-            padding-left: rem(25);
-        }
-
-        .popup__entertainment-number {
-            margin-left: none;
-        }
-    }
-
-    &__entertainment-number {
-        margin-right: rem(2);
-    }
-
-    &__total {
-        display: flex;
-        flex-direction: column;
-        width: rem(230);
-
-        @include below($mobile) {
-            width: 100%;
-            margin-bottom: rem(20);
-        }
-    }
-
-    &__total-sum {
-        margin: 0;
-        margin-bottom: rem(12);
-
-        font-weight: 400;
-
-        @include below($mobile) {
-            order: 1;
-        }
-
-        .rouble_popup {
-            @include bg($rouble_black);
-        }
-    }
-
-    &__total-numbers {
-        font-weight: 400;
-    }
-
-    &__total-yacht {
-        margin: 0;
-        margin-bottom: rem(5);
-
-        @include below($tablet) {
-            margin: 0;
-        }
-
-        &_mobile {
-            display: none;
-
-            @include below($mobile) {
-                display: block;
-            }
-        }
-    }
-
-    &__total-entertainment {
-        margin: 0;
-    }
-
-    &__icon-tick {
-        fill: $forest-green;
-    }
-
-    &_bottom-wrapper {
-        display: flex;
-        justify-content: flex-start;
-        width: 100%;
-
-        @include below($mobile) {
-            flex-direction: column;
-        }
-    }
-    &__time-rent-text {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        width: 85%;
-        padding-right: rem(15);
-    }
-
-    &__price-old {
-        position: relative;
-
-        &::after {
-            content: '';
-
-            position: absolute;
-            bottom: 50%;
-            left: 0;
-
-            width: 100%;
-            height: 1px;
-
-            background-color: $red;
-        }
-    }
-    &__price-new,
-    &__price-group {
-        margin: 0;
-    }
-
-    &__price-rent {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-        width: 74%;
-        margin-bottom: rem(25);
-    }
-
-    &_fishing {
-        width: rem(870);
-
-        @include below($tablet) {
-            width: rem(754);
-        }
-        @include below($mobile) {
-            width: 100%;
-        }
-
-        .popup__title {
-            height: rem(90);
-            padding: rem(20) rem(30);
-
-            @include below($tablet) {
-                padding: rem(20);
-            }
-            @include below($mobile) {
-                padding: rem(5);
-                padding-bottom: rem(20);
-            }
-        }
-
-        .popup__content {
-            display: none;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            height: 100%;
-            padding: rem(35);
-
-            @include below($mobile) {
-                padding: rem(35) rem(10);
+                background-color: #ffffff;
+                transform: translateY(50%);
             }
 
-            &_booking {
-                flex-direction: column;
-                padding-top: rem(15);
-                padding-right: 0;
-                padding-left: 0;
+            .popup__textarea {
+                &:focus {
+                    & ~ .popup__placeholder {
+                        top: rem(-7);
 
-                .popup__fishing-form {
-                    padding-right: rem(35);
-                    padding-left: rem(35);
+                        padding-right: rem(10);
 
-                    @include below($tablet) {
-                        padding-right: rem(25);
-                        padding-left: rem(25);
-                    }
+                        font-size: rem(10);
+                        font-weight: 400;
+                        line-height: rem(14);
+                        color: #069edb;
+                        letter-spacing: rem(-.1);
 
-                    .popup__form-item {
-                        &:nth-of-type(1) {
-                            @include below($tablet) {
-                                width: rem(180);
-                                margin: 0;
-                            }
-                            @include below($mobile) {
-                                width: 100%;
-                            }
-                        }
-                        &:nth-of-type(2) {
-                            @include below($tablet) {
-                                width: rem(210);
-                                margin: 0;
-                            }
-                            @include below($mobile) {
-                                width: 100%;
-                            }
-                        }
-                        &:nth-of-type(3) {
-                            @include below($tablet) {
-                                width: rem(220);
-                                margin: 0;
-                            }
-                            @include below($mobile) {
-                                width: 100%;
-                                margin-bottom: rem(40);
-                            }
-                        }
-                    }
-                }
-
-                .popup__time-for-rent {
-                    margin-bottom: rem(20);
-
-                    @include below($mobile) {
-                        margin-bottom: rem(70);
-                    }
-                }
-
-                .discount {
-                    top: rem(228);
-                    left: 0;
-
-                    @include below($tablet) {
-                        top: rem(228);
-                    }
-                    @include below($mobile) {
-                        top: rem(300);
+                        background-color: $white;
                     }
                 }
             }
 
-            .popup__type-fishing {
-                .discount {
-                    position: absolute;
-                    top: rem(228);
-                    left: 0;
-
-                    display: flex;
-
-                    @include below($tablet) {
-                        top: rem(228);
-                    }
-                    @include below($mobile) {
-                        top: rem(300);
-                    }
-                }
-            }
-            &_booking-title {
-                padding-bottom: rem(15);
-                margin: 0;
-                margin-bottom: rem(25);
-
-                text-align: center;
-
-                border-bottom: rem(1) solid $platinum-grey;
-            }
-        }
-
-        .popup__content-info-title {
-            @include below($mobile) {
-                font-weight: bold;
-                color: $black;
-            }
-        }
-
-        .popup__content.active {
-            display: flex;
-        }
-
-        .popup__request_textarea {
-            height: rem(141);
-        }
-
-        .popup__input-wrap-request {
-            width: 100%;
-
-            &_number {
-                width: rem(40);
-                margin-bottom: 0;
-                margin-left: auto;
-
-                input::-webkit-outer-spin-button,
-                input::-webkit-inner-spin-button {
-                    -webkit-appearance: none;
-                }
-                input[type='number'] {
-                    -moz-appearance: textfield;
-                }
-            }
-            &_date {
-                width: rem(95);
-                margin-bottom: 0;
-
-                @include below($mobile) {
-                    width: rem(105);
-                }
-            }
-        }
-
-        .popup__entertainment-number {
-            margin-left: 0;
-        }
-
-        .popup__type-fishing {
-            .discount {
-                position: relative;
-                top: 0;
-                right: 0;
-                left: auto;
-
-                padding-left: rem(5);
-
-                @include below($tablet) {
-                    position: absolute;
-                    top: rem(4);
-
-                    display: flex;
-                }
-                @include below($mobile) {
-                    font-size: rem(18);
-                }
-            }
-        }
-
-        .discount {
-            position: relative;
-            top: 0;
-            right: 0;
-            left: auto;
-
-            display: none;
-            padding-left: rem(5);
-
-            @include below($tablet) {
-                position: absolute;
-                top: rem(4);
-
-                display: flex;
-            }
-            @include below($mobile) {
-                font-size: rem(18);
-            }
-        }
-    }
-
-    &_parasaling {
-        width: rem(870);
-
-        @include below($tablet) {
-            width: rem(754);
-        }
-        @include below($mobile) {
-            width: 100%;
-        }
-
-        .popup__title {
-            height: rem(90);
-            padding: rem(20) rem(30);
-
-            @include below($tablet) {
-                padding: rem(20);
-            }
-            @include below($mobile) {
-                padding: rem(5);
-                padding-bottom: rem(20);
-            }
-        }
-
-
-        .popup__content {
-            display: none;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            height: 100%;
-            padding: rem(35);
-
-            @include below($mobile) {
-                padding: rem(35) rem(10);
-            }
-
-            &_booking {
-                flex-direction: column;
-                padding-top: rem(15);
-                padding-right: 0;
-                padding-left: 0;
-
-                .popup__service-form {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    padding-right: rem(35);
-                    padding-left: rem(35);
-
-                    @include below($tablet) {
-                        padding-right: rem(25);
-                        padding-left: rem(25);
-                    }
-                }
-
-                .popup__form-item {
-                    &:nth-of-type(1) {
-                        @include below($tablet) {
-                            width: rem(185);
-                            margin: 0;
-                        }
-                        @include below($mobile) {
-                            width: 100%;
-                        }
-                    }
-                    &:nth-of-type(2) {
-                        @include below($tablet) {
-                            width: rem(215);
-                            margin: 0;
-                        }
-                        @include below($mobile) {
-                            width: 100%;
-                        }
-                    }
-                    &:nth-of-type(3) {
-                        @include below($tablet) {
-                            width: rem(225);
-                            margin: 0;
-                        }
-                        @include below($mobile) {
-                            width: 100%;
-                            margin-bottom: rem(40);
-                        }
-                    }
-                }
-
-                .popup__add-entertainment {
-                    @include below($mobile) {
-                        margin-bottom: rem(40);
-                    }
-                }
-
-                .popup__total-entertainment {
-                    @include below($mobile) {
-                        margin-bottom: rem(15);
-                    }
-                }
-
-                .popup__time-for-rent {
-                    @include below($tablet) {
-                        display: flex;
-                    }
-                }
-
-                .popup__date-and-time-rent {
-                    .popup__input-name {
-                        @include below($mobile) {
-                            display: none;
-                        }
-                        &_mobile {
-                            display: none;
-
-                            @include below($mobile) {
-                                display: block;
-                                margin: 0;
-                            }
-                        }
-                    }
-                }
-            }
-            &_booking-title {
-                padding-bottom: rem(15);
-                margin: 0;
-                margin-bottom: rem(25);
-
-                text-align: center;
-
-                border-bottom: rem(1) solid $platinum-grey;
-            }
-        }
-
-        .popup__content-info-title {
-            @include below($mobile) {
-                font-weight: bold;
-                color: $black;
-            }
-        }
-
-        .popup__content.active {
-            display: flex;
-        }
-
-        .popup__request_textarea {
-            height: rem(141);
-        }
-
-        .popup__people-for-rent {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            margin-bottom: rem(40);
-        }
-
-        .popup__input-wrap-request {
-            width: 100%;
-
-            &_number {
-                width: rem(38);
-                margin-bottom: 0;
-
-                input::-webkit-outer-spin-button,
-                input::-webkit-inner-spin-button {
-                    -webkit-appearance: none;
-                }
-                input[type='number'] {
-                    -moz-appearance: textfield;
-                }
-            }
-            &_date {
-                width: rem(95);
-                margin-bottom: 0;
-            }
-            &_time {
-                width: rem(60);
-                margin-bottom: 0;
-            }
-        }
-        .popup__link-discount {
-            margin-left: auto;
-        }
-
-        .discount {
-            top: rem(54);
-            right: 0;
-            left: auto;
-
-            display: none;
-
-            @include below($tablet) {
-                top: 0;
-
-                display: flex;
-            }
-        }
-    }
-
-    &__discount__text {
-        margin: 0;
-
-        &:first-child {
-            margin-right: rem(5);
-        }
-    }
-
-    &__discount__item {
-        display: flex;
-        margin-bottom: rem(10);
-    }
-
-    &_yacht-rent {
-        width: rem(870);
-
-        @include below($phablet) {
-            width: auto;
-            margin-right: rem(20);
-            margin-left: rem(20);
-        }
-        @include below($mobile) {
-            width: 100%;
-            margin-right: 0;
-            margin-left: 0;
-        }
-
-
-
-        .popup__title {
-            height: rem(90);
-            padding: rem(20) rem(30);
-
-            @include below($phablet) {
-                padding: rem(20) rem(50) rem(20) rem(20);
-            }
-            @include below($mobile) {
-                padding: rem(5) rem(5) rem(20) rem(5);
-            }
-        }
-
-        .popup__tab {
-            justify-content: center;
-            width: 33.3%;
-            padding: rem(10) rem(30);
-
-            @include below($mobile) {
-                padding: rem(10) rem(15);
-            }
-        }
-
-        .popup__close {
-            position: absolute;
-            top: 50%;
-            right: rem(20);
-
-            transform: translateY(-50%);
-
-            @include below($mobile) {
-                position: static;
+            .popup__placeholder {
+                top: rem(16);
 
                 transform: translateY(0);
             }
         }
-
-        .popup__type-fishing {
-            .popup__time-for-rent {
-                margin-bottom: rem(23);
-            }
-        }
-
-        .popup__content {
-            display: none;
-            flex-direction: row;
-            justify-content: space-between;
-            height: 100%;
-            padding: rem(35);
-
-            &_booking {
-                flex-direction: column;
-                padding-top: rem(30);
-                padding-right: 0;
-                padding-left: 0;
-
-                @include below($phablet) {
-                    padding-top: rem(20);
-                }
-
-                .popup__yacht-form {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    width: 100%;
-                    padding-right: rem(35);
-                    padding-left: rem(35);
-
-                    @include below($phablet) {
-                        padding-right: rem(25);
-                        padding-left: rem(25);
-                    }
-                    @include below($mobile) {
-                        padding-right: rem(10);
-                        padding-left: rem(10);
-                    }
-                }
-            }
-            &_booking-title {
-                padding-bottom: rem(15);
-                margin: 0;
-                margin-bottom: rem(25);
-
-                text-align: center;
-
-                border-bottom: rem(1) solid $platinum-grey;
-            }
-        }
-        .popup__content.active {
-            display: flex;
-        }
-
-        .popup__request_textarea {
-            height: rem(141);
-        }
-
-        .popup__input-wrap-request {
-            width: 100%;
-
-            &_number {
-                width: rem(38);
-                margin-bottom: 0;
-
-                input::-webkit-outer-spin-button,
-                input::-webkit-inner-spin-button {
-                    -webkit-appearance: none;
-                }
-                input[type='number'] {
-                    -moz-appearance: textfield;
-                }
-            }
-            &_date {
-                width: rem(95);
-                margin-bottom: 0;
-            }
-            &_time {
-                width: rem(60);
-                margin-bottom: 0;
-            }
-        }
-        .popup__rent-group-form {
-            @include below($tablet) {
-                .popup__price-rent {
-                    width: 84%;
-                }
-                .popup__add-entertainment {
-                    width: rem(219);
-                }
-                .popup__total {
-                    width: rem(219);
-                }
-            }
-            @include below($mobile) {
-                .popup__add-entertainment {
-                    width: 100%;
-                }
-            }
-            .popup__price-rent {
-                width: 84%;
-            }
-        }
-
-        .popup__rent-fishing-form {
-            @include below($tablet) {
-                .popup__add-entertainment {
-                    width: rem(219);
-                }
-                .popup__type-fishing {
-                    width: rem(210);
-                }
-                .popup__total {
-                    width: rem(219);
-                }
-            }
-            @include below($mobile) {
-                .popup__add-entertainment {
-                    width: 100%;
-                }
-            }
-        }
-
-        .popup__mobile-hours {
-            @include below($tablet) {
-                display: flex;
-            }
-        }
-
-        .popup__group-rent {
-            @include below($tablet) {
-                .popup__price-rent {
-                    justify-content: flex-start;
-                    width: 100%;
-                }
-            }
-            .discount {
-                position: relative;
-                z-index: 99;
-                top: 0;
-                right: 17px;
-                left: auto;
-            }
-        }
-
-        .popup__form-item {
-            @include below($tablet) {
-                margin-right: 0;
-            }
-            @include below($mobile) {
-                width: 100%;
-            }
-        }
-
-        .popup__time-rent-text {
-            padding-right: 0;
-
-            @include below($tablet) {
-                justify-content: flex-start;
-            }
-        }
-
-        .popup__date-and-time-rent {
-            @include below($tablet) {
-                .popup__input-name {
-                    margin-right: rem(5);
-                }
-            }
-            @include below($mobile) {
-                justify-content: flex-start;
-                padding-left: rem(10);
-
-                .popup__input-name {
-                    margin-right: rem(15);
-                }
-                .popup__input-wrap-request_date {
-                    margin-right: rem(15);
-                }
-            }
-        }
-
-        .popup__add-entertainment {
-            @include below($mobile) {
-                margin-bottom: rem(40);
-            }
-        }
-
-        .popup__type-fishing {
-            @include below($mobile) {
-                margin-bottom: rem(40);
-            }
-        }
-
-        .popup__input-name {
-            @include below($mobile) {
-                font-size: rem(18);
-            }
-        }
-
-        .popup__price-rent {
-            @include below($tablet) {
-                width: 81%;
-            }
-            @include below($mobile) {
-                width: 58%;
-            }
-        }
-
-        .popup__time-for-rent {
-            @include below($tablet) {
-                display: flex;
-            }
-            @include below($mobile) {
-                justify-content: flex-start;
-                padding-left: rem(10);
-
-                .popup__time-rent-text {
-                    width: 65%;
-                }
-            }
-        }
-
-        .popup__submit_big {
-            @include below($tablet) {
-                margin-left: 0;
-            }
-        }
     }
 
-    &__date-and-time-rent {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: rem(18);
-    }
-
-    &__social-icon {
-        transition: fill .5s;
-
-        fill: $sky-blue;
-
-        &_fill {
-            &_ash-grey {
-                fill: $ash-grey;
-            }
-        }
-    }
-
-    &__item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: rem(20);
-
-        &_end {
-            justify-content: flex-start;
-
-            .popup__text {
-                margin-right: rem(15);
-            }
-        }
-    }
-
-    &__text {
-        margin: 0;
-    }
-
-    &__avatar-wrap {
-        position: relative;
-
-        width: rem(23);
-        height: rem(23);
-        margin-right: rem(15);
-        &::after {
-            content: '';
-
-            position: absolute;
-            z-index: 1;
-            right: rem(-6);
-            bottom: rem(-7);
-
-            @include bg($add-avatar);
-        }
-    }
-
-    &__avatar-img {
-        position: relative;
-
-        pointer-events: none;
-
-        &.uploaded {
-            width: 100%;
-        }
-    }
-
-    &__avatar {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        flex-shrink: 0;
-        width: rem(23);
-        height: rem(23);
-        overflow: hidden;
-
-        border-radius: rem(3);
-        cursor: pointer;
-        background-color: #c8c8c8;
-    }
-
-    &__input-wrap-review {
-        width: rem(157);
-
-        transition: width .5s;
-
-        &::after {
-            content: '';
-
-            border-color: $ash-grey;
-        }
-    }
-
-    &__review {
-        &_textarea {
-            width: 100%;
-            height: rem(124);
-            padding: rem(10);
-            resize: none;
-
-            border: rem(1) solid $ash-grey;
-            border-radius: rem(5);
-            outline: none;
-        }
-    }
-
-    &__review-select {
-        width: rem(170);
-
-        select {
-            padding-top: 0;
-
-            color: $rich-blue!important;
-        }
-    }
-
-    &__review-to {
-        display: flex;
-        margin-bottom: rem(15);
-    }
-
-    &__review-info {
-        display: flex;
-
-        @include below($mobile) {
-            display: none;
-        }
-
-        &_mobile {
-            display: none;
-
-            @include below($mobile) {
-                display: flex;
-                flex-direction: column;
-
-                .popup__review-info-text {
-                    width: 100%;
-
-                    .popup__text:first-of-type {
-                        margin-bottom: rem(10);
-                    }
-
-                    .popup__review-to {
-                        margin-bottom: rem(20);
-                    }
-                    .popup__select_review {
-                        width: 100%;
-
-                        .select_form {
-                            width: 100%;
-
-                            select {
-                                padding-right: 0;
-                                padding-left: 0;
-                            }
-                        }
-                    }
-                }
-
-                .popup__review-info-content {
-                    margin-bottom: rem(30);
-
-                    .popup__files-text {
-                        margin-bottom: rem(15);
-                    }
-                    .popup__file-icon {
-                        left: 0;
-                    }
-                    .popup__file-label {
-                        padding-left: rem(30);
-                    }
-                }
-
-                .popup__submit_review {
-                    align-self: auto;
-                    margin-bottom: rem(10);
-                    margin-left: 0;
-                    overflow: hidden;
-
-                    border-radius: rem(5);
-                }
-            }
-        }
-    }
-
-    &__review-info-text {
-        display: flex;
-        flex-direction: column;
-        width: rem(122);
-        padding-top: rem(5);
-
-        .popup__text:first-of-type {
-            margin-bottom: rem(20);
-        }
-    }
-
-    &__file-item {
-        &:first-of-type {
-            margin-bottom: rem(12);
-        }
-    }
-    &__input {
-        &_file {
-            position: absolute;
-            z-index: -1;
-
-            width: 0;
-            height: 0;
-            overflow: hidden;
-
-            opacity: 0;
-        }
-    }
-
-    &__file-label {
-        position: relative;
-
-        display: flex;
-        align-items: flex-start;
-        padding-left: rem(10);
-
-        cursor: pointer;
-    }
-
-    &__file-icon {
+    &__placeholder {
         position: absolute;
-        left: rem(-20);
-    }
+        top: calc(50% - 3px);
+        left: 0;
 
-    &__file-text {
-        color: $rich-blue;
-    }
+        margin: 0;
 
-    &__person {
-        display: flex;
-        align-items: center;
+        font-family: $lato;
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: rem(24);
+        color: #cdd4d6;
+        letter-spacing: rem(-.2);
 
-        transition: width .5s;
-    }
+        background-color: $white;
+        transform: translateY(-50%);
 
-    &__person.focus {
-        width: 70%;
+        transition: all .3s;
+        will-change: transform;
 
-        .popup__input-wrap-review {
-            width: 100%;
+        &.active {
+            top: rem(-10);
+
+            font-size: rem(10);
+            font-weight: 400;
+            line-height: rem(14);
+            color: #069edb;
+            letter-spacing: rem(-.1);
         }
     }
 
     &__input {
-        &_file {
-            position: absolute;
-            z-index: -1;
+        position: relative;
+        z-index: 2;
 
-            width: 0;
-            height: 0;
-            overflow: hidden;
-
-            opacity: 0;
-        }
-    }
-
-    &__city-link {
-        display: block;
-        margin-bottom: 10px;
-
-        text-decoration: underline;
-    }
-
-    &__link {
-        display: inline-flex;
-
-        list-style-type: none;
-    }
-
-    &__city-subtitle {
-        padding-bottom: rem(15);
-        margin-top: 0;
-
-        color: #aeb2b4;
-
-        border-bottom: rem(1) solid #e6e6e6;
-
-        @extend .text;
-    }
-
-    &_review {
-        width: rem(618);
-
-        @include below($mobile) {
-            width: 100%;
-        }
-
-        .popup__review_textarea {
-            @include below($mobile) {
-                border-radius: 0;
-            }
-        }
-
-        .popup__close {
-            display: block;
-        }
-
-        .popup__item {
-            @include below($mobile) {
-                display: none;
-            }
-
-            &_end {
-                display: flex;
-
-                @include below($mobile) {
-                    flex-direction: column;
-                    align-items: flex-start;
-                    width: calc(100% + 20px);
-                    padding-top: rem(20);
-                    padding-right: rem(10);
-                    padding-bottom: rem(25);
-                    padding-left: rem(10);
-                    margin-right: rem(-10);
-                    margin-bottom: rem(25);
-                    margin-left: rem(-10);
-
-                    border-top: rem(1) solid $ash-grey;
-                    background-color: $light-grey;
-
-                    .popup__text {
-                        display: none;
-                        margin-bottom: rem(5);
-
-                        font-size: rem(18);
-
-                        &_mobile {
-                            display: inline-flex;
-                        }
-                    }
-                }
-            }
-
-            &_mobile {
-                display: none;
-                flex-direction: column;
-
-                @include below($mobile) {
-                    display: flex;
-                }
-
-                .popup__social-wrap {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    width: 100%;
-                    margin-bottom: rem(15);
-
-                    .popup__text {
-                        margin: 0;
-
-                        font-weight: bold;
-
-                        transition: color .4s;
-
-                        &_ash-grey {
-                            color: $ash-grey;
-                        }
-                    }
-                }
-
-                .popup__text {
-                    margin-bottom: rem(10);
-
-                    font-size: rem(18);
-                }
-                .popup__person {
-                    width: 100%;
-
-                    .popup__avatar-wrap {
-                        width: rem(38);
-                        height: rem(38);
-                    }
-                    .popup__avatar,
-                    .popup__avatar-img {
-                        width: 100%;
-                        height: 100%;
-                    }
-                    .popup__input-wrap-review {
-                        flex-grow: 1;
-                    }
-                }
-            }
-        }
-
-        .popup__content-hidden {
-            min-height: rem(310);
-        }
-    }
-
-    &__entertiment-wrap {
-        display: flex;
         width: 100%;
 
-        @include below($mobile) {
-            flex-direction: column;
-        }
-    }
+        font-family: $lato;
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: rem(24);
+        color: #cdd4d6;
+        letter-spacing: rem(-.2);
 
-    &__add-entertainment {
-        @include below($mobile) {
-            border-bottom: rem(1) solid $ash-grey;
-        }
-    }
+        border: none;
+        border-bottom: rem(1) solid #93a2a7;
+        outline: none;
+        background-color: transparent;
 
-    &__date-mobile {
-        display: none;
+        transition: all .3s;
 
-        @include below($mobile) {
-            display: flex;
-            align-items: baseline;
-            justify-content: space-between;
-            margin-bottom: rem(25);
+        &:focus {
+            color: #93a2a7;
 
-            .popup__input-wrap-request_time {
-                width: rem(60);
-                margin: 0;
-            }
+            border-bottom: rem(1) solid #069edb;
 
-            .popup__input-name {
-                margin: 0;
-            }
-        }
-    }
-
-    &__mobile-none {
-        @include below($tablet) {
-            display: none;
-        }
-    }
-
-    &__mobile-show {
-        display: none;
-
-        @include below($tablet) {
-            display: inline;
-        }
-    }
-
-    .input::-webkit-input-placeholder {
-        @include below($mobile) {
-            font-size: rem(14);
-        }
-    }
-
-    .input::-moz-placeholder {
-        @include below($mobile) {
-            font-size: rem(14);
-        }
-    }
-
-    .input:-ms-input-placeholder {
-        @include below($mobile) {
-            font-size: rem(14);
-        }
-    }
-
-    .input:-moz-placeholder {
-        @include below($mobile) {
-            font-size: rem(14);
-        }
-    }
-
-    .input {
-        @include below($mobile) {
-            color: $rich-blue;
-
-            &:-moz-placeholder {
-                @include below($mobile) {
-                    font-size: rem(16);
-                }
-            }
-
-            &:-ms-input-placeholder {
-                @include below($mobile) {
-                    font-size: rem(16);
-                }
+            &::-webkit-input-placeholder {
+                color: #93a2a7;
             }
 
             &::-moz-placeholder {
-                @include below($mobile) {
-                    font-size: rem(16);
-                }
+                color: #93a2a7;
             }
+
+            &:-ms-input-placeholder {
+                color: #93a2a7;
+            }
+
+            & ~ .popup__placeholder {
+                top: rem(-10);
+
+                font-size: rem(10);
+                font-weight: 400;
+                line-height: rem(14);
+                color: #069edb;
+                letter-spacing: rem(-.1);
+            }
+        }
+
+        &::-webkit-input-placeholder {
+            font-family: $lato;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(24);
+            color: #cdd4d6;
+            letter-spacing: rem(-.2);
+
+            transition: color .3s;
+        }
+
+        &::-moz-placeholder {
+            font-family: $lato;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(24);
+            color: #cdd4d6;
+            letter-spacing: rem(-.2);
+
+            transition: color .3s;
+        }
+
+        &:-ms-input-placeholder {
+            font-family: $lato;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(24);
+            color: #cdd4d6;
+            letter-spacing: rem(-.2);
+
+            transition: color .3s;
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        margin-bottom: rem(16);
+
+        @extend .button;
+        @extend .button_color_yellow;
+    }
+
+    &__desc {
+        margin: 0;
+
+        font-family: $lato;
+        font-size: rem(12);
+        font-weight: 400;
+        line-height: rem(18);
+        color: #cdd4d6;
+
+        @include below($mobile) {
+            font-size: rem(10);
+            line-height: rem(16);
+        }
+    }
+
+    &__thankyou-close,
+    &__remarks-close {
+        margin: 0 auto;
+
+        font-family: $lato;
+        font-size: rem(24);
+        font-weight: 400;
+        line-height: rem(24);
+        color: #004080;
+        text-decoration: none;
+        letter-spacing: rem(-.2);
+    }
+
+    &__remarks-close {
+        display: none;
+    }
+
+    &__main-text {
+        margin: 0;
+
+        font-family: $avenir;
+        font-size: rem(24);
+        font-weight: 600;
+        line-height: rem(30);
+        color: #5b6f76;
+        letter-spacing: rem(-.8);
+
+        @include below($mobile) {
+            font-size: rem(18);
+            line-height: rem(22);
+            letter-spacing: rem(-.6);
+        }
+    }
+
+    &__thankyou {
+        @include below($mobile) {
+            padding-bottom: rem(34);
+        }
+        .popup__main-text {
+            margin-bottom: rem(16);
+        }
+    }
+
+    .survey {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: rem(50);
+
+        &__yes,
+        &__no {
+            display: flex;
+            align-items: center;
+            padding: 0;
+
+            font-family: $lato;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(24);
+            color: #93a2a7;
+            letter-spacing: rem(-.2);
+
+            border: none;
+            cursor: pointer;
+            outline: none;
+            background-color: transparent;
+            background-repeat: no-repeat;
+
+            @include below($mobile) {
+                font-size: rem(14);
+                line-height: rem(20);
+                letter-spacing: rem(-.1);
+            }
+        }
+
+        &__yes-icon {
+            position: relative;
+            top: rem(-5);
+
+            margin-right: rem(8);
+
+            @include below($mobile) {
+                width: rem(34);
+                height: rem(32);
+            }
+        }
+
+        &__no-icon {
+            position: relative;
+            top: rem(5);
+
+            margin-right: rem(8);
+
+            @include below($mobile) {
+                width: rem(34);
+                height: rem(32);
+            }
+        }
+    }
+
+    &__textarea {
+        width: 100%;
+        width: 100%;
+        height: rem(144);
+        padding: rem(16) 0;
+        padding-bottom: rem(27);
+        resize: none;
+
+        font-family: $lato;
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: rem(24);
+        color: #cdd4d6;
+        letter-spacing: rem(-.2);
+
+        border: none;
+        border-top: rem(1) solid #aeb9bd;
+        border-bottom: rem(1) solid #aeb9bd;
+        outline: none;
+        background-color: #ffffff;
+
+        transition: all .3s;
+        will-change: transform;
+
+        @include below($mobile) {
+            height: rem(128);
+        }
+
+        &:disabled {
+            border-top: none;
+            background-color: rgba(235, 237, 238, .2);
+        }
+
+        &:focus {
+            color: #93a2a7;
+
+            border-top: rem(1) solid #069edb;
+            border-bottom: rem(1) solid #069edb;
 
             &::-webkit-input-placeholder {
-                @include below($mobile) {
-                    font-size: rem(16);
-                }
+                color: #93a2a7;
+            }
+
+            &::-moz-placeholder {
+                color: #93a2a7;
+            }
+
+            &:-ms-input-placeholder {
+                color: #93a2a7;
             }
         }
-    }
 
-    &_request,
-    &_message-dir {
-        @include below($mobile) {
-            .popup__close {
-                display: block;
-            }
-        }
-    }
+        &::-webkit-input-placeholder {
+            font-family: $lato;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(24);
+            color: #cdd4d6;
+            letter-spacing: rem(-.2);
 
-    &__input-wrap-request_number,
-    &__input-wrap-request_date,
-    &__input-wrap-request_time {
-        label {
-            display: none!important;
+            transition: color .3s;
         }
-    }
-    &__input-wrap-request_number.error,
-    &__input-wrap-request_date.error,
-    &__input-wrap-request_time.error {
-        ::-webkit-input-placeholder {
-            color: $red;
-        }
-        ::-moz-placeholder {
-            color: $red;
-        }
-        :-moz-placeholder {
-            color: $red;
-        }
-        :-ms-input-placeholder {
-            color: $red;
-        }
-    }
 
-    &_city {
-        @include below($tablet) {
-            .popup__close {
-                display: block;
-            }
+        &::-moz-placeholder {
+            font-family: $lato;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(24);
+            color: #cdd4d6;
+            letter-spacing: rem(-.2);
+
+            transition: color .3s;
         }
-        .popup__content-wrapper {
-            margin: 0;
+
+        &:-ms-input-placeholder {
+            font-family: $lato;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(24);
+            color: #cdd4d6;
+            letter-spacing: rem(-.2);
+
+            transition: color .3s;
         }
     }
 
-    &__yacht-price {
-        .discount {
-            position: relative;
-            top: 0;
-            right: 0;
-            left: auto;
+    &__content-remarks {
+        width: 100%;
 
-            display: flex;
-            padding-left: rem(5);
-            margin-left: auto;
-
-            @include below($tablet) {
-                display: none;
-            }
+        .popup__input-wrap {
+            width: 100%;
         }
     }
 }

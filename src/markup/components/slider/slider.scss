@@ -42,6 +42,10 @@
             height: rem(320);
 
             background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+
+            @include below($mobile) {
+                height: rem(400);
+            }
         }
 
         &-content {

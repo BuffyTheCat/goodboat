@@ -55,7 +55,7 @@ textarea {
         position: relative;
         z-index: 1;
 
-        margin-top: rem(-68);
+        margin-top: rem(-68)!important;
         margin-bottom: rem(128)!important;
 
 		@include below($tablet-small) {
@@ -63,7 +63,7 @@ textarea {
         }
 
         @include below($mobile) {
-            margin-top: rem(-197)!important;
+            margin-top: rem(-160)!important;
             margin-bottom: rem(74)!important;
         }
     }
@@ -87,7 +87,7 @@ textarea {
 		h1 {
             @extend .container;
 			padding-top: rem(42);
-			margin-bottom: rem(26)!important;
+			margin-bottom: rem(32)!important;
 			color: #5b6f76;
 			font-family: $avenir;
 			font-size: rem(64);
@@ -97,7 +97,15 @@ textarea {
 
             @include below($tablet) {
                 padding-top: rem(26);
-                margin-bottom: rem(27);
+                margin-bottom: rem(27)!important;
+            }
+
+            @include below($mobile) {
+                padding-top: rem(42);
+                margin-bottom: rem(20)!important;
+    			font-size: rem(48);
+    			letter-spacing: rem(-1.8);
+    			line-height: rem(54);
             }
 		}
     }
@@ -1015,4 +1023,37 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.ts-tooltip_mini {
+	.tooltipster-box {
+        box-shadow: inset 0 -1px 0 #485058;
+        background-color: #808890;
+		border-radius: rem(5);
+		border: none;
+
+		.tooltipster-content {
+			padding: rem(15) rem(22);
+			color: $white;
+			font-family: $lato;
+			font-size: rem(14);
+			font-weight: 300;
+			line-height: rem(19);
+		}
+	}
+
+	.tooltipster-arrow {
+		.tooltipster-arrow-background {
+			border-top-color: #808890;
+            top: rem(-1);
+            border-bottom-color: #808890;
+
+		}
+
+		.tooltipster-arrow-border {
+            border-top-color: #485058;
+			box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12), 0 0 8px rgba(0, 0, 0, 0.08), inset 0 -1px 0 rgba(0, 0, 0, 0.12);
+            border-bottom-color: #808890;
+		}
+	}
 }

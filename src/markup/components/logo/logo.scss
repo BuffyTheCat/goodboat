@@ -6,6 +6,8 @@
         margin-right: rem(12);
 
         @include below($mobile) {
+            width: rem(56);
+            height: rem(26);
             margin: 0;
         }
     }

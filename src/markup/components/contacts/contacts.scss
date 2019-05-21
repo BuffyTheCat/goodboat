@@ -15,11 +15,9 @@
     }
 
     &__adress {
+        position: relative;
+
         @extend .container;
-        @include below($mobile) {
-            order: 1;
-            margin-top: rem(-50);
-        }
     }
 
     &__info {
@@ -34,6 +32,7 @@
         }
         @include below($tablet-small) {
             justify-content: space-between;
+            padding-bottom: rem(115);
         }
         @include below($mobile) {
             flex-direction: column;
@@ -47,13 +46,19 @@
             flex-direction: column;
 
             &:not(:last-of-type) {
-                margin-right: rem(164);
+                margin-right: rem(192);
 
                 @include below($tablet-small) {
                     margin: 0;
                 }
                 @include below($mobile) {
                     margin-bottom: rem(30);
+                }
+            }
+
+            &:last-of-type {
+                .contacts__info-link {
+                    text-decoration: underline;
                 }
             }
         }

@@ -167,6 +167,10 @@
             margin-left: 0;
         }
 
+        &:hover {
+            bottom: rem(-4);
+        }
+
         &::after {
             content: '';
 
@@ -284,8 +288,16 @@
         text-decoration: none;
         text-transform: uppercase;
 
+        cursor: pointer;
+
+        transition: color .3s;
+
         @include below($mobile) {
             font-size: rem(32);
+        }
+
+        &:hover {
+            color: #71c8e9;
         }
     }
 

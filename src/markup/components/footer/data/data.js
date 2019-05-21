@@ -40,8 +40,6 @@ var data = {
             footerModifier: 'footer_with-wave'
         },
         yachtPage: {
-            discount: function (fullData) {
-                return fullData.discount;
-            }
+            footerModifier: 'footer_with-wave'
         }
     }};

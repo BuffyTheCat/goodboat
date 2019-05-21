@@ -1,398 +1,575 @@
 .yacht-detiled {
-    padding-top: rem(50);
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: rem(48);
+    padding-bottom: rem(96);
 
-    @include below($tablet) {
-        .reviews {
-            margin-bottom: rem(100);
-        }
-    }
+    @extend .container;
     @include below($mobile) {
-        padding-top: rem(20);
-    }
-
-    &__content {
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: rem(112);
-
-        @include below($tablet) {
-            margin-bottom: rem(95);
-        }
-        @include below($mobile) {
-            flex-direction: column;
-            margin-bottom: rem(50);
-        }
-    }
-
-    &__left-side {
-        display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        width: 62%;
-        margin-right: 2%;
+        padding-top: rem(32);
+    }
+
+    &__gallery {
+        display: flex;
+        margin-right: rem(40);
+        margin-bottom: rem(50);
         overflow: hidden;
 
         @include below($tablet) {
-            margin-bottom: rem(30);
-
-            .text-hide {
-                display: none;
-            }
-            .yacht-detiled__button {
-                display: none;
-            }
+            flex-direction: column;
+            margin-right: rem(14);
         }
         @include below($mobile) {
             width: 100%;
             margin-right: 0;
-
-
-            .gallery-with-slider__list {
-                width: 100%;
-            }
-        }
-
-        p {
-            margin: 0;
-
-            font-family: $open_sans;
-            font-size: rem(14);
-            font-weight: 300;
-            line-height: rem(19);
-            color: $dim-grey;
-        }
-        .text-hide {
-            margin: 0;
-            margin-bottom: rem(15);
-        }
-
-        .discount {
-            z-index: 3;
+            margin-bottom: rem(30);
         }
     }
 
-    &__right-side {
+    &__main {
+        position: relative;
+
+        width: rem(616);
+        height: rem(462);
+        padding-bottom: rem(30);
+        margin-right: rem(16);
+
+        @include below($tablet) {
+            width: rem(484);
+            height: rem(382);
+            padding-bottom: rem(30);
+            margin-right: 0;
+            margin-bottom: rem(16);
+        }
+        @include below($mobile) {
+            width: 100%;
+            height: rem(288);
+            padding-bottom: rem(64);
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+
+        .slick-list {
+            height: 100%;
+        }
+    }
+
+    &__main-image {
+        height: 100%;
+
+        iframe {
+            width: rem(616);
+            height: rem(432);
+
+            @include below($tablet) {
+                width: rem(484);
+                height: rem(352);
+            }
+            @include below($mobile) {
+                width: rem(304);
+                height: rem(224);
+            }
+        }
+
+        img {
+            width: rem(616);
+            height: rem(432);
+
+            border-radius: rem(16);
+
+            @include below($tablet) {
+                width: rem(484);
+                height: rem(352);
+            }
+            @include below($mobile) {
+                width: rem(304);
+                height: rem(224);
+            }
+
+            object-fit: cover;
+        }
+    }
+
+    &__gallery-filtering {
+        position: absolute;
+        bottom: rem(2);
+        left: rem(16);
+
+        @include below($mobile) {
+            left: 0;
+        }
+
+        label {
+            cursor: pointer;
+
+            &:hover {
+                span {
+                    &::after {
+                        bottom: rem(-4);
+                    }
+                }
+            }
+
+            &:not(:last-of-type) {
+                margin-right: rem(16);
+            }
+
+            input {
+                display: none;
+
+                &:checked + span {
+                    color: #069edb;
+
+                    &::after {
+                        border-bottom: rem(1) dashed #069edb;
+                    }
+                }
+            }
+
+            span {
+                position: relative;
+
+                font-family: $lato;
+                font-size: rem(12);
+                font-weight: 400;
+                line-height: rem(18);
+                color: #93a2a7;
+
+                transition: color .3s;
+
+                &::after {
+                    content: '';
+
+                    position: absolute;
+                    bottom: rem(-2);
+                    left: 0;
+
+                    width: 100%;
+                    height: rem(1);
+
+                    border-bottom: rem(1) dashed #93a2a7;
+
+                    transition: all .3s;
+                }
+            }
+        }
+    }
+
+    &__slider-image {
+        width: rem(128);
+        height: rem(80)!important;
+        margin-bottom: rem(12);
+
+        border: rem(1) solid transparent;
+        border-radius: rem(16);
+
+        @include below($tablet) {
+            width: rem(110);
+            height: rem(72)!important;
+            margin-right: rem(14);
+            margin-bottom: 0;
+        }
+
+        object-fit: cover;
+    }
+
+    &__slider {
         position: relative;
 
         display: flex;
         flex-direction: column;
-        width: 36%;
+        width: rem(128);
+        height: rem(462);
+        padding-bottom: rem(30);
 
+        @include below($tablet) {
+            width: rem(484);
+            height: rem(72);
+            padding-bottom: 0;
+        }
         @include below($mobile) {
-            order: -1;
-            width: 100%;
+            display: none;
         }
 
-        .discount {
-            display: none;
+        &::after {
+            content: '';
+
+            position: absolute;
+            bottom: rem(30);
+            left: 0;
+
+            width: 100%;
+            height: rem(48);
+
+            background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
 
             @include below($tablet) {
-                top: rem(25);
-                left: 40%;
-
-                display: flex;
-
-                .discount__link {
-                    font-size: rem(14);
-                }
-            }
-            @include below($mobile) {
                 z-index: 2;
-                top: rem(185);
-                right: 0;
+                top: 0;
+                right: rem(-1);
                 left: auto;
 
-                width: rem(110);
+                width: rem(48);
+                height: 100%;
 
-                text-align: right;
+                background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
             }
         }
-    }
 
+        &::before {
+            content: '';
 
-    &__button {
-        display: flex;
-        align-items: center;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: rem(-1);
 
-        &:hover {
-            .mini-arrow_deep-sky-blue {
-                fill: $yale-blue;
-            }
-        }
-    }
-
-    &__entertiment-name {
-        margin: 0;
-    }
-
-    &__service-name {
-        display: flex;
-        flex-wrap: wrap;
-        padding-bottom: rem(25);
-
-        border-bottom: rem(1) solid $platinum-grey;
-
-        @include below($mobile) {
             display: none;
+            width: rem(48);
+            height: 100%;
+
+            background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+
+            @include below($tablet) {
+                display: block;
+            }
+        }
+
+        .slick-current {
+            border: rem(1) solid #f0c010;
+        }
+
+        .slick-slide,
+        .yacht-detiled__slider-image {
+            outline: none;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            bottom: 0;
+
+            width: rem(24);
+            height: rem(12);
+
+            text-indent: -9999px;
+
+            border: none;
+            outline: none;
+            background-color: transparent;
+            background-image: url('%=static=%general/arrow_slider.svg');
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            @include below($tablet) {
+                display: none!important;
+            }
+        }
+
+        .slick-prev {
+            left: rem(37);
+
+            transform: rotate(180deg);
+        }
+
+        .slick-next {
+            right: rem(37);
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        width: calc(100% - 800px);
+        padding-top: rem(12);
+        margin-bottom: rem(50);
+
+        @include below($tablet) {
+            width: calc(100% - 500px);
+            padding-top: rem(14);
+        }
+        @include below($mobile) {
+            width: 100%;
+            margin-bottom: rem(66);
+        }
+
+        &-overtitle {
+            margin: 0;
+            margin-bottom: rem(8);
+
+            font-family: $avenir;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(20);
+            color: #5b6f76;
+            letter-spacing: rem(6);
+            text-transform: uppercase;
+
+            @include below($tablet) {
+                font-size: rem(14);
+                line-height: rem(18);
+                letter-spacing: rem(5);
+            }
+            @include below($mobile) {
+                font-size: rem(12);
+                line-height: rem(16);
+                letter-spacing: rem(5);
+            }
+        }
+
+        &-name {
+            margin: 0;
+            margin-bottom: rem(12);
+
+            font-family: $avenir;
+            font-size: rem(64);
+            font-weight: 600;
+            line-height: rem(70);
+            color: #5b6f76;
+            letter-spacing: rem(-2.4);
+
+            @include below($tablet) {
+                margin-bottom: rem(12);
+
+                font-size: rem(48);
+                line-height: rem(54);
+                letter-spacing: rem(-1.8);
+            }
         }
 
         .stars {
-            padding: 0;
-            margin-right: rem(15);
-            &__input {
-                &::before {
-                    top: rem(2);
+            margin-bottom: rem(46);
+
+            @include below($tablet) {
+                margin-bottom: rem(36);
+            }
+            @include below($mobile) {
+                margin-bottom: rem(36);
+            }
+        }
+
+        &-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include below($tablet) {
+                flex-direction: column;
+            }
+        }
+
+        &-book {
+            width: rem(210);
+
+            @extend .button;
+            @extend .button_color_yellow;
+            @include below($tablet) {
+                width: 100%;
+                margin-bottom: rem(34);
+
+                font-size: rem(24);
+            }
+            @include below($mobile) {
+                height: rem(64);
+            }
+        }
+
+        &-discount {
+            font-family: $lato;
+            font-size: rem(24);
+            font-weight: 400;
+            line-height: rem(24);
+            color: #004080;
+            text-decoration: none;
+            letter-spacing: rem(-.2);
+        }
+
+        &-prices {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: rem(44);
+
+            dl {
+                display: flex;
+                justify-content: space-between;
+                margin: 0;
+
+                &:first-of-type {
+                    dt,
+                    dd {
+                        color: #069edb;
+                    }
+                }
+
+                &:not(:last-of-type) {
+                    margin-bottom: rem(12);
+                }
+
+                dt,
+                dd {
+                    margin: 0;
+
+                    font-family: $lato;
+                    font-size: rem(24);
+                    font-weight: 400;
+                    line-height: rem(34);
+                    color: #93a2a7;
+                    letter-spacing: rem(-.4);
+
+                    @include below($tablet) {
+                        font-size: rem(18);
+                        line-height: rem(28);
+                        letter-spacing: rem(-.3);
+                    }
+                }
+
+                dd {
+                    font-weight: 700;
+
+                    span {
+                        font-family: $rouble;
+                    }
                 }
             }
         }
-        .port {
-            margin-left: rem(30);
-        }
     }
 
-    &__service-title {
-        width: 100%;
-        margin: 0;
-        margin-bottom: rem(9);
-
-        font-family: $open_sans;
-        font-size: rem(30);
-        font-weight: 300;
-        line-height: 1;
-        color: $dim-grey;
-        text-align: left;
-
-        @include below($tablet) {
-            font-size: rem(18);
-            font-weight: 400;
-        }
-    }
-
-    &__service-info {
+    &__desc {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
+        width: rem(760);
+        margin-right: rem(40);
 
         @include below($tablet) {
-            flex-direction: column;
-
-            .number-of-reviews {
-                display: none;
-            }
-            .stars {
-                margin-bottom: rem(10);
-            }
-            .port {
-                margin-left: 0;
-            }
+            width: rem(484);
+            margin-right: rem(16);
         }
-    }
-
-    &__info-yacht-wrap {
-        padding-top: rem(8);
-        padding-bottom: rem(30);
-
-        border-bottom: rem(1) solid $platinum-grey;
-
-        @include below($tablet) {
-            border-bottom: none;
-        }
-    }
-
-    &__info-yacht {
-        height: rem(168);
-        margin-bottom: rem(10);
-        overflow: hidden;
-    }
-
-    &__yacht-spec {
-        display: flex;
-        align-items: baseline;
-        justify-content: flex-start;
-        width: 100%;
-        margin: 0;
-        margin-bottom: rem(3);
-    }
-
-    &__yacht-spec-name {
-        width: 34%;
-
-        font-weight: 400;
-
         @include below($mobile) {
-            width: 50%;
+            order: 2;
+            width: 100%;
         }
-    }
 
-    &__yacht-spec-value {
-        width: 66%;
-        margin: 0;
+        &-title {
+            margin: 0;
+            margin-bottom: rem(15);
 
-        font-weight: 400;
-
-        @include below($mobile) {
-            width: 50%;
-        }
-    }
-
-    &__yacht-spec-price {
-        &_big {
+            font-family: $avenir;
             font-size: rem(24);
+            font-weight: 600;
+            line-height: rem(30);
+            color: #5b6f76;
+            letter-spacing: rem(-.8);
         }
-    }
 
-    &__wrap-button:hover .mini-arrow_deep-sky-blue {
-        fill: $yale-blue;
-    }
+        &-text {
+            margin: 0;
 
-    &__entertiment {
-        padding-top: rem(15);
+            font-family: $lato;
+            font-size: rem(16);
+            font-weight: 400;
+            line-height: rem(24);
+            color: #93a2a7;
+            letter-spacing: rem(-.2);
 
-        @include below($tablet) {
-            display: none;
-        }
-    }
-
-    &__entertiment-included {
-        padding-bottom: rem(38);
-
-        border-bottom: rem(1) solid $platinum-grey;
-    }
-
-    &__entertiment-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: rem(7);
-
-        @include below($tablet) {
-            width: 50%;
-
-            .yacht-detiled__entertiment-price {
-                width: auto;
+            &:not(:last-of-type) {
+                margin-bottom: rem(12);
             }
+        }
+    }
+
+    &__specifications {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: calc(100% - 800px);
+
+        @include below($tablet) {
+            width: calc(100% - 500px);
         }
         @include below($mobile) {
             width: 100%;
-
-            &:last-of-type {
-                margin-bottom: rem(0);
-            }
+            margin-bottom: rem(50);
         }
 
-        &:last-of-type {
-            margin-bottom: rem(25);
+        &-title {
+            margin: 0;
+            margin-bottom: rem(16);
+
+            font-family: $avenir;
+            font-size: rem(24);
+            font-weight: 600;
+            line-height: rem(30);
+            color: #5b6f76;
+            letter-spacing: rem(-.8);
         }
-    }
 
-    &__entertiment-icon {
-        fill: $dim-grey;
-    }
-
-    &__entertiment-price {
-        width: 26%;
-        margin: 0;
-        margin-left: auto;
-    }
-
-    &__entertiment-icon-wrap {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: rem(42);
-        height: rem(35);
-        margin-right: rem(20);
-    }
-
-    &__booking {
-        position: relative;
-
-        color: $white;
-
-        &:active {
-            top: rem(1);
-        }
-    }
-
-    &__add-entertiment {
-        position: relative;
-
-        padding-top: rem(22);
-    }
-
-    &__add-entertiment-title {
-        position: absolute;
-        top: rem(-10);
-        left: rem(52);
-
-        padding: 0 rem(10);
-        margin: 0;
-
-        background-color: $white;
-    }
-
-    .reviews {
-        margin-bottom: rem(150);
-    }
-
-    &__tablet-content {
-        display: none;
-
-        @include below($tablet) {
+        dl {
             display: flex;
-            flex-wrap: wrap;
-            padding-top: rem(20);
+            justify-content: space-between;
+            width: 100%;
+            padding: rem(12);
+            padding-bottom: rem(10);
+            margin: 0;
 
-            border-top: rem(1) solid $platinum-grey;
+            border-radius: rem(4);
 
-            .text-hide {
-                height: rem(128);
+            &:nth-of-type(even) {
+                background-color: #f7f8f9;
+            }
 
-                font-size: rem(14);
-                line-height: rem(14);
+            dt,
+            dd {
+                margin: 0;
+
+                font-family: $lato;
+                font-size: rem(16);
+                font-weight: 400;
+                line-height: rem(24);
+                color: #93a2a7;
+                letter-spacing: rem(-.2);
+            }
+
+            dd {
+                font-weight: 700;
             }
         }
+    }
+
+    .slick-dots {
+        right: calc(100% + 32px);
+        bottom: rem(2);
+        left: auto;
+
+        margin-left: 0;
+
         @include below($mobile) {
-            .yacht-detiled__booking {
-                order: 1;
-            }
-            .yacht-detiled__entertiment-tablet {
-                order: 2;
-            }
+            right: auto;
+            bottom: rem(-28);
+            left: 0;
 
-            .text-hide {
-                height: rem(56);
-                margin-bottom: rem(20);
-            }
-            .yacht-detiled__button {
-                margin-bottom: rem(25);
-            }
-            .yacht-detiled__booking {
-                margin-bottom: rem(20);
-            }
+            display: flex!important;
         }
-    }
 
-    &__entertiment-tablet {
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: rem(30);
-    }
+        li {
+            height: rem(8);
 
-    &__yacht-price {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
+            &:not(:last-of-type) {
+                margin-right: rem(8);
+            }
 
-        .discount {
-            position: relative;
-            top: 0;
-            left: auto;
+            button {
+                width: rem(8);
+                height: rem(8);
 
-            display: inline-flex;
-            padding-left: rem(5);
-            margin-left: auto;
+                background-color: #ebedee;
+            }
 
-            @include below($tablet) {
-                display: none;
+            &.slick-active {
+                button {
+                    background-color: #069edb;
+                }
             }
         }
     }
